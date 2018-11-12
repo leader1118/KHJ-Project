@@ -1,0 +1,2 @@
+﻿  DX_Device.cpp
+c:\users\hyunj\desktop\c언어 프로그램\khj project\3d\part_00\sample\dx_device.h(3): fatal error C1083: 포함 파일을 열 수 없습니다. 'MyWindow.h': No such file or directory

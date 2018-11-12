@@ -1,0 +1,5 @@
+﻿  Sutdy_96.c
+c:\users\hyunj\desktop\c언어 프로그램\khj project\00_c_lang\project_97\sutdy_96.c(13): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\hyunj\desktop\c언어 프로그램\khj project\00_c_lang\project_97\sutdy_96.c(17): warning C4477: 'printf' : 서식 문자열 '%u'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\hyunj\desktop\c언어 프로그램\khj project\00_c_lang\project_97\sutdy_96.c(17): note: 서식 문자열에서 '%zu'을(를) 사용하는 것이 좋습니다.
+  Project_97.vcxproj -> C:\Users\hyunj\Desktop\c언어 프로그램\KHJ Project\00_C_Lang\x64\Debug\Project_97.exe

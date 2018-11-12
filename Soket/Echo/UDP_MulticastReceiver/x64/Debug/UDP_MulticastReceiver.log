@@ -1,0 +1,4 @@
+﻿  Sample.cpp
+c:\users\hyunj\desktop\c언어 프로그램\khj project\soket\echo\udp_multicastreceiver\sample.cpp(21): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'LPVOID'입니다.
+c:\users\hyunj\desktop\c언어 프로그램\khj project\soket\echo\udp_multicastreceiver\sample.cpp(26): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  UDP_MulticastReceiver.vcxproj -> C:\Users\hyunj\Desktop\c언어 프로그램\KHJ Project\00_C_Lang\x64\Debug\UDP_MulticastReceiver.exe

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="header.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>소스파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>소스파일</Filter>
+    </Image>
+    <Image Include="Thread.ico">
+      <Filter>소스파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="소스파일">
+      <UniqueIdentifier>{4c9d70e5-4f6c-4f6b-8194-0786710f5444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더파일">
+      <UniqueIdentifier>{3728df44-f5bb-4e5e-ada6-12625ea9205c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Thread.cpp">
+      <Filter>소스파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Thread.rc">
+      <Filter>소스파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint">
+      <Filter>소스파일</Filter>
+    </None>
+  </ItemGroup>
+</Project>

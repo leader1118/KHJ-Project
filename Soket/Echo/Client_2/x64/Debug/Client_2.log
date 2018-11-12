@@ -1,0 +1,3 @@
+﻿  Sever_2.cpp
+c:\users\hyunj\desktop\c언어 프로그램\khj project\soket\echo\client_2\sever_2.cpp(12): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Client_2.vcxproj -> C:\Users\hyunj\Desktop\c언어 프로그램\KHJ Project\00_C_Lang\x64\Debug\Sever_2.exe

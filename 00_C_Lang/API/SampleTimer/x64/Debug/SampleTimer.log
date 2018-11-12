@@ -1,0 +1,5 @@
+﻿  Core.cpp
+  Window.cpp
+  코드를 생성하고 있습니다...
+Timer.obj : error LNK2019: __imp_timeGetTime 외부 기호(참조 위치: "public: bool __cdecl Timer::Frame(void)" (?Frame@Timer@@QEAA_NXZ) 함수)에서 확인하지 못했습니다.
+C:\Users\hyunj\Desktop\c언어 프로그램\KHJ Project\00_C_Lang\x64\Debug\SampleTimer.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

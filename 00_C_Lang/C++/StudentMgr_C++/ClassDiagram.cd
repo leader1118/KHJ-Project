@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LinkedList">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgFAEABCEAIAAAAAABAAAAAEIAAAAAAACAAAAAAA=</HashCode>
+      <FileName>LinkedList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SStudent">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABEkAAAAAAAAAgAAAAAAAACAAAAAAAAAAEAAA=</HashCode>
+      <FileName>SStudent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="StudentData">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAAAAAEAAAAoAAAACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>SStudent.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Node">
+    <Position X="5.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAA=</HashCode>
+      <FileName>SStudent.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Work">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAIAQACAAAAACCAAQAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>SStudent.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
