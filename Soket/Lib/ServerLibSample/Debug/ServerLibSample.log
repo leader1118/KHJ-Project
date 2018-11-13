@@ -1,0 +1,15 @@
+﻿  Accept.cpp
+  LogError.cpp
+  Network.cpp
+  stdafx.cpp
+  StreamPacket.cpp
+c:\users\김현진\desktop\khjdata\svrlib\streampacket.cpp(27): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\김현진\desktop\khjdata\svrlib\streampacket.cpp(42): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  SvrIOCP.cpp
+  SvrObject.cpp
+  Synchronize.cpp
+  Thread.cpp
+  User.cpp
+  WorkThread.cpp
+  코드를 생성하고 있습니다...
+LINK : fatal error LNK1104: 'SvrLib.lib' 파일을 열 수 없습니다.

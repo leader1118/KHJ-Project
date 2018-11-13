@@ -1,0 +1,4 @@
+﻿  Study_58.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_59\study_58.c(17): warning C4477: 'printf' : 서식 문자열 '%08x'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char *'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_59\study_58.c(20): warning C4477: 'printf' : 서식 문자열 '%08x'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'char *'입니다.
+  Project_59.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\Project_59.exe

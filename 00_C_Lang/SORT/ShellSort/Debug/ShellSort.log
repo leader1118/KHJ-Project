@@ -1,0 +1,4 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\sort\shellsort\sample.cpp(27): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\sort\shellsort\sample.cpp(28): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  ShellSort.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\ShellSort.exe

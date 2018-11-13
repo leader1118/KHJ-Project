@@ -1,0 +1,2 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\dp\abstractfactory\sample.cpp(65): error C3867: 'TCharacter::CreateTDenfense': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.

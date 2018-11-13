@@ -1,0 +1,4 @@
+﻿  Mgr.cpp
+c:\users\김현진\desktop\khj\00_c_lang\ex(studentmgr)\mgr.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\ex(studentmgr)\mgr.cpp(5): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  EX(StudentMgr).vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\EX(StudentMgr).exe

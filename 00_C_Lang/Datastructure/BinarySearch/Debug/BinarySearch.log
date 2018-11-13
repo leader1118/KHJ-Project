@@ -1,0 +1,4 @@
+﻿  BinarySearch.cpp
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch\binarysearch.cpp(64): error C3861: 'Build': 식별자를 찾을 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch\binarysearch.cpp(66): error C3861: 'Build': 식별자를 찾을 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch\binarysearch.cpp(80): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.

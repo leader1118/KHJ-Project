@@ -10,6 +10,7 @@ void main()
 	{
 		int Select = 0;
 		printf("\n 1: 출력 2: 추가 3: 불러오기? 4: 수정 5:삭제");
+		printf("\n 번호를 입력하시요 :");
 		scanf("%d", &Select);
 
 		switch (Select)

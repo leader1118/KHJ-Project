@@ -1,0 +1,5 @@
+﻿  CLinkedList.cpp
+  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\c++\linkedlist2\sample.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  코드를 생성하고 있습니다...
+  LinkedList2.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\LinkedList2.exe

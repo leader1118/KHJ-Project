@@ -1,0 +1,4 @@
+﻿  Study_85.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_86\study_85.c(70): warning C4013: 'call_ref'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_86\study_85.c(78): warning C4716: 'call_ref': 값을 반환해야 합니다.
+  Project_86.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\Project_86.exe

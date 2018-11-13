@@ -1,0 +1,14 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(13): error C2039: 'm_szName': 'ImageWork'의 멤버가 아닙니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(3): note: 'ImageWork' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(13): error C2679: 이항 '=': 오른쪽 피연산자로 'ImageLoad' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(4): note: 'Image &Image::operator =(Image &&)'일 수 있습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(4): note: 또는       'Image &Image::operator =(const Image &)'
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(13): note: 인수 목록 '(Image, ImageLoad)'을(를) 일치시키는 동안
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(15): error C2275: 'ImageWork': 이 형식을 식으로 잘못 사용했습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(3): note: 'ImageWork' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(15): error C2228: '.DoWork' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(24): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(25): error C2065: 'blank': 선언되지 않은 식별자입니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(25): error C2440: '초기화 중': 'initializer list'에서 'ImageWork'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\facadepattern\sample.cpp(25): note: 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.

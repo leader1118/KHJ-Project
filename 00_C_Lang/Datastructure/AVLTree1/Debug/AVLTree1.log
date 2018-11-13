@@ -1,0 +1,7 @@
+﻿  Sample.cpp
+  TAvlTree.cpp
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.cpp(10): error C2275: 'Node': 이 형식을 식으로 잘못 사용했습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.h(9): note: 'Node' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.cpp(10): error C2227: '->left' 왼쪽은 클래스/구조체/공용 구조체/제네릭 형식을 가리켜야 합니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.cpp(10): error C2227: '->right' 왼쪽은 클래스/구조체/공용 구조체/제네릭 형식을 가리켜야 합니다.
+  코드를 생성하고 있습니다...

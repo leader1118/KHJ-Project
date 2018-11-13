@@ -1,0 +1,7 @@
+﻿  Core.cpp
+  Timer.cpp
+c:\users\김현진\desktop\khj\00_c_lang\api\tcorelib\timer.cpp(24): warning C4474: 'swprintf_s' : 서식 문자열에 전달된 인수가 너무 많습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\api\tcorelib\timer.cpp(24): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 2개 필요하지만 3개가 제공되었습니다.
+  Window.cpp
+  코드를 생성하고 있습니다...
+  TCoreLIB.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\TCoreLIB.lib

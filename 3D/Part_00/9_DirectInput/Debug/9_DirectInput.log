@@ -1,0 +1,13 @@
+﻿  DDirectWrite.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  DIDevice.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  DIDInput.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  DIWindow.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  DTimer.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  Sample.cpp
+c:\users\김현진\desktop\khj\3d\part_00\9_directinput\ddefine.h(13): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx11.h': No such file or directory
+  코드를 생성하고 있습니다...

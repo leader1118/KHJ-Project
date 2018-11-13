@@ -1,0 +1,10 @@
+﻿  CCCore.cpp
+  CCInput.cpp
+  CCSample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\api\samplewin\ccsample.cpp(8): error C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\corecrt_wstring.h(123): note: 'wcscpy' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\api\samplewin\ccsample.cpp(54): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\김현진\desktop\khj\00_c_lang\api\samplewin\ccsample.cpp(48): warning C4101: 'rect' :참조되지 않은 지역 변수입니다.
+  CCTimer.cpp
+  CCWindow.cpp
+  코드를 생성하고 있습니다...

@@ -1,0 +1,5 @@
+﻿  Study_90.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_91\study_90.c(27): error C2065: 'data': 선언되지 않은 식별자입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_91\study_90.c(27): error C2109: 첨자는 배열 또는 포인터 형식을 사용해야 합니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_91\study_90.c(29): warning C4013: 'print_array'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_91\study_90.c(29): error C2065: 'data': 선언되지 않은 식별자입니다.

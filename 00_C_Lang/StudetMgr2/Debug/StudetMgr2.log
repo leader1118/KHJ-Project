@@ -1,0 +1,7 @@
+﻿  StudentMgr2.cpp
+c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.h(317): error C2664: 'errno_t ctime_s(char *const ,const size_t,const time_t *const )': 인수 3을(를) '_fsize_t *'에서 'const time_t *const '(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.h(317): note: 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.cpp(5): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.cpp(58): error C2562: 'main': 'void' 함수에서 값을 반환하고 있습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\studetmgr2\studentmgr2.cpp(3): note: 'main' 선언을 참조하십시오.

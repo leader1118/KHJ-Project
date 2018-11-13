@@ -1,0 +1,6 @@
+﻿  DXWindow.cpp
+c:\users\김현진\desktop\khj\3d\part_00\0_createwindow\dxwindow.cpp(59): warning C4302: '형식 캐스트': 'LPWSTR'에서 'WORD'(으)로 잘립니다.
+c:\users\김현진\desktop\khj\3d\part_00\0_createwindow\dxwindow.cpp(64): warning C4302: '형식 캐스트': 'LPWSTR'에서 'WORD'(으)로 잘립니다.
+  sample.cpp
+  코드를 생성하고 있습니다...
+  0_CreateWindow.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\0_CreateWindow.exe

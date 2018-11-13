@@ -1,0 +1,10 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\api\sampletbitmap\sample.cpp(40): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TBitmap.cpp
+  TBitmapMgr.cpp
+  TCore.cpp
+  TInput.cpp
+  TTimer.cpp
+  TWindow.cpp
+  코드를 생성하고 있습니다...
+  SampleTBitmap.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Debug\SampleTBitmap.exe
