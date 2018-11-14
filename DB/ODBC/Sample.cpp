@@ -195,7 +195,7 @@ void main()
 		case 3: Update(); break;
 		}
 	}
-
+	
 
 	// 삭제 반대순서로
 	SQLFreeHandle(SQL_HANDLE_STMT, g_hStmt);

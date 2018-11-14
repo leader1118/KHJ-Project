@@ -18,18 +18,18 @@
     <ClInclude Include="ODBCSTD.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="DBConnect.h">
+    <ClInclude Include="DB_MGR.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ODBCMGR.h">
+    <ClInclude Include="DB_CONNECT.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DBConnect.cpp">
+    <ClCompile Include="DB_MGR.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ODBCMGR.cpp">
+    <ClCompile Include="DB_CONNECT.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

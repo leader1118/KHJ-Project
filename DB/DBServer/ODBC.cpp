@@ -1,41 +1,40 @@
-#include "ODBCMGR.h"
+#include "DB_MGR.h"
 
 void main()
 {
-	ODBCMGR odb;
+	USERINFO U_info;
+	DB_MGR	mgr;
 
-	odb.Connect();
+	mgr.DBConnect();
 
 	while (1)
 	{
 		int Select = 0;
-		printf("\n 1: 출력 2: 추가 3: 불러오기? 4: 수정 5:삭제");
+		printf("\n 1: 출력 2: 추가 3: 수정 4:삭제");
 		printf("\n 번호를 입력하시요 :");
 		scanf("%d", &Select);
+		
 
 		switch (Select)
 		{
-		case 1: odb.ReadRecord(); 
+		case 1: mgr.SELECTDATA();
 		{
 			break; 
 		}
-		case 2: odb.AddRecord(); 
+		case 2: mgr.ADDDATA();
 		{
 			break;
 		}
-		case 3: odb.DBExecuteSQL(); 
+		case 3: mgr.UPDATE();
 		{
 			break;
 		}
-		case 4:	odb.UpdateRecord(); 
-		{
-			break;
-		}
-		case 5: odb.DeleteRecord(); 
+		case 4:	mgr.DELETEDATA();
 		{
 			break;
 		}
 		}
+		system("cls");
 	}
-	odb.DisConnect();
+	mgr.DBDisConnect();
 }

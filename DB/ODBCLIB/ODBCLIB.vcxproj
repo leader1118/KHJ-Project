@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DBConnect.h" />
-    <ClInclude Include="ODBCMGR.h" />
+    <ClInclude Include="DB_CONNECT.h" />
+    <ClInclude Include="DB_MGR.h" />
     <ClInclude Include="ODBCSTD.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DBConnect.cpp" />
-    <ClCompile Include="ODBCMGR.cpp" />
+    <ClCompile Include="DB_CONNECT.cpp" />
+    <ClCompile Include="DB_MGR.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
