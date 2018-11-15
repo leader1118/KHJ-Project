@@ -28,13 +28,14 @@ void DB_CONNECT::DBConnect()
 	SQLTCHAR	m_OutCon[255];
 	SQLSMALLINT	m_cbOutCon;
 
+	_stprintf(m_InCon, _T("%s"), _T("Driver={SQL server};Server =shader.kr;address=192.168.0.28,1433;Network=dbmssocn;Database=KHJUser;Uid=sa;Pwd=kgca!@34;"));
 	RET = SQLDriverConnect(m_hDBC, NULL, (SQLTCHAR*)m_InCon, _countof(m_InCon), m_OutCon, _countof(m_OutCon), &m_cbOutCon, SQL_DRIVER_NOPROMPT);
 
-	RET= SQLConnect(
+	/*RET= SQLConnect(
 		m_hDBC,
 		(SQLTCHAR*)L"KHJUser", SQL_NTS,
 		(SQLTCHAR*)L"sa", SQL_NTS,
-		(SQLTCHAR*)L"kgca!@34", SQL_NTS);
+		(SQLTCHAR*)L"kgca!@34", SQL_NTS);*/
 	if (RET != SQL_SUCCESS && RET != SQL_SUCCESS_WITH_INFO)
 	{
 		return;

@@ -13,13 +13,13 @@ void main()
 		printf("\n 1: 출력 2: 추가 3: 수정 4:삭제");
 		printf("\n 번호를 입력하시요 :");
 		scanf("%d", &Select);
-		
+
 
 		switch (Select)
 		{
-		case 1: mgr.SELECTDATA();
+		case 1:mgr.SELECTDATA(); //mgr.SELECTOUTDATA();
 		{
-			break; 
+			break;
 		}
 		case 2: mgr.ADDDATA();
 		{

@@ -2,16 +2,17 @@
 #include "DB_CONNECT.h"
 struct USERINFO
 {
-	TCHAR		szSQL[256] = { 0, };
-	SQLCHAR*	UserID[20] = { 0, };
-	SQLCHAR*	UserPS[20] = { 0, };
-	SQLCHAR*	NewUserID[20] = { 0, };
+	SQLTCHAR		szSQL[256] = { 0, };
+	SQLTCHAR		UserID[20] = { 0, };
+	SQLTCHAR		UserPS[20] = { 0, };
+	SQLTCHAR		NewUserID[20] = { 0, };
 };
 class DB_MGR: public DB_CONNECT
 {
 public:
 	bool		ADDDATA();
 	void		SELECTDATA();
+	void		SELECTOUTDATA();
 	bool		DELETEDATA();
 	bool		UPDATE();
 public:
