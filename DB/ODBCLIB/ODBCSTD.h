@@ -9,6 +9,6 @@
 #include <iostream>
 #include <string>
 
-
+using namespace std;
 
 extern HINSTANCE g_hInst;

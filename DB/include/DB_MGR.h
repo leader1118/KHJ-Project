@@ -6,17 +6,15 @@ struct USERINFO
 	SQLTCHAR		UserID[20] = { 0, };
 	SQLTCHAR		UserPS[20] = { 0, };
 	SQLTCHAR		NewUserID[20] = { 0, };
+	SQLTCHAR		OldUserID[20] = { 0, };
 };
 class DB_MGR: public DB_CONNECT
 {
 public:
-	bool		ADDDATA();
-	void		SELECTDATA();
-	void		SELECTOUTDATA();
-	bool		DELETEDATA();
-	bool		UPDATE();
-public:
-	SQLRETURN HandleDiagnosticRecord(SQLHANDLE hHandle, SQLSMALLINT hType, RETCODE RetCode);
+	bool Add();
+	bool Delete();
+	bool Update();
+	void Select();
 public:
 	DB_MGR();
 	virtual ~DB_MGR();

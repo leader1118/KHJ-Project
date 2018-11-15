@@ -2,39 +2,36 @@
 
 void main()
 {
-	USERINFO U_info;
 	DB_MGR	mgr;
-
-	mgr.DBConnect();
 
 	while (1)
 	{
-		int Select = 0;
+		int iSelect = 0;
 		printf("\n 1: 출력 2: 추가 3: 수정 4:삭제");
 		printf("\n 번호를 입력하시요 :");
-		scanf("%d", &Select);
+		scanf("%d", &iSelect);
+		mgr.DBConnect();
 
-
-		switch (Select)
+		switch (iSelect)
 		{
-		case 1:mgr.SELECTDATA(); //mgr.SELECTOUTDATA();
-		{
-			break;
-		}
-		case 2: mgr.ADDDATA();
+		case 1: mgr.Select();
 		{
 			break;
 		}
-		case 3: mgr.UPDATE();
+		case 2: mgr.Add();
 		{
 			break;
 		}
-		case 4:	mgr.DELETEDATA();
+		case 3: mgr.Update();
+		{
+			break;
+		}
+		case 4:	mgr.Delete();
 		{
 			break;
 		}
 		}
-		system("cls");
+		//system("cls");
 	}
 	mgr.DBDisConnect();
 }
