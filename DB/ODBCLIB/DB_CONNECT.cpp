@@ -19,7 +19,7 @@ int DB_CONNECT::DBConnect()
 	sRet = SQLAllocHandle(SQL_HANDLE_DBC, m_hENV, &m_hDBC);
 	SQLTCHAR szInCon[256];
 	SQLSMALLINT cbOutCon;
-	_stprintf_s(szInCon, 256, _T("%s"), _T("DRIVER ={SQL Server};Server = shader.kr;Address=192.168.0.XX,1433;Network=dbmssocn;Database=KHJUser;Uid=sa;Pwd=kgca!@34;"));
+	_stprintf_s(szInCon, 256, _T("%s"), _T("DRIVER ={SQL Server};Server = shader.kr;Address=192.168.0.28,1433;Network=dbmssocn;Database=KHJUser;Uid=sa;Pwd=kgca!@34;"));
 	
 	SQLTCHAR szOutCon[256] = { 0, };
 
