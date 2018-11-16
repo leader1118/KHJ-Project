@@ -76,26 +76,3 @@
 // bool Render()
 // bool Release()
 // 항상 있어야 하는 함수
-#include <iostream>
-
-using namespace std;
-istream &operator>>(istream &ins, char arr[][3]) {
-
-	int i, j;
-
-	if (ins == '&' || ins == '#' || ins == '@') {
-
-		for (j = 0; j < 3; j++) {
-			ins >> arr[0][j];
-		}
-
-	}
-	else {
-
-		for (i = 0; i < 9; i++) {
-			for (j = 0; j < 3; j++) {
-				ins >> arr[i][j];
-
-			}
-		}
-	}

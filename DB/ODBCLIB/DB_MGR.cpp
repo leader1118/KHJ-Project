@@ -53,7 +53,7 @@ bool DB_MGR::Update()
 	scanf("%s", &OldName);
 	MultiByteToWideChar(CP_ACP, 0, OldName, -1, info.OldUserID, sizeof(OldName));
 
-	printf("새로운 아이디를 입력하세요 : ");
+	printf("새로운 아이디를 입력하세요 :");
 	scanf("%s", &NewName);
 	MultiByteToWideChar(CP_ACP, 0, NewName, -1, info.NewUserID, sizeof(NewName));
 
@@ -89,7 +89,7 @@ void DB_MGR::Select()
 	scanf("%s", &m_UserID);
 	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SSHORT, SQL_SMALLINT, 0, 0, &sReturn, sizeof(sReturn), &cbRetParam);
 	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_LONGVARCHAR, IBytes, 0, m_UserID, 0, NULL);
-	sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?=CALL usp_LogInTime(?)}"), SQL_NTS);
+	sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?=CALL ??(??)}"), SQL_NTS);
 
 	if (sRet != SQL_SUCCESS && sRet != SQL_SUCCESS_WITH_INFO)
 	{

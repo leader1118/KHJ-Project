@@ -31,7 +31,7 @@ void main()
 			break;
 		}
 		}
-		//system("cls");
+		system("cls");
 	}
 	mgr.DBDisConnect();
 }
