@@ -1,6 +1,7 @@
 #pragma once
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
+
 #include <WinSock2.h>
 #include <Windows.h>
 #include <ws2tcpip.h>
@@ -21,7 +22,7 @@
 
 #pragma comment (lib,"SSvrLIB.lib")
 #pragma comment (lib,"ws2_32.lib")
-
+#pragma comment (lib,"winmm.lib")
 using namespace std;
 
 #include "SSingleton.h"
