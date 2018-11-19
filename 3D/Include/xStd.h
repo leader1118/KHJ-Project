@@ -19,7 +19,7 @@
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"d3dx11.lib")
 #pragma comment(lib,"dxgi.lib")
-#pragma comment(lib,"TCore3D.lib")
+#pragma comment(lib,"3D_lib.lib")
 
 using namespace std;
 using namespace Microsoft::WRL;

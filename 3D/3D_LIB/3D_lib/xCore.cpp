@@ -43,7 +43,7 @@ bool	xCore::GameInit()
 	m_DefaultCamera.SetProjMatrix(D3DX_PI * 0.5f,(float)m_rtClient.right/ (float)m_rtClient.bottom );
 	m_pMainCamera = &m_DefaultCamera;
 
-	m_dirAxis.Create(m_pd3dDevice,L"../../data/shader/shape.hlsl",L"../../data/eye.bmp");
+	m_dirAxis.Create(m_pd3dDevice,L"../../Include/data/shader/shape.hlsl",L"../../Include/data/eye.bmp");
 
 	Init();
 	return true;

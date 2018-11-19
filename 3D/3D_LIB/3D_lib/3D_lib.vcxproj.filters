@@ -45,9 +45,6 @@
     <ClCompile Include="xCamera.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
-    <ClCompile Include="xCore.cpp">
-      <Filter>Camera</Filter>
-    </ClCompile>
     <ClCompile Include="xLineShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
@@ -60,11 +57,11 @@
     <ClCompile Include="xSphereShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
+    <ClCompile Include="xCore.cpp">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="xCamera.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="xCore.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -97,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="xShape.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="xCamera.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
