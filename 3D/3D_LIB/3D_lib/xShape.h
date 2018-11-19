@@ -110,7 +110,15 @@ public:
 };
 class xSphereShape : public xBoxShape
 {
+	vector<PNCT_VERTEX>  m_vList;
 public:
+	PNCT_VERTEX NormalizeVertex(PNCT_VERTEX Vertex);
+	void TriAppend(PNCT_VERTEX V0, PNCT_VERTEX V1, PNCT_VERTEX V2,
+		vector<PNCT_VERTEX>& TriStream, int iIndex);
+	HRESULT CreateVertexData();
+	HRESULT CreateIndexData() {	return S_OK;};
+	HRESULT CreateVertexBuffer();
+	HRESULT CreateIndexBuffer() { return S_OK; }
 	HRESULT LoadVertexShader(T_STR  szName);
 	HRESULT LoadGeometryShader(T_STR  szName);
 public:

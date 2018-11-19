@@ -13,12 +13,9 @@ class xCore : public xWindow
 public:
 	xTimer		m_Timer;
 	xDxWrite	m_Font;
-	xInput		m_Input;
 	xCamera     m_DefaultCamera;
 	xCamera*	m_pMainCamera;
-	xDirLineShape   m_dirAxis;
-	ID3D11DepthStencilView*  m_pDSV;
-
+	xDirLineShape   m_dirAxis;	
 public:	
 	virtual bool	GamePreInit();
 	bool	GameInit();
@@ -28,7 +25,7 @@ public:
 	bool	GameRender();
 	bool	GamePreRender();
 	bool	GamePostRender();
-	HRESULT CreateDSV();
+
 	void    DeleteDeviceResources();
 	HRESULT CreateDeviceResources(UINT width, UINT height);
 	virtual void    DeleteResources() {};

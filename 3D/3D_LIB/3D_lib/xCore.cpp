@@ -1,6 +1,7 @@
 #include "xCore.h"
 void xCore::DeleteDeviceResources() 
 {
+	if (m_pDSV)m_pDSV->Release();
 	m_Font.DiscardDeviceResources();
 	DeleteResources();
 }
@@ -12,6 +13,7 @@ HRESULT xCore::CreateDeviceResources(UINT width, UINT height)
 	HRESULT hr = m_Font.CreateDeviceResources(pBackBuffer);
 	pBackBuffer->Release();
 
+	CreateDSV();
 	m_pMainCamera->UpdateProjMatrix(width, height);
 
 	CreateResources(width, height);
@@ -24,92 +26,66 @@ bool	xCore::GamePreInit()
 bool	xCore::GameInit()
 {	
 	GamePreInit();
-	if (FAILED(CreateDevice()))
-	{
-		return false;
-	}
-	if (FAILED(CreateGIFactory()))
-	{
-		return false;
-	}
-	if (FAILED(CreateSwapChain()))
-	{
-		return false;
-	}
-	if (FAILED(SetRenderTargetView()))
-	{
-		return false;
-	}
-	SetViewPort();
-	CreateDSV();
+	
+	xDevice::Init();
+	m_Timer.Init();
+	m_Font.Init();
+	I_Input.Init();
+
+	IDXGISurface* pBackBuffer;
+	m_pSwapChain->GetBuffer(0, __uuidof(IDXGISurface),(void**)&pBackBuffer);
+	m_Font.Set(m_hWnd,m_sd.BufferDesc.Width,m_sd.BufferDesc.Height, pBackBuffer);
+	pBackBuffer->Release();
 
 	xDxState::SetState(m_pd3dDevice);
 
-	m_pDXGIFactory->MakeWindowAssociation(m_hWnd,
-		DXGI_MWA_NO_ALT_ENTER | DXGI_MWA_NO_WINDOW_CHANGES);
-
-
-	m_Timer.Init();
-	m_Font.Init();
-	m_Input.Init();
-	IDXGISurface* pBackBuffer;
-	m_pSwapChain->GetBuffer(0, __uuidof(IDXGISurface),
-		(void**)&pBackBuffer);
-	m_Font.Set(m_hWnd,
-		m_sd.BufferDesc.Width,
-		m_sd.BufferDesc.Height, pBackBuffer);
-
-	pBackBuffer->Release();
-
-
 	m_DefaultCamera.SetViewMatrix();
-	m_DefaultCamera.SetProjMatrix(D3DX_PI * 0.5f, 
-		(float)m_rtClient.right/ (float)m_rtClient.bottom );
-
+	m_DefaultCamera.SetProjMatrix(D3DX_PI * 0.5f,(float)m_rtClient.right/ (float)m_rtClient.bottom );
 	m_pMainCamera = &m_DefaultCamera;
 
-
-	m_dirAxis.Create(m_pd3dDevice,
-		L"../../data/shader/shape.hlsl",
-		L"../../data/eye.bmp");
+	m_dirAxis.Create(m_pd3dDevice,L"../../data/shader/shape.hlsl",L"../../data/eye.bmp");
 
 	Init();
 	return true;
 }
-HRESULT xCore::CreateDSV()
-{
-	HRESULT hr;
-	ID3D11Texture2D* pTex = nullptr;
-	D3D11_TEXTURE2D_DESC td;
-	td.Width = g_rtClient.right;
-	td.Height = g_rtClient.bottom;
-	td.MipLevels = 1;
-	td.ArraySize = 1;
-	td.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	td.SampleDesc.Count = 1;
-	td.SampleDesc.Quality = 0;
-	td.Usage = D3D11_USAGE_DEFAULT;
-	td.BindFlags = D3D11_BIND_DEPTH_STENCIL;
-	td.CPUAccessFlags = 0;
-	td.MiscFlags = 0;
-	hr = m_pd3dDevice->CreateTexture2D(&td, NULL, &pTex);
 
-	D3D11_DEPTH_STENCIL_VIEW_DESC dsvd;
-	dsvd.Format = td.Format;
-	dsvd.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
-	dsvd.Flags = 0;
-	dsvd.Texture2D.MipSlice = 0;
-	hr = m_pd3dDevice->CreateDepthStencilView(
-		pTex, &dsvd, &m_pDSV);
-
-	if( pTex ) pTex->Release();
-	
-	return hr;
-}
 bool	xCore::GameFrame()
 {	
 	m_Timer.Frame();
-	m_Input.Frame();
+	I_Input.Frame();
+	
+	D3DXVECTOR4   vYawPitchRoll(0,0,0,0);
+	// camera control
+	if (g_Input.bAttack)
+	{
+		vYawPitchRoll.y = 0.1f * D3DXToRadian(I_Input.m_MouseState.lX);
+		vYawPitchRoll.x = 0.1f * D3DXToRadian(I_Input.m_MouseState.lY);
+	}
+	float fValue = I_Input.m_MouseState.lZ;
+	vYawPitchRoll.w = fValue *g_fSecPerFrame;
+	if (g_Input.bJump)
+	{
+		m_pMainCamera->SetSpeed(g_fSecPerFrame*3.0f);
+	}
+	if (g_Input.bFront)
+	{
+		m_pMainCamera->MoveLook(g_fSecPerFrame*5.0f);
+	}
+	if (g_Input.bBack)
+	{
+		m_pMainCamera->MoveLook(-g_fSecPerFrame*5.0f);
+	}
+	if (g_Input.bLeft)
+	{
+		m_pMainCamera->MoveSide(-g_fSecPerFrame * 5.0f);
+	}
+	if (g_Input.bRight)
+	{
+		m_pMainCamera->MoveSide(g_fSecPerFrame*5.0f);
+	}
+	m_pMainCamera->Update(vYawPitchRoll);
+	m_pMainCamera->Frame();
+
 	Frame();
 
 	m_dirAxis.Frame();
@@ -124,8 +100,13 @@ bool	xCore::GamePreRender()
 
 	ApplyDSS(m_pContext, xDxState::g_pDSVStateEnableLessEqual);
 	ApplyBS(m_pContext, xDxState::g_pBSAlphaBlend);
-	ApplyRS(m_pContext, xDxState::g_pRSBackCullSolid);
+	//ApplyRS(m_pContext, xDxState::g_pRSBackCullSolid);
 	ApplySS(m_pContext, xDxState::g_pSSWrapLinear);
+
+	if (I_Input.m_KeyState[DIK_P])
+		ApplyRS(m_pContext, xDxState::g_pRSWireFrame);
+	else
+		ApplyRS(m_pContext, xDxState::g_pRSNoneCullSolid);
 
 	m_pContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	return true;
@@ -167,22 +148,10 @@ bool	xCore::GameRelease()
 	Release();	
 	m_Timer.Release();
 	m_Font.Release();
-	m_Input.Release();
+	I_Input.Release();
 	m_dirAxis.Release();
 	xDxState::Release();
-
-	m_pSwapChain->SetFullscreenState(false, NULL);
-	if (m_pDSV)m_pDSV->Release();
-	if (m_pRenderTargetView)m_pRenderTargetView->Release();
-	if (m_pSwapChain)m_pSwapChain->Release();
-	if (m_pd3dDevice)m_pd3dDevice->Release();
-	if (m_pContext)m_pContext->Release();
-	if (m_pDXGIFactory)m_pDXGIFactory->Release();
-	m_pRenderTargetView = nullptr;
-	m_pSwapChain = nullptr;
-	m_pd3dDevice = nullptr;
-	m_pContext = nullptr;
-	m_pDXGIFactory = nullptr;
+	xDevice::Release();
 	return true;
 }
 xCore::xCore()
