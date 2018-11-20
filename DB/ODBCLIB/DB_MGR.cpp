@@ -78,6 +78,7 @@ void DB_MGR::Select()
 
 	/*if (SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("select UserId,UserPs from KHJUser where name = '%s'"), SQL_NTS) != SQL_SUCCESS)
 	{
+
 		return;
 	}*/
 
