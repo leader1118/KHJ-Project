@@ -12,7 +12,7 @@ bool DB_MGR::Add()
 	scanf("%s", &m_cPass);
 	MultiByteToWideChar(CP_ACP, 0, m_cPass, -1, info.UserPS, sizeof(m_cPass));
 
-	wsprintf(info.szSQL, _T("Insert into KHJUser values('%s','%s')"), info.UserID, info.UserPS);
+	wsprintf(info.szSQL, _T("Insert into KHJUser(UserId,UserPs) values('%s','%s')"), info.UserID, info.UserPS);
 	SQLRETURN sRet;
 	sRet = SQLExecDirect(m_hSTMT, info.szSQL, SQL_NTS);
 	if (sRet == SQL_SUCCESS)
@@ -70,51 +70,53 @@ bool DB_MGR::Update()
 }
 void DB_MGR::Select()
 {
-	SWORD sReturn;
-	SQLLEN IBytes;
-	IBytes = (SDWORD)12000;
-	SQLINTEGER cbRetParam;
-	SQLCHAR m_UserID[10];
-	SQLINTEGER sLen = sizeof(m_UserID);
-	SQLRETURN sRet;
 	
 	USERINFO info;
+	SQLLEN LID, LPS;
+	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &LID);
+	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &LPS);
 
-	SQLLEN UserName, UserPass;
-	
-	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &UserName);
-	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &UserPass);
-
-	printf(" 검색 아이디 :");
-	scanf("%s", &m_UserID);
-	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SSHORT, SQL_SMALLINT, 0, 0, &sReturn, sizeof(sReturn), &cbRetParam);
-	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_LONGVARCHAR, IBytes, 0, m_UserID, 0, NULL);
-	sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?=CALL dbo.usp.Create1(??)}"), SQL_NTS);
-
-	if (sRet != SQL_SUCCESS && sRet != SQL_SUCCESS_WITH_INFO)
+	/*if (SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("select UserId,UserPs from KHJUser where name = '%s'"), SQL_NTS) != SQL_SUCCESS)
 	{
-		SQLTCHAR buffer[SQL_MAX_MESSAGE_LENGTH + 1];
-		SQLTCHAR sqlstate[SQL_SQLSTATE_SIZE + 1];
-		SQLINTEGER sqlcode;
-		SQLSMALLINT length;
+		return;
+	}*/
 
-		SQLError(m_hENV, m_hDBC, m_hSTMT, sqlstate, &sqlcode, buffer, SQL_MAX_MESSAGE_LENGTH + 1, &length);
-		MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
+	SWORD sReturn=0;
+	SQLINTEGER cbRetParam;
+	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SHORT, SQL_INTEGER, 0, 0, &sReturn, 0, &cbRetParam);
 
-		int iErrorCnt = 1;
-		while (sRet = SQLGetDiagRec(SQL_HANDLE_DBC, m_hDBC, iErrorCnt++, sqlstate, &sqlcode,
-			buffer, sizeof(buffer),&length)!=SQL_NO_DATA);
-		{
-			MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
-		}
+	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_INTEGER, 0, 0, &sReturn, 0, NULL);
+	SQLRETURN ret = 0;
+	if (SQLExecDirect(m_hSTMT,
+		(SQLTCHAR*)_T("{?=CALL usp_Create1(?)}"), SQL_NTS) != SQL_SUCCESS)
+	{
+		//HandleDiagnosticRecord(m_hSTMT, SQL_HANDLE_STMT, ret);
 		return;
 	}
-	system("cls");
+
 	while (SQLFetch(m_hSTMT) != SQL_NO_DATA)
 	{
-		printf("UserID : %s \n UserPS : %s", (char*)info.UserID, (char*)info.OldUserID);
+		printf("\nID : %s\tPS : %s", LID, LPS);
 	}
 	SQLCloseCursor(m_hSTMT);
+}
+SQLRETURN HandleDiagnosticRecord(SQLHANDLE hHandle, SQLSMALLINT hType, RETCODE RetCode)
+{
+	int ii;
+	SQLINTEGER NativeError;
+	SQLTCHAR SqlState[6], Msg[255];
+	SQLSMALLINT MsgLen;
+	TCHAR str[256];
+
+	ii = 1;
+	while (RetCode = SQLGetDiagRec(hType, hHandle, ii, SqlState, &NativeError,
+		Msg, sizeof(Msg), &MsgLen) != SQL_NO_DATA)
+	{
+		wsprintf(str, _T("SQLSTATE:%s, 진단정보:%s"), (LPCTSTR)SqlState, (LPCTSTR)Msg);
+		::MessageBox(NULL, str, _T("진단 정보"), 0);
+		ii++;
+	}
+	return RetCode;
 }
 DB_MGR::DB_MGR()
 {
