@@ -1,1 +1,3 @@
-﻿  DBServer.vcxproj -> C:\Users\김현진\Desktop\KHJ\DB\DBServer\../output/DBServer/DBServer.exe
+﻿  ODBC.cpp
+c:\users\김현진\desktop\khj\db\dbserver\odbc.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  DBServer.vcxproj -> C:\Users\김현진\Desktop\KHJ\DB\DBServer\../output/DBServer/DBServer.exe

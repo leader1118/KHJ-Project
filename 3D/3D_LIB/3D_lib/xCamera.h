@@ -11,6 +11,7 @@ public:
 	D3DXVECTOR3	m_vLook;
 	D3DXVECTOR3	m_vSide;
 	D3DXVECTOR3	m_vUp;
+public:
 	float m_fCameraYawAngle;
 	float m_fCameraPitchAngle;
 	float m_fFov;
@@ -34,7 +35,7 @@ public:
 	void  UpdateProjMatrix(UINT width, UINT height);
 public:
 	bool Frame();
-	bool Update(D3DXVECTOR4 vValue);
+	virtual bool Update(D3DXVECTOR4 vValue);
 public:
 	xCamera();
 	virtual ~xCamera();

@@ -70,35 +70,66 @@ bool DB_MGR::Update()
 }
 void DB_MGR::Select()
 {
-	
 	USERINFO info;
 	SQLLEN LID, LPS;
 	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &LID);
 	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &LPS);
 
-	/*if (SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("select UserId,UserPs from KHJUser where name = '%s'"), SQL_NTS) != SQL_SUCCESS)
+	SQLRETURN ret;
+
+	ret = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("select UserId, UserPs from KHJUser"), SQL_NTS);
+
+	if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO)
 	{
-
-		return;
-	}*/
-
-	SWORD sReturn=0;
-	SQLINTEGER cbRetParam;
-	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SHORT, SQL_INTEGER, 0, 0, &sReturn, 0, &cbRetParam);
-
-	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_INTEGER, 0, 0, &sReturn, 0, NULL);
-	SQLRETURN ret = 0;
-	if (SQLExecDirect(m_hSTMT,
-		(SQLTCHAR*)_T("{?=CALL usp_Create1(?)}"), SQL_NTS) != SQL_SUCCESS)
-	{
-		//HandleDiagnosticRecord(m_hSTMT, SQL_HANDLE_STMT, ret);
-		return;
 	}
 
 	while (SQLFetch(m_hSTMT) != SQL_NO_DATA)
 	{
-		printf("\nID : %s\tPS : %s", LID, LPS);
+		printf("\nID : %s\tPS : %s", info.UserID, info.UserPS);
 	}
+
+
+	//SWORD sReturn;
+	//SQLLEN IBytes; 
+	//SQLLEN LID, LPS;
+	//IBytes = (SDWORD)12000;
+	//SQLINTEGER cbRetParam;
+	//SQLCHAR m_cUserID[10];
+	//SQLINTEGER sLen = sizeof(m_cUserID);
+	//SQLRETURN sRet;
+
+	//SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &LID);
+	//SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &LPS);
+
+	//SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SSHORT, SQL_SMALLINT, 0, 0, &sReturn, sizeof(sReturn), &cbRetParam);
+	//SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_LONGVARCHAR, IBytes, 0, info.UserID, 0, NULL);
+	//sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?= CALL 프로시저(?)}"), SQL_NTS);
+	//
+
+	//if (sRet != SQL_SUCCESS && sRet != SQL_SUCCESS_WITH_INFO)
+	//{
+	//	SQLTCHAR buffer[SQL_MAX_MESSAGE_LENGTH + 1];
+	//	SQLTCHAR sqlstate[SQL_SQLSTATE_SIZE + 1];
+	//	SQLINTEGER sqlcode;
+	//	SQLSMALLINT length;
+	//	// 단순한 에러
+	//	SQLError(m_hENV, m_hDBC, m_hSTMT, sqlstate, &sqlcode, buffer, SQL_MAX_MESSAGE_LENGTH + 1, &length);
+	//	MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
+
+	//	// 모든 에러 나열됨.
+	//	int iErrorCnt = 1;
+	//	while (sRet = SQLGetDiagRec(SQL_HANDLE_DBC, m_hDBC, iErrorCnt++, sqlstate, &sqlcode,
+	//		buffer, sizeof(buffer), &length) != SQL_NO_DATA)
+	//	{
+	//		MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
+	//	}
+	//	return;
+	//}
+	//system("cls");
+	//while (SQLFetch(m_hSTMT) != SQL_NO_DATA)
+	//{
+	//	printf("\nID : %s\tPS : %s", LID, LPS);
+	//}
 	SQLCloseCursor(m_hSTMT);
 }
 SQLRETURN HandleDiagnosticRecord(SQLHANDLE hHandle, SQLSMALLINT hType, RETCODE RetCode)

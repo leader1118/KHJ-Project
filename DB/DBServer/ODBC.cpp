@@ -16,6 +16,7 @@ void main()
 		{
 		case 1: mgr.Select();
 		{
+			system("pause");
 			break;
 		}
 		case 2: mgr.Add();
