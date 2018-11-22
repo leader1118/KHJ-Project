@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[usp_Select]
+
+AS
+BEGIN
+	SELECT * FROM dbo.KHJUser;
+END

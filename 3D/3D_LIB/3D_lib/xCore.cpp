@@ -19,12 +19,47 @@ HRESULT xCore::CreateDeviceResources(UINT width, UINT height)
 	CreateResources(width, height);
 	return hr;
 }
+HRESULT xCore::CreateDSV()
+{
+	HRESULT hr;
+	ID3D11Texture2D* pTex = nullptr;
+	D3D11_TEXTURE2D_DESC td;
+	td.Width = g_rtClient.right;
+	td.Height = g_rtClient.bottom;
+	td.MipLevels = 1;
+	td.ArraySize = 1;
+	td.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	td.SampleDesc.Count = 1;
+	td.SampleDesc.Quality = 0;
+	td.Usage = D3D11_USAGE_DEFAULT;
+	td.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	td.CPUAccessFlags = 0;
+	td.MiscFlags = 0;
+	hr = m_pd3dDevice->CreateTexture2D(&td, NULL, &pTex);
+
+	D3D11_DEPTH_STENCIL_VIEW_DESC dsvd;
+	dsvd.Format = td.Format;
+	dsvd.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
+	dsvd.Flags = 0;
+	dsvd.Texture2D.MipSlice = 0;
+	hr = m_pd3dDevice->CreateDepthStencilView(
+		pTex, &dsvd, &m_pDSV);
+
+	if (pTex) pTex->Release();
+
+	return hr;
+}
 bool	xCore::GamePreInit()
 {
 	return false;
 }
 bool	xCore::GameInit()
 {	
+	//m_YawPitchRoll.x = 0;
+	//m_YawPitchRoll.y = 0;
+	//m_YawPitchRoll.z = 0;
+	//m_YawPitchRoll.w = 0;
+
 	GamePreInit();
 	
 	xDevice::Init();
@@ -100,7 +135,7 @@ bool	xCore::GamePreRender()
 
 	ApplyDSS(m_pContext, xDxState::g_pDSVStateEnableLessEqual);
 	ApplyBS(m_pContext, xDxState::g_pBSAlphaBlend);
-	//ApplyRS(m_pContext, xDxState::g_pRSBackCullSolid);
+//	ApplyRS(m_pContext, xDxState::g_pRSBackCullSolid);
 	ApplySS(m_pContext, xDxState::g_pSSWrapLinear);
 
 	if (I_Input.m_KeyState[DIK_P])

@@ -17,6 +17,7 @@ public:
 	bool Delete();
 	bool Update();
 	void Select();
+	void FindSelect();
 	//SQLRETURN HandleDiagnosticRecord(SQLHANDLE hHandle, SQLSMALLINT hType, RETCODE RetCode);
 public:
 	DB_MGR();

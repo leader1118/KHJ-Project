@@ -60,6 +60,9 @@
     <ClCompile Include="xCore.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="xFrustum.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xCore.h">
@@ -96,6 +99,9 @@
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="xCamera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xFrustum.h">
       <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>

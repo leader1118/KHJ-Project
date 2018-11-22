@@ -544,6 +544,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CHATClient_0", "..\Soket\CHAT\CHATClient_0\CHATClient_0.vcxproj", "{B9580212-4499-4B30-9433-EA3A9188EF88}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleModelView", "..\3D\Part_01\SampleModelView\SampleModelView.vcxproj", "{EAD7691A-21B6-4C78-8A95-04C23ED899DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25D972BF-9D36-4EFE-9D6C-84F500307742} = {25D972BF-9D36-4EFE-9D6C-84F500307742}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,18 +1,20 @@
 #include "SArcBall.h"
 
-void SArcBall::OnBegin(int x, int y)
+D3DXMATRIX SArcBall::GetRotationMatrix()
 {
-	m_bDrag = true;
-	m_qDown = m_qNow;
-	m_vDownPT = ScreenToVector(x, y);
+	D3DXMATRIX matRot;
+	D3DXMatrixRotationQuaternion(&matRot, &m_qNow);
+	return matRot;
 }
+
+
 // 2D->3D로 변환 
 D3DXVECTOR3	SArcBall::ScreenToVector(float fX, float fY)
 {
-	// fx*fx + fy*fy + fz*fz = r*r;
-	float fHalfX = -(g_rtClient.right / 2.0f);;
+	// fx*fx + fy*fy + fz*fz = r*r;( 구면 방정식 )
+	float fHalfX = (g_rtClient.right / 2.0f);;
 	float fHalfY = (g_rtClient.bottom / 2.0f);
-		float x = (fX - fHalfX) / fHalfX;
+	float x = -(fX - fHalfX) / fHalfX;
 	float y = (fY - fHalfY) / fHalfY;
 	float z = 0.0f;
 	float fFlag = (x*x + y * y);
@@ -35,6 +37,12 @@ D3DXQUATERNION SArcBall::QuatFromBallPoints(D3DXVECTOR3 m_vDownPT, D3DXVECTOR3 m
 	D3DXVec3Cross(&vPart, &m_vDownPT, &m_vCurrentPT);
 	D3DXQUATERNION qRet(vPart.x,vPart.y,vPart.z,fDot);
 	return qRet;
+}
+void SArcBall::OnBegin(int x, int y)
+{
+	m_bDrag = true;
+	m_qDown = m_qNow;
+	m_vDownPT = ScreenToVector(x, y);
 }
 void SArcBall::OnMove(int x, int y)
 {

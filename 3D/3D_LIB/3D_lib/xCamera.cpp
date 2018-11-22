@@ -40,6 +40,9 @@ bool xCamera::UpdateVector()
 	m_fCameraYawAngle = atan2f(pZBasis->x, pZBasis->z);
 	float fLen = sqrtf(pZBasis->z * pZBasis->z + pZBasis->x * pZBasis->x);
 	m_fCameraPitchAngle = -atan2f(pZBasis->y, fLen);
+	
+	xFrustum::SetMatrix(NULL, &m_matView,&m_matProj);
+	xFrustum::CreateFrustum();
 	return true;
 }
 bool xCamera::Update(D3DXVECTOR4 vValue)

@@ -1,8 +1,9 @@
 #pragma once
-#include "xStd.h"
-class xCamera
+#include "xFrustum.h"
+class xCamera : public xFrustum
 {
 public:
+	D3DXMATRIX m_matWorld;
 	D3DXMATRIX m_matView;
 	D3DXMATRIX m_matProj;
 	D3DXVECTOR3 m_vPos;
@@ -11,6 +12,11 @@ public:
 	D3DXVECTOR3	m_vLook;
 	D3DXVECTOR3	m_vSide;
 	D3DXVECTOR3	m_vUp;
+
+	D3DXMATRIX	m_mModelLastRot;
+	D3DXMATRIX	m_mModelRot;
+	
+public:
 	float m_fCameraYawAngle;
 	float m_fCameraPitchAngle;
 	float m_fFov;
@@ -34,7 +40,7 @@ public:
 	void  UpdateProjMatrix(UINT width, UINT height);
 public:
 	bool Frame();
-	bool Update(D3DXVECTOR4 vValue);
+	virtual bool Update(D3DXVECTOR4 vValue);
 public:
 	xCamera();
 	virtual ~xCamera();

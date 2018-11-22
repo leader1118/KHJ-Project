@@ -25,6 +25,7 @@
     <ClCompile Include="xDxObj.cpp" />
     <ClCompile Include="xDxState.cpp" />
     <ClCompile Include="xDxWrite.cpp" />
+    <ClCompile Include="xFrustum.cpp" />
     <ClCompile Include="xInput.cpp" />
     <ClCompile Include="xLineShape.cpp" />
     <ClCompile Include="xPlaneShape.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="xDxObj.h" />
     <ClInclude Include="xDxState.h" />
     <ClInclude Include="xDxWrite.h" />
+    <ClInclude Include="xFrustum.h" />
     <ClInclude Include="xInput.h" />
     <ClInclude Include="xObjectStd.h" />
     <ClInclude Include="xShape.h" />
