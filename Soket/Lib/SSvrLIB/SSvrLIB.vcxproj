@@ -34,11 +34,6 @@
     <ClInclude Include="SUser.h" />
     <ClInclude Include="SvrStd.h" />
     <ClInclude Include="SWorkThread.h" />
-    <ClInclude Include="TCore.h" />
-    <ClInclude Include="TInput.h" />
-    <ClInclude Include="TStd.h" />
-    <ClInclude Include="TTimer.h" />
-    <ClInclude Include="TWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SAcceptor.cpp" />
@@ -53,10 +48,6 @@
     <ClCompile Include="SThread.cpp" />
     <ClCompile Include="SUser.cpp" />
     <ClCompile Include="SWorkThread.cpp" />
-    <ClCompile Include="TCore.cpp" />
-    <ClCompile Include="TInput.cpp" />
-    <ClCompile Include="TTimer.cpp" />
-    <ClCompile Include="TWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

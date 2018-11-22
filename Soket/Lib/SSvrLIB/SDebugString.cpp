@@ -9,7 +9,7 @@ bool	SDebugString::Release() // 소멸
 {
 	return true;
 }
-void	SDebugString::Print(const char* fmt, ...) // 출력
+void	SDebugString::Print(char* fmt, ...) // 출력
 {
 	if (m_hList == NULL)return; // 리스트가 NULL일경우 return
 	{
