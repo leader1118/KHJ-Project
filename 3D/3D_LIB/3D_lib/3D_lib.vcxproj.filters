@@ -21,6 +21,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="xCore.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="xDevice.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -42,7 +45,16 @@
     <ClCompile Include="xWindow.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="xArcBall.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
     <ClCompile Include="xCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="xFrustum.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="xModelView.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
     <ClCompile Include="xLineShape.cpp">
@@ -56,12 +68,6 @@
     </ClCompile>
     <ClCompile Include="xSphereShape.cpp">
       <Filter>Object</Filter>
-    </ClCompile>
-    <ClCompile Include="xCore.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="xFrustum.cpp">
-      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +89,9 @@
     <ClInclude Include="xInput.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="xObjectStd.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="xStd.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -92,17 +101,20 @@
     <ClInclude Include="xWindow.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="xObjectStd.h">
-      <Filter>Object</Filter>
-    </ClInclude>
-    <ClInclude Include="xShape.h">
-      <Filter>Object</Filter>
+    <ClInclude Include="xArcBall.h">
+      <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="xCamera.h">
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="xFrustum.h">
       <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xModelView.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xShape.h">
+      <Filter>Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

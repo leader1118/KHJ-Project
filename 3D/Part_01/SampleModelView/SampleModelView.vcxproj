@@ -148,12 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Sample.cpp" />
-    <ClCompile Include="SArcBall.cpp" />
-    <ClCompile Include="SCameraModelView.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SArcBall.h" />
-    <ClInclude Include="SCameraModelView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -50,6 +50,9 @@ struct TGameInput
 	BOOL bRight;
 	BOOL bAttack;
 	BOOL bJump;
+	BOOL bButton0;
+	BOOL bButton1;
+	BOOL bButton2;
 };
 extern TGameInput g_Input;
 template<class T> class TSingleton

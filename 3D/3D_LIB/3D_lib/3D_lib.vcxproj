@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="xArcBall.cpp" />
     <ClCompile Include="xCamera.cpp" />
     <ClCompile Include="xCore.cpp" />
     <ClCompile Include="xDevice.cpp" />
@@ -28,6 +29,7 @@
     <ClCompile Include="xFrustum.cpp" />
     <ClCompile Include="xInput.cpp" />
     <ClCompile Include="xLineShape.cpp" />
+    <ClCompile Include="xModelView.cpp" />
     <ClCompile Include="xPlaneShape.cpp" />
     <ClCompile Include="xShape.cpp" />
     <ClCompile Include="xSphereShape.cpp" />
@@ -35,6 +37,7 @@
     <ClCompile Include="xWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="xArcBall.h" />
     <ClInclude Include="xCamera.h" />
     <ClInclude Include="xCore.h" />
     <ClInclude Include="xDevice.h" />
@@ -43,6 +46,7 @@
     <ClInclude Include="xDxWrite.h" />
     <ClInclude Include="xFrustum.h" />
     <ClInclude Include="xInput.h" />
+    <ClInclude Include="xModelView.h" />
     <ClInclude Include="xObjectStd.h" />
     <ClInclude Include="xShape.h" />
     <ClInclude Include="xStd.h" />

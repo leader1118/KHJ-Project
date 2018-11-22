@@ -4,7 +4,7 @@
 #include "xDxWrite.h"
 #include "xInput.h"
 #include "xDxState.h"
-#include "xCamera.h"
+#include "xModelView.h"
 #include "xShape.h"
 using namespace DX;
 
@@ -14,10 +14,9 @@ public:
 	xTimer		m_Timer;
 	xDxWrite	m_Font;
 	xCamera     m_DefaultCamera;
+	xModelView  m_ModelCamera;
 	xCamera*	m_pMainCamera;
-	xDirLineShape   m_dirAxis;
-	ID3D11DepthStencilView* m_pDSV;
-	//D3DXVECTOR4		m_YawPitchRoll;
+	xDirLineShape   m_dirAxis;	
 public:	
 	virtual bool	GamePreInit();
 	bool	GameInit();
@@ -27,7 +26,7 @@ public:
 	bool	GameRender();
 	bool	GamePreRender();
 	bool	GamePostRender();
-	HRESULT CreateDSV();
+
 	void    DeleteDeviceResources();
 	HRESULT CreateDeviceResources(UINT width, UINT height);
 	virtual void    DeleteResources() {};
@@ -39,6 +38,10 @@ public:
 	virtual bool	PreRender() { return true; }
 	virtual bool	PostRender() { return true; }
 	virtual bool	Release() { return true; }
+	LRESULT	MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+public:
+	void    SwapDefaultView();
+	void    SwapModelView();
 public:
 	xCore();
 	virtual ~xCore();

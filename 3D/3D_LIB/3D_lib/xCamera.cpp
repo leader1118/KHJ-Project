@@ -33,15 +33,7 @@ bool xCamera::UpdateVector()
 	D3DXVec3Normalize(&m_vUp, &m_vUp);
 	D3DXVec3Normalize(&m_vSide, &m_vSide);
 
-	D3DXMATRIX mInvView;
-	D3DXMatrixInverse(&mInvView, NULL, &m_matView);
-	D3DXVECTOR3* pZBasis = (D3DXVECTOR3*)&mInvView._31;
-
-	m_fCameraYawAngle = atan2f(pZBasis->x, pZBasis->z);
-	float fLen = sqrtf(pZBasis->z * pZBasis->z + pZBasis->x * pZBasis->x);
-	m_fCameraPitchAngle = -atan2f(pZBasis->y, fLen);
-	
-	xFrustum::SetMatrix(NULL, &m_matView,&m_matProj);
+	xFrustum::SetMatrix(NULL, &m_matView, &m_matProj);
 	xFrustum::CreateFrustum();
 	return true;
 }
@@ -51,9 +43,8 @@ bool xCamera::Update(D3DXVECTOR4 vValue)
 	D3DXMATRIX matRotation;
 	D3DXQUATERNION qRotation;
 	D3DXQuaternionRotationYawPitchRoll(&qRotation,
-		m_fCameraYawAngle+=vValue.y, 
-		m_fCameraPitchAngle+=vValue.x, 
-		vValue.z);
+							m_fCameraYawAngle+=vValue.y, 
+							m_fCameraPitchAngle+=vValue.x, vValue.z);
 	m_vPos += m_vLook * vValue.w*m_fSpeed;
 	D3DXMatrixAffineTransformation(&matRotation, 1.0f, NULL, &qRotation,&m_vPos);
 	D3DXMatrixInverse(&m_matView, NULL, &matRotation);
@@ -70,6 +61,16 @@ D3DXMATRIX xCamera::SetViewMatrix(
 	m_vDefaultUp = vUp;
 	D3DXMatrixLookAtLH(&m_matView,&vPos,&vTarget,&vUp);
 	UpdateVector();
+
+	// 뷰 행렬 생성 할 때 1번만 호출되도록 한다. 
+	// 이유는 카메라가 뒤집어 질 경우에는 문제가 생긴다.
+	D3DXMATRIX mInvView;
+	D3DXMatrixInverse(&mInvView, NULL, &m_matView);
+	D3DXVECTOR3* pZBasis = (D3DXVECTOR3*)&mInvView._31;
+
+	m_fCameraYawAngle = atan2f(pZBasis->x, pZBasis->z);
+	float fLen = sqrtf(pZBasis->z * pZBasis->z + pZBasis->x * pZBasis->x);
+	m_fCameraPitchAngle = -atan2f(pZBasis->y, fLen);
 	return m_matView;
 }
 
@@ -93,6 +94,7 @@ xCamera::xCamera()
 	m_fSpeed = 1.0f;
 	m_fCameraYawAngle = 0.0f;
 	m_fCameraPitchAngle = 0.0f;
+	D3DXMatrixIdentity(&m_matWorld);
 }
 
 
