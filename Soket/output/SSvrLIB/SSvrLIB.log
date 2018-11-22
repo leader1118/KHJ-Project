@@ -16,6 +16,11 @@ c:\users\김현진\desktop\khj\soket\lib\ssvrlib\sthread.cpp(16): warning C4244:
 c:\users\김현진\desktop\khj\soket\lib\ssvrlib\sthread.cpp(41): warning C4312: '형식 캐스트': 'unsigned int'에서 더 큰 'HANDLE'(으)로의 변환입니다.
   SUser.cpp
   SWorkThread.cpp
+  TCore.cpp
+c:\users\김현진\desktop\khj\soket\lib\ssvrlib\tcore.cpp(91): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TInput.cpp
+  TTimer.cpp
+  TWindow.cpp
   코드를 생성하고 있습니다...
 c:\users\김현진\desktop\khj\soket\lib\ssvrlib\sdebugstring.cpp(66): warning C4172: 지역 변수 또는 임시: msg의 주소를 반환하고 있습니다.
 c:\users\김현진\desktop\khj\soket\lib\ssvrlib\sdebugstring.cpp(92): warning C4172: 지역 변수 또는 임시: msg의 주소를 반환하고 있습니다.
@@ -36,6 +41,11 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VC
   SUser.h
   SvrStd.h
   SWorkThread.h
-         15개 파일이 복사되었습니다.
+  TCore.h
+  TInput.h
+  TStd.h
+  TTimer.h
+  TWindow.h
+         20개 파일이 복사되었습니다.
   SSvrLIB.lib
           1개 파일이 복사되었습니다.

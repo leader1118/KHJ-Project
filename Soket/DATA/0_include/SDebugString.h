@@ -8,7 +8,7 @@ private:
 public:
 	HWND		m_hList; //  윈도우 핸들
 public:
-	void		Print(char* fmt, ...); // 출력 함수
+	void		Print(const char* fmt, ...); // 출력 함수
 public:
 	bool		Init(); // 초기화
 	bool		Release(); // 소멸

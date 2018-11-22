@@ -12,7 +12,7 @@ bool DB_MGR::Add()
 	scanf("%s", &m_cPass);
 	MultiByteToWideChar(CP_ACP, 0, m_cPass, -1, info.UserPS, sizeof(m_cPass));
 
-	wsprintf(info.szSQL, _T("Insert into KHJUser values('%s','%s')"), info.UserID, info.UserPS);
+	wsprintf(info.szSQL, _T("Insert into KHJUser(UserId,UserPs) values('%s','%s')"), info.UserID, info.UserPS);
 	SQLRETURN sRet;
 	sRet = SQLExecDirect(m_hSTMT, info.szSQL, SQL_NTS);
 	if (sRet == SQL_SUCCESS)
@@ -53,7 +53,7 @@ bool DB_MGR::Update()
 	scanf("%s", &OldName);
 	MultiByteToWideChar(CP_ACP, 0, OldName, -1, info.OldUserID, sizeof(OldName));
 
-	printf("새로운 아이디를 입력하세요 : ");
+	printf("새로운 아이디를 입력하세요 :");
 	scanf("%s", &NewName);
 	MultiByteToWideChar(CP_ACP, 0, NewName, -1, info.NewUserID, sizeof(NewName));
 
@@ -70,26 +70,62 @@ bool DB_MGR::Update()
 }
 void DB_MGR::Select()
 {
-	SWORD sReturn;
-	SQLLEN IBytes;
-	IBytes = (SDWORD)12000;
-	SQLINTEGER cbRetParam;
-	SQLCHAR m_UserID[10];
-	SQLINTEGER sLen = sizeof(m_UserID);
-	SQLRETURN sRet;
-	
 	USERINFO info;
+	SQLLEN LID, LPS;
+	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &LID);
+	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &LPS);
 
-	SQLLEN UserName, UserPass;
+	//ret = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("select UserId, UserPs from KHJUser"), SQL_NTS);
 	
-	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &UserName);
-	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &UserPass);
+	if (SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{CALL usp_Select}"), SQL_NTS) != SQL_SUCCESS)
+	{
+		return;
+	}
 
-	printf(" 검색 아이디 :");
-	scanf("%s", &m_UserID);
-	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_SSHORT, SQL_SMALLINT, 0, 0, &sReturn, sizeof(sReturn), &cbRetParam);
-	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_LONGVARCHAR, IBytes, 0, m_UserID, 0, NULL);
-	sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?=CALL usp_LogInTime(?)}"), SQL_NTS);
+	while (SQLFetch(m_hSTMT) != SQL_NO_DATA)
+	{
+		printf("\nID : %s\tPS : %s", info.UserID, info.UserPS);
+	}
+	SQLCloseCursor(m_hSTMT);
+
+}
+SQLRETURN HandleDiagnosticRecord(SQLHANDLE hHandle, SQLSMALLINT hType, RETCODE RetCode)
+{
+	int ii;
+	SQLINTEGER NativeError;
+	SQLTCHAR SqlState[6], Msg[255];
+	SQLSMALLINT MsgLen;
+	TCHAR str[256];
+
+	ii = 1;
+	while (RetCode = SQLGetDiagRec(hType, hHandle, ii, SqlState, &NativeError,
+		Msg, sizeof(Msg), &MsgLen) != SQL_NO_DATA)
+	{
+		wsprintf(str, _T("SQLSTATE:%s, 진단정보:%s"), (LPCTSTR)SqlState, (LPCTSTR)Msg);
+		::MessageBox(NULL, str, _T("진단 정보"), 0);
+		ii++;
+	}
+	return RetCode;
+}
+void DB_MGR::FindSelect()
+{
+	int sRet=0;
+	USERINFO info;
+	SQLINTEGER cbRetParam;
+	TCHAR FindUserID[10] = { 0, };
+	
+
+	SQLLEN lName, lPass;
+
+	SQLBindCol(m_hSTMT, 1, SQL_C_CHAR, info.UserID, sizeof(info.UserID), &lName);
+	SQLBindCol(m_hSTMT, 2, SQL_C_CHAR, info.UserPS, sizeof(info.UserPS), &lPass);
+	
+	printf(" 검색할 아이디를 입력하세요 : ");
+	scanf_s("%s", FindUserID, 10);
+
+	SQLBindParameter(m_hSTMT, 1, SQL_PARAM_OUTPUT, SQL_C_LONG, SQL_INTEGER, 0, 0, &sRet, 0, 0);
+	SQLBindParameter(m_hSTMT, 2, SQL_PARAM_INPUT, SQL_C_CHAR, SQL_VARCHAR, 20,0,(SQLTCHAR*)&FindUserID,0,0);
+	sRet = SQLExecDirect(m_hSTMT, (SQLTCHAR*)_T("{?= CALL usp_FIND(?)}"), SQL_NTS);
 
 	if (sRet != SQL_SUCCESS && sRet != SQL_SUCCESS_WITH_INFO)
 	{
@@ -97,13 +133,14 @@ void DB_MGR::Select()
 		SQLTCHAR sqlstate[SQL_SQLSTATE_SIZE + 1];
 		SQLINTEGER sqlcode;
 		SQLSMALLINT length;
-
+		// 단순한 에러
 		SQLError(m_hENV, m_hDBC, m_hSTMT, sqlstate, &sqlcode, buffer, SQL_MAX_MESSAGE_LENGTH + 1, &length);
 		MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
 
+		// 모든 에러 나열됨.
 		int iErrorCnt = 1;
 		while (sRet = SQLGetDiagRec(SQL_HANDLE_DBC, m_hDBC, iErrorCnt++, sqlstate, &sqlcode,
-			buffer, sizeof(buffer),&length)!=SQL_NO_DATA);
+			buffer, sizeof(buffer), &length) != SQL_NO_DATA)
 		{
 			MessageBox(NULL, (LPTSTR)buffer, (LPTSTR)sqlstate, MB_OK);
 		}
@@ -112,7 +149,7 @@ void DB_MGR::Select()
 	system("cls");
 	while (SQLFetch(m_hSTMT) != SQL_NO_DATA)
 	{
-		printf("UserID : %s \n UserPS : %s", (char*)info.UserID, (char*)info.OldUserID);
+		printf("\nID : %s\tPS : %s", info.UserID, info.UserPS);
 	}
 	SQLCloseCursor(m_hSTMT);
 }
