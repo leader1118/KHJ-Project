@@ -1,0 +1,2 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\3d\part_01\samplemodelview\sample.cpp(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'xCore.h': No such file or directory

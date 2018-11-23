@@ -27,6 +27,9 @@
     <ClCompile Include="DB_CONNECT.cpp" />
     <ClCompile Include="DB_MGR.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{731E9B93-8E99-4B9F-A51D-8B4B399B4F81}</ProjectGuid>
