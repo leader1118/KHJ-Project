@@ -1,8 +1,8 @@
 #pragma once
 #define DIRECTINPUT_VERSION 0x800
-#include <windows.h>
-#include <assert.h>
-#include <tchar.h>
+#include <windows.h> 
+#include <assert.h> 
+#include <tchar.h> 
 #include <iostream>
 #include <map>
 #include <string>
