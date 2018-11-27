@@ -33,6 +33,7 @@
     <ClCompile Include="xModelView.cpp" />
     <ClCompile Include="xPlaneShape.cpp" />
     <ClCompile Include="xShape.cpp" />
+    <ClCompile Include="xSkyBox.cpp" />
     <ClCompile Include="xSphereShape.cpp" />
     <ClCompile Include="xTexture.cpp" />
     <ClCompile Include="xTimer.cpp" />
@@ -52,6 +53,7 @@
     <ClInclude Include="xModelView.h" />
     <ClInclude Include="xObjectStd.h" />
     <ClInclude Include="xShape.h" />
+    <ClInclude Include="xSkyBox.h" />
     <ClInclude Include="xStd.h" />
     <ClInclude Include="XTemplate.h" />
     <ClInclude Include="xTexture.h" />

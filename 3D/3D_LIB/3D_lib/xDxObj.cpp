@@ -1,6 +1,28 @@
 #include "xDxObj.h"
 namespace DX
 {
+	ID3D11ShaderResourceView* CreateShaderResourceView(
+		ID3D11Device* pd3dDevice,
+		const TCHAR* szFileName)
+	{
+		HRESULT hr = S_OK;
+		ID3D11ShaderResourceView* pSRV = nullptr;
+		D3DX11_IMAGE_LOAD_INFO loadinfo;
+		ZeroMemory(&loadinfo, sizeof(loadinfo));
+		loadinfo.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+		loadinfo.Format = DXGI_FORMAT_FROM_FILE;
+		ID3D11ShaderResourceView* pTex = NULL;
+		hr = D3DX11CreateShaderResourceViewFromFile(
+			pd3dDevice,
+			szFileName,
+			&loadinfo, NULL,
+			&pSRV, NULL);
+		if (FAILED(hr))
+		{
+			return nullptr;
+		}
+		return pSRV;
+	}
 	ID3D11Buffer* CreateVertexBuffer(
 		ID3D11Device* pd3dDevice,
 		UINT iNumCount,
@@ -271,7 +293,7 @@ namespace DX
 			m_pIndexBuffer.Get(),
 			DXGI_FORMAT_R32_UINT, 0);
 
-		pContext->VSSetConstantBuffers(0,1, 
+		pContext->VSSetConstantBuffers(0, 1,
 			m_pConstantBuffer.GetAddressOf());
 		pContext->GSSetConstantBuffers(0, 1,
 			m_pConstantBuffer.GetAddressOf());
@@ -283,7 +305,7 @@ namespace DX
 			m_pGeometryShader.Get(), NULL, 0);
 
 		pContext->PSSetShaderResources(
-			0,1,
+			0, 1,
 			m_pTextureRV.GetAddressOf());
 		return true;
 	}
@@ -310,7 +332,7 @@ namespace DX
 		return true;
 	}
 	xDxObj::xDxObj()
-	{		
+	{
 	}
 
 

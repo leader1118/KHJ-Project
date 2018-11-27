@@ -22,6 +22,9 @@
     <Filter Include="Texture">
       <UniqueIdentifier>{e70b3bef-d832-4610-8d96-7d5a51152942}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SKY">
+      <UniqueIdentifier>{eb693521-fa79-426c-92fc-2da35879bb97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="xCore.cpp">
@@ -78,6 +81,9 @@
     <ClCompile Include="xTexture.cpp">
       <Filter>Texture</Filter>
     </ClCompile>
+    <ClCompile Include="xSkyBox.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xCore.h">
@@ -132,6 +138,9 @@
       <Filter>Texture</Filter>
     </ClInclude>
     <ClInclude Include="XTemplate.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="xSkyBox.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

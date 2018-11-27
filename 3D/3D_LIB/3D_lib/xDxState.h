@@ -8,6 +8,7 @@ namespace DX
 	public:
 		static ID3D11DepthStencilState*   g_pDSVStateEnableLessEqual;
 		static ID3D11DepthStencilState*   g_pDSVStateEnableGreater;
+		static ID3D11DepthStencilState*   g_pDSVStateDetphWriteDisable;
 
 
 		static ID3D11RasterizerState* g_pRSWireFrame;
@@ -23,6 +24,7 @@ namespace DX
 		static ID3D11BlendState* g_pBSAlphaBlend;
 
 		static ID3D11SamplerState*	g_pSSWrapLinear;
+		static ID3D11SamplerState*	g_pSSWrapPoint;
 
 		static HRESULT SetState(ID3D11Device* pd3dDevice);
 		static bool Release();
@@ -33,15 +35,15 @@ namespace DX
 
 	static void ApplyDSS(ID3D11DeviceContext* pContext,
 		ID3D11DepthStencilState* pState,
-		UINT iRef=0x01)
+		UINT iRef = 0x01)
 	{
-		pContext->OMSetDepthStencilState(pState,iRef );
+		pContext->OMSetDepthStencilState(pState, iRef);
 	}
 	static void ApplyRS(ID3D11DeviceContext* pContext,
 		ID3D11RasterizerState* pState)
 	{
 		pContext->RSSetState(pState);
-	}	
+	}
 
 	static void ApplyBS(
 		ID3D11DeviceContext* pContext,
