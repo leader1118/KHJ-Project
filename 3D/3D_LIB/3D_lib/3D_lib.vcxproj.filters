@@ -19,6 +19,9 @@
     <Filter Include="Object">
       <UniqueIdentifier>{711473a9-4d01-4403-b410-8910dcbe9934}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Texture">
+      <UniqueIdentifier>{e70b3bef-d832-4610-8d96-7d5a51152942}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="xCore.cpp">
@@ -69,6 +72,12 @@
     <ClCompile Include="xSphereShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
+    <ClCompile Include="XDX_RT.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="xTexture.cpp">
+      <Filter>Texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xCore.h">
@@ -115,6 +124,15 @@
     </ClInclude>
     <ClInclude Include="xShape.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="XDX_RT.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="xTexture.h">
+      <Filter>Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="XTemplate.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

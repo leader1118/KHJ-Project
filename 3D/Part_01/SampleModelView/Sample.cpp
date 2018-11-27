@@ -30,20 +30,20 @@ public:
 
 		m_ObjLine.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/eye.bmp");
+			L"../../Include/data/ViewCube.png");
 
 		m_ObjBox.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/eye.bmp");
+			L"../../Include/data/ViewCube.png");
 
 		m_ObjPlane.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/eye.bmp");
+			L"../../Include/data/ViewCube.png");
 
 
 		m_ObjSphere.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/eye.bmp");
+			L"../../Include/data/ViewCube.png");
 		return true;
 	}
 	bool Frame()
