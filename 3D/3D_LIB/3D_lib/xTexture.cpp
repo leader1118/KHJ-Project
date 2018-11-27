@@ -1,12 +1,12 @@
-#include "xTexture.h"
-
-
-
-xTexture::xTexture()
-{
-}
-
-
-xTexture::~xTexture()
-{
-}
+//#include "xTexture.h"
+//
+//
+//
+//xTexture::xTexture()
+//{
+//}
+//
+//
+//xTexture::~xTexture()
+//{
+//}
