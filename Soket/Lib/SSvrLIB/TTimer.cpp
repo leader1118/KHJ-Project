@@ -13,7 +13,7 @@ bool		TTimer::Init()
 // 매 프레임에서 계산을 담당한다.
 bool		TTimer::Frame() 
 { 
-	// 1000 == 1초(winmm.lib)
+	
 	DWORD dwCurrentTick = timeGetTime();
 	DWORD dwElapseTick = dwCurrentTick - m_dwBeforeTick;
 	
@@ -26,10 +26,7 @@ bool		TTimer::Frame()
 		g_iFPS = m_iFPS = m_dwFrameCnt;
 		m_dwFrameCnt = 0;
 		m_fFrameTime -= 1.0f;
-		//_CRT_SECURE_NO_WARNINGS
-		//_stprintf_s(m_csBuffer, L"Timer:[%10.4f] FPS:[%d] %f\n",
-		//	m_fAccumulation, m_iFPS, m_fSecondPerFrame);
-		//OutputDebugString(m_csBuffer);
+		
 	}
 
 	m_dwFrameCnt++;

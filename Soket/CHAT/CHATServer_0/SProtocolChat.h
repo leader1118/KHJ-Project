@@ -1,5 +1,6 @@
 #include "SProtocol.h"
 
+
 #define PACKET_CHAR_NAME_REQ 1000
 #define PACKET_CHAR_NAME_ACK 1001
 #define PACKET_CHAR_MSG 1002
@@ -8,7 +9,7 @@
 
 typedef struct
 {
-	WORD user_idx; // 캐릭터의 고유한 인덱스
+	WORD user_idx;
 	WORD PosX;
 	WORD PosY;
 	WORD direction;

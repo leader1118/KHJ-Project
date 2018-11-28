@@ -22,6 +22,7 @@
 
 #pragma comment (lib,"SSvrLIB.lib")
 #pragma comment (lib,"ws2_32.lib")
+#pragma comment (lib,"winmm.lib")
 
 using namespace std;
 
@@ -29,5 +30,9 @@ using namespace std;
 
 extern HWND			g_hWnd;
 extern HINSTANCE	g_hInstance;
+extern RECT			g_rtClient;
 extern int			g_iFPS;// 1초당 프레임 개수
 extern float		g_fSecPerFrame; // 1프레임의 경과시간
+extern float		g_fAccumulation;// 실행된 경과 시간
+extern HDC			g_hScreenDC;
+extern HDC			g_hOffScreenDC;

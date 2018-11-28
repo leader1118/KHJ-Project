@@ -151,13 +151,17 @@
     <ClInclude Include="SChatPacketPool.h" />
     <ClInclude Include="SChatSvr.h" />
     <ClInclude Include="SChatUser.h" />
+    <ClInclude Include="ServerMain.h" />
     <ClInclude Include="SProtocolChat.h" />
+    <ClInclude Include="sUdpSocket.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SCHATAccept.cpp" />
     <ClCompile Include="SChatPacketPool.cpp" />
     <ClCompile Include="SChatSvr.cpp" />
     <ClCompile Include="SChatUser.cpp" />
+    <ClCompile Include="ServerMain.cpp" />
+    <ClCompile Include="sUdpSocket.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

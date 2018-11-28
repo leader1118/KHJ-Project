@@ -145,7 +145,7 @@
 copy "*.lib" "../../DATA/0_lib"</Command>
     </PostBuildEvent>
     <Lib>
-      <OutputFile>../../output/0_lib/SSvrLIB.lib</OutputFile>
+      <OutputFile>SSvrLIB.lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

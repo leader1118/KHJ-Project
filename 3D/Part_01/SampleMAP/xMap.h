@@ -1,6 +1,7 @@
 #pragma once
 #include "xStd.h"
 #include "xShape.h"
+
 struct xMapDesc
 {
 	int iNumCols; // 가로 개수
@@ -22,9 +23,11 @@ public:
 	int		m_iNumFace;
 	int		m_iNumVertices;
 	float	m_fColliDistance;
+	vector<float> m_fHeightList;
 public:
 	bool CreateMap(xMapDesc desc);
 	bool Load(ID3D11Device* pDevice, xMapDesc desc);
+	bool CreateHeightMap(ID3D11Device* pDevice, ID3D11DeviceContext*	m_pContext ,T_STR szName);
 	bool Init();
 	bool Frame();
 	bool Release();

@@ -1,6 +1,59 @@
 #include "xMap.h"
 
+bool xMap::CreateHeightMap(ID3D11Device* pDevice, ID3D11DeviceContext*	m_pContext,T_STR szName)
+{
+	HRESULT hr;
+	D3DX11_IMAGE_INFO imageinfo;
+	ID3D11Resource* pLoadTexture = nullptr;
+	//ID3D11Texture2D* pTex2D;
+	D3DX11_IMAGE_LOAD_INFO info;
+	ZeroMemory(&info, sizeof(info));
+	info.MipLevels = 1;
+	info.Usage = D3D11_USAGE_STAGING; // cpu가 접근할수 있는
+	info.CpuAccessFlags = D3D11_CPU_ACCESS_WRITE | D3D11_CPU_ACCESS_READ;
+	info.Format = DXGI_FORMAT_FROM_FILE;
+	info.pSrcInfo = &imageinfo;
 
+	if (FAILED(hr=D3DX11CreateTextureFromFile(pDevice, szName.c_str(), NULL, NULL, &pLoadTexture, NULL)))
+	{
+		return false;
+	}
+	ID3D11Texture2D* pTex2D = nullptr;
+	if (FAILED(pLoadTexture->QueryInterface(__uuidof(ID3D11Texture2D), (LPVOID*)&pTex2D)))
+	{
+		return false;
+	}
+	SAFE_RELEASE(pLoadTexture);
+
+	D3D11_TEXTURE2D_DESC desc;
+	pTex2D->GetDesc(&desc);
+
+	
+	m_fHeightList.resize(desc.Height*desc.Width);
+
+	D3D11_MAPPED_SUBRESOURCE map;
+	UINT index = D3D11CalcSubresource(0, 0, 1);
+	if (SUCCEEDED(m_pContext->Map(pTex2D, index,D3D11_MAP_READ,0,&map)))
+	{
+		UCHAR* pTexels = (UCHAR*)map.pData;
+		for (UINT iRow = 0; iRow < desc.Height; iRow++)
+		{
+			BYTE rowStart = iRow * map.RowPitch;
+			for (UINT iCol = 0; iCol < desc.Width; iCol++)
+			{
+				BYTE colStart = iCol * 4;
+				UCHAR uRed = pTexels[rowStart + colStart +0];
+				m_fHeightList[iRow*desc.Width+iCol] = uRed;
+			}
+		}
+		m_pContext-> Unmap(pTex2D,index);
+	}
+	m_iNumRows = desc.iNumRows;
+	m_iNumCols = desc.iNumCols;
+
+
+	return true;
+}
 bool xMap::CreateMap(xMapDesc desc)
 {
 	// 2n+1,
@@ -66,7 +119,7 @@ D3DXVECTOR4 xMap::GetColorOfVertex(int iIndex)
 
 float xMap::GetHeightOfVertex(int iIndex)
 {
-	return 0.0f;
+	return m_fHeightList[iIndex];
 }
 
 HRESULT xMap::CreateVertexData()

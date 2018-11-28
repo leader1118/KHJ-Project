@@ -25,6 +25,9 @@
     <Filter Include="SKY">
       <UniqueIdentifier>{eb693521-fa79-426c-92fc-2da35879bb97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{83b4f604-39b1-4e97-9cb2-c8bcf3ffd2cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="xCore.cpp">
@@ -82,7 +85,10 @@
       <Filter>Texture</Filter>
     </ClCompile>
     <ClCompile Include="xSkyBox.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>SKY</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Part_01\SampleMAP\xMap.cpp">
+      <Filter>Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +147,10 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="xSkyBox.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>SKY</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Part_01\SampleMAP\xMap.h">
+      <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

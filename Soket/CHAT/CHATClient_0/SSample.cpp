@@ -52,6 +52,10 @@ LRESULT SSample::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	}
 	return -1;
 }
+bool SSample::Init()
+{
+	return false;
+}
 bool SSample::Frame()
 {
 	if (I_Input.KeyCheck(VK_LEFT) == KEY_PUSH)

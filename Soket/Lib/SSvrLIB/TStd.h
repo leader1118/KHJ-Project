@@ -1,5 +1,5 @@
-#ifndef KGCA
-	#define KGCA
+#ifndef SOCKET_Server
+	#define  SOCKET_Server
 	#include <WinSock2.h>
 	#include <windows.h>
 	#include <time.h>
@@ -30,12 +30,7 @@
 	typedef basic_string<char>  C_STR;
 	typedef vector<basic_string<TCHAR>>		TCHAR_STRING_VECTOR;
 	typedef vector<DWORD>					DWORD_VECTOR;
-	// 멀티바이트 문자집합 사용경우
-	// ABC홍길동 = 9
-	// [A][B][C] [0]
-	// 유니코드바이트 문자집합 사용경우
-	// ABC홍길동 = 12
-	// [A][0][B][0][C][0] [][][][][][]
+	
 	static std::wstring mtw(std::string str)
 	{
 		std::wstring ret = std::wstring(str.begin(), str.end());
@@ -157,7 +152,7 @@
 #ifndef SAFE_NEW_ARRAY_CLEAR
 #define SAFE_NEW_ARRAY_CLEAR( A, B, C )	{ if (!A && C) A = new B[C]; if(A) memset( A, 0, sizeof(B)*C ); };
 #endif
-	// 추가
+	
 #define COUNTOF(a) ( sizeof( a ) / sizeof( ( a )[0] ) )
 
 	static void T_ERR_EXIT(TCHAR *msg)

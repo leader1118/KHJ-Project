@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Part_01\SampleMAP\xMap.cpp" />
     <ClCompile Include="xArcBall.cpp" />
     <ClCompile Include="xCamera.cpp" />
     <ClCompile Include="xCore.cpp" />
@@ -40,6 +41,7 @@
     <ClCompile Include="xWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Part_01\SampleMAP\xMap.h" />
     <ClInclude Include="xArcBall.h" />
     <ClInclude Include="xCamera.h" />
     <ClInclude Include="xCore.h" />

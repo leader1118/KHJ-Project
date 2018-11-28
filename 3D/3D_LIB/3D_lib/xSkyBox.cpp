@@ -12,7 +12,7 @@ HRESULT xSkyBox::LoadTexture(T_STR  szName)
 {
 	HRESULT hr = S_OK;
 
-	TCHAR* g_szSkyTextures[] =
+	const TCHAR* g_szSkyTextures[] =
 	{
 		L"../../Include/data/st00_cm_front.bmp",
 		L"../../Include/data/st00_cm_back.bmp",

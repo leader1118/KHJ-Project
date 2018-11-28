@@ -1,6 +1,6 @@
 #include "SServer.h"
 
-bool SServer::SendMsg(SOCKET socket, char* msg, WORD code) // 보내기
+bool SServer::SendMsg(SOCKET socket, const char* msg, WORD code) // 보내기
 {
 	UPACKET sendmsg;
 	ZeroMemory(&sendmsg, sizeof(sendmsg));

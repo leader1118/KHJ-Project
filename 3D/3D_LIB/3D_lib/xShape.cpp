@@ -141,17 +141,17 @@ HRESULT xShape::LoadGeometryShader(T_STR  szName) {
 }
 HRESULT xShape::LoadTexture(T_STR  szName) {
 	HRESULT hr = S_OK;
+	if (szName.empty()) return E_FAIL;
 	D3DX11_IMAGE_LOAD_INFO loadinfo;
 	ZeroMemory(&loadinfo, sizeof(loadinfo));
 	loadinfo.BindFlags = D3D11_BIND_SHADER_RESOURCE;
 	loadinfo.Format = DXGI_FORMAT_FROM_FILE;
 	ID3D11ShaderResourceView* pTex = NULL;
-	hr=D3DX11CreateShaderResourceViewFromFile(
+	hr = D3DX11CreateShaderResourceViewFromFile(
 		m_pd3dDevice,
 		szName.c_str(),
-		&loadinfo, NULL, 
+		&loadinfo, NULL,
 		m_dxObj.m_pTextureRV.GetAddressOf(), NULL);
-	
 	return hr;
 }
 bool  xShape::PreRender(
