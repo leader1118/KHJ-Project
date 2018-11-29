@@ -1,20 +1,20 @@
 #pragma once
 
 #include "xDevice.h"
-class xWindow : public xDevice // 디바이스를 상속받는다
+class xWindow : public xDevice
 {
 public:
-	HWND		m_hWnd; // 윈도우 핸들
-	HINSTANCE	m_hInstance; // 핸들 인스턴스
-	RECT		m_rtClient; // 영역 렉트
-	RECT		m_rtWindow; // 윈도우 렉트
+	HWND		m_hWnd;
+	HINSTANCE	m_hInstance;
+	RECT		m_rtClient;
+	RECT		m_rtWindow;
 private:
-	DWORD		m_dwStyle; //unsinged long
+	DWORD		m_dwStyle;
 public:
 	void		Set(DWORD dwStyle);
-	void		CenterWindow(); // 윈도우 센터를 잡아준다
-	bool		SetWindow(HINSTANCE	hInstance, // 윈도우 세팅
-		const TCHAR* pTitleName = L"KHJ Sample",
+	void		CenterWindow();
+	bool		SetWindow(HINSTANCE	hInstance,
+		const TCHAR* pTitleName = L"KHJ",
 		UINT iWidth = 800, UINT iHeight = 600);
 	bool		Run();
 public:

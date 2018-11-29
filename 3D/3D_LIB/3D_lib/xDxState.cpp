@@ -3,14 +3,14 @@
 
 namespace DX
 {
-	ID3D11BlendState* xDxState::g_pBSNoBlend = 0;
-	ID3D11BlendState* xDxState::g_pBSAlphaBlend = 0;
+	ID3D11BlendState* xDxState::g_pBSNoBlend=0;
+	ID3D11BlendState* xDxState::g_pBSAlphaBlend=0;
 
-	ID3D11DepthStencilState*   xDxState::g_pDSVStateEnableLessEqual = 0;
-	ID3D11DepthStencilState*   xDxState::g_pDSVStateEnableGreater = 0;
-	ID3D11DepthStencilState*   xDxState::g_pDSVStateDetphWriteDisable = 0;
+	ID3D11DepthStencilState*   xDxState::g_pDSVStateEnableLessEqual =0;
+	ID3D11DepthStencilState*   xDxState::g_pDSVStateEnableGreater =0;
+	ID3D11DepthStencilState*   xDxState::g_pDSVStateDetphWriteDisable=0;
 
-	ID3D11RasterizerState* xDxState::g_pRSWireFrame = 0;
+	ID3D11RasterizerState* xDxState::g_pRSWireFrame=0;
 	ID3D11RasterizerState* xDxState::g_pRSSolid = 0;
 	ID3D11RasterizerState* xDxState::g_pRSBackCullSolid = 0;
 	ID3D11RasterizerState* xDxState::g_pRSFrontCullSolid = 0;
@@ -19,7 +19,7 @@ namespace DX
 	ID3D11RasterizerState* xDxState::g_pRSFrontCullWireFrame = 0;
 	ID3D11RasterizerState* xDxState::g_pRSNoneCullWireFrame = 0;
 
-	ID3D11SamplerState*	xDxState::g_pSSWrapLinear = NULL;
+	ID3D11SamplerState*	xDxState::g_pSSWrapLinear=NULL;
 	ID3D11SamplerState*	xDxState::g_pSSWrapPoint = NULL;
 	HRESULT xDxState::SetState(ID3D11Device* pd3dDevice)
 	{
@@ -36,7 +36,7 @@ namespace DX
 		bd.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ZERO;
 		bd.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
 
-		bd.RenderTarget[0].RenderTargetWriteMask =
+		bd.RenderTarget[0].RenderTargetWriteMask = 
 			D3D11_COLOR_WRITE_ENABLE_ALL;
 		pd3dDevice->CreateBlendState(&bd, &g_pBSAlphaBlend);
 
@@ -70,7 +70,7 @@ namespace DX
 		hr = pd3dDevice->CreateDepthStencilState(
 			&dsd,
 			&g_pDSVStateDetphWriteDisable);
-
+		
 		////////////////////////////////
 
 
@@ -81,25 +81,25 @@ namespace DX
 		rd.CullMode = D3D11_CULL_BACK;
 		rd.DepthClipEnable = TRUE;
 
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSWireFrame);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSWireFrame);
 		rd.FillMode = D3D11_FILL_SOLID;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSSolid);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSSolid);
 		rd.CullMode = D3D11_CULL_FRONT;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSFrontCullSolid);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSFrontCullSolid);
 		rd.CullMode = D3D11_CULL_BACK;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSBackCullSolid);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSBackCullSolid);
 		rd.CullMode = D3D11_CULL_NONE;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSNoneCullSolid);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSNoneCullSolid);
 
 		rd.FillMode = D3D11_FILL_WIREFRAME;
 		rd.CullMode = D3D11_CULL_FRONT;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSFrontCullWireFrame);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSFrontCullWireFrame);
 		rd.CullMode = D3D11_CULL_BACK;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSBackCullWireFrame);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSBackCullWireFrame);
 		rd.CullMode = D3D11_CULL_NONE;
-		hr = pd3dDevice->CreateRasterizerState(&rd, &g_pRSNoneCullWireFrame);
+		hr = pd3dDevice->CreateRasterizerState(&rd,	&g_pRSNoneCullWireFrame);
 		//////////////////////////////////
-
+		
 		D3D11_SAMPLER_DESC descSamp;
 		descSamp.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
 		descSamp.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -117,7 +117,7 @@ namespace DX
 		descSamp.MaxLOD = D3D10_FLOAT32_MAX;
 		pd3dDevice->CreateSamplerState(&descSamp,
 			&g_pSSWrapLinear);
-
+		
 		descSamp.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT;
 
 		pd3dDevice->CreateSamplerState(&descSamp,
@@ -126,19 +126,19 @@ namespace DX
 	}
 	bool xDxState::Release()
 	{
-		if (g_pDSVStateEnableLessEqual)g_pDSVStateEnableLessEqual->Release();
-		if (g_pDSVStateEnableGreater) g_pDSVStateEnableGreater->Release();
-		if (g_pRSWireFrame) g_pRSWireFrame->Release();
-		if (g_pRSSolid) g_pRSSolid->Release();
-		if (g_pRSBackCullSolid) g_pRSBackCullSolid->Release();
-		if (g_pRSFrontCullSolid) g_pRSFrontCullSolid->Release();
-		if (g_pRSNoneCullSolid) g_pRSNoneCullSolid->Release();
-		if (g_pRSBackCullWireFrame) g_pRSBackCullWireFrame->Release();
-		if (g_pRSFrontCullWireFrame) g_pRSFrontCullWireFrame->Release();
-		if (g_pRSNoneCullWireFrame) g_pRSNoneCullWireFrame->Release();
+		if(g_pDSVStateEnableLessEqual)g_pDSVStateEnableLessEqual->Release();
+		if(g_pDSVStateEnableGreater) g_pDSVStateEnableGreater->Release();
+		if(g_pRSWireFrame) g_pRSWireFrame->Release();
+		if(g_pRSSolid) g_pRSSolid->Release();
+		if(g_pRSBackCullSolid) g_pRSBackCullSolid->Release();
+		if(g_pRSFrontCullSolid) g_pRSFrontCullSolid->Release();
+		if(g_pRSNoneCullSolid) g_pRSNoneCullSolid->Release();
+		if(g_pRSBackCullWireFrame) g_pRSBackCullWireFrame->Release();
+		if(g_pRSFrontCullWireFrame) g_pRSFrontCullWireFrame->Release();
+		if(g_pRSNoneCullWireFrame) g_pRSNoneCullWireFrame->Release();
 		if (g_pBSNoBlend) g_pBSNoBlend->Release();
 		if (g_pBSAlphaBlend) g_pBSAlphaBlend->Release();
-		if (g_pSSWrapLinear) g_pSSWrapLinear->Release();
+		if(g_pSSWrapLinear) g_pSSWrapLinear->Release();
 		if (g_pSSWrapPoint)g_pSSWrapPoint->Release();
 		if (g_pDSVStateDetphWriteDisable) g_pDSVStateDetphWriteDisable->Release();
 		return true;
@@ -146,7 +146,7 @@ namespace DX
 
 	xDxState::xDxState()
 	{
-
+		
 	}
 
 

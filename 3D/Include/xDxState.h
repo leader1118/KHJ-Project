@@ -35,15 +35,15 @@ namespace DX
 
 	static void ApplyDSS(ID3D11DeviceContext* pContext,
 		ID3D11DepthStencilState* pState,
-		UINT iRef = 0x01)
+		UINT iRef=0x01)
 	{
-		pContext->OMSetDepthStencilState(pState, iRef);
+		pContext->OMSetDepthStencilState(pState,iRef );
 	}
 	static void ApplyRS(ID3D11DeviceContext* pContext,
 		ID3D11RasterizerState* pState)
 	{
 		pContext->RSSetState(pState);
-	}
+	}	
 
 	static void ApplyBS(
 		ID3D11DeviceContext* pContext,

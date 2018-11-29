@@ -19,12 +19,4 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="..\..\Include\data\shader\shape.hlsl">
-      <Filter>헤더 파일</Filter>
-    </FxCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Sky.hlsli" />
-  </ItemGroup>
 </Project>

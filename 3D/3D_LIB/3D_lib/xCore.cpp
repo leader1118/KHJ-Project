@@ -44,12 +44,16 @@ bool	xCore::GameInit()
 	xDxState::SetState(m_pd3dDevice);
 
 	m_DefaultCamera.SetViewMatrix();
-	m_DefaultCamera.SetProjMatrix(D3DX_PI * 0.5f,(float)m_rtClient.right/ (float)m_rtClient.bottom );
+	m_DefaultCamera.SetProjMatrix(D3DX_PI * 0.25f,(float)m_rtClient.right/ (float)m_rtClient.bottom );
 	
 	m_ModelCamera.SetViewMatrix();
-	m_ModelCamera.SetProjMatrix(D3DX_PI * 0.5f, (float)m_rtClient.right / (float)m_rtClient.bottom);
+	m_ModelCamera.SetProjMatrix(D3DX_PI * 0.25f, (float)m_rtClient.right / (float)m_rtClient.bottom);
 
 	m_pMainCamera = &m_DefaultCamera;
+
+	m_SkyBox.Create(m_pd3dDevice,
+		L"../../Include/data/shader/sky.hlsl",
+		L"../../Include/data/grassenvmap1024.dds");
 
 	m_dirAxis.Create(m_pd3dDevice,L"../../Include/data/shader/shape.hlsl",L"../../Include/data/eye.bmp");
 
@@ -101,6 +105,8 @@ bool	xCore::GameFrame()
 	m_pMainCamera->Update(vYawPitchRoll);
 	m_pMainCamera->Frame();
 
+	m_SkyBox.Frame();
+
 	Frame();
 
 	m_dirAxis.Frame();
@@ -124,6 +130,12 @@ bool	xCore::GamePreRender()
 		ApplyRS(m_pContext, xDxState::g_pRSNoneCullSolid);
 
 	m_pContext->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	m_SkyBox.SetMatrix(NULL,
+		&m_pMainCamera->m_matView,
+		&m_pMainCamera->m_matProj);
+	m_SkyBox.Render(m_pContext);
+
 	return true;
 }
 bool	xCore::GamePostRender()
@@ -165,6 +177,7 @@ bool	xCore::GameRelease()
 	m_ModelCamera.Release();
 	m_DefaultCamera.Release();
 
+	m_SkyBox.Release();
 	m_Timer.Release();
 	m_Font.Release();
 	I_Input.Release();

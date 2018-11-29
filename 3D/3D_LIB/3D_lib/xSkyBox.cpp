@@ -19,7 +19,7 @@ HRESULT xSkyBox::LoadTexture(T_STR  szName)
 		L"../../Include/data/st00_cm_right.bmp",
 		L"../../Include/data/st00_cm_left.bmp",
 		L"../../Include/data/st00_cm_up.bmp",
-		L"../../Inckude/data/st00_cm_down.bmp"
+		L"../../Include/data/st00_cm_down.bmp"
 	};
 	int iNumTexture = sizeof(g_szSkyTextures) / sizeof(g_szSkyTextures[0]);
 
@@ -34,14 +34,14 @@ bool xSkyBox::Render(ID3D11DeviceContext* pContext)
 {
 	ApplySS(pContext, xDxState::g_pSSWrapPoint);
 	//ApplyDSS(pContext, xDxState::g_pDSVStateDetphWriteDisable);
-
+	
 	D3DXMATRIX matView = m_matView;
 	matView._41 = 0;
 	matView._42 = 0;
 	matView._43 = 0;
 	SetMatrix(&m_matWorld, &matView, &m_matProj);
 
-	pContext->UpdateSubresource(m_dxObj.m_pConstantBuffer.Get(), 0, NULL, &m_cbData, 0, 0);
+	pContext->UpdateSubresource(m_dxObj.m_pConstantBuffer.Get(),0, NULL, &m_cbData, 0, 0);
 	pContext->IASetPrimitiveTopology((D3D_PRIMITIVE_TOPOLOGY)m_Primitive);
 
 	PreRender(pContext);

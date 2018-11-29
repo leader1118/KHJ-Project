@@ -38,7 +38,7 @@ SamplerState  g_samLinear : register(s0);
 VS_OUTPUT VS(VS_IN v)
 {
 	VS_OUTPUT vOut = (VS_OUTPUT)0;
-	float4 vWorld = mul(float4(v.p, 1.0f), g_matWorld);
+	float4 vWorld = mul(float4(v.p,1.0f), g_matWorld);
 	float4 vView = mul(vWorld, g_matView);
 	float4 vProj = mul(vView, g_matProj);
 	vOut.p = vProj;
@@ -49,7 +49,7 @@ VS_OUTPUT VS(VS_IN v)
 }
 VS_OUTPUT VS_NoMatrix(VS_IN v)
 {
-	VS_OUTPUT vOut = (VS_OUTPUT)0;
+	VS_OUTPUT vOut = (VS_OUTPUT)0;	
 	vOut.p = float4(v.p, 1.0f);
 	vOut.n = v.n;
 	vOut.c = v.c;// g_Color;
@@ -59,7 +59,7 @@ VS_OUTPUT VS_NoMatrix(VS_IN v)
 float4 PS(VS_OUTPUT v) : SV_Target
 {
 	float4 vTexColor = g_txDiffuse.Sample(g_samLinear, v.t);
-	return vTexColor * v.c;
+	return vTexColor*v.c;
 }
 float4 PSLine(VS_OUTPUT v) : SV_Target
 {
@@ -72,8 +72,8 @@ float4 PSColor(VS_OUTPUT v) : SV_Target
 // 로칼 정점의 크기를 정규화하여 1로 만든다.
 GS_OUTPUT NormalizeVertex(GS_OUTPUT Vertex)
 {
-	GS_OUTPUT newvertex = (GS_OUTPUT)0;
-	newvertex.p = float4(normalize(Vertex.p.xyz), 1);
+	GS_OUTPUT newvertex= (GS_OUTPUT)0;
+	newvertex.p = float4(normalize(Vertex.p.xyz),1);
 	// 정점이 원점을 중심으로 하는 노말 벡터가 된다.
 	newvertex.n = normalize(Vertex.p.xyz);
 	newvertex.c = Vertex.c;
@@ -85,7 +85,7 @@ GS_OUTPUT NormalizeVertex(GS_OUTPUT Vertex)
 	newvertex.p = vProj;
 	return newvertex;
 }
-void TriAppend(GS_OUTPUT V0, GS_OUTPUT V1, GS_OUTPUT V2,
+void TriAppend(GS_OUTPUT V0, GS_OUTPUT V1, GS_OUTPUT V2, 
 	inout TriangleStream<GS_OUTPUT> TriStream)
 {
 	TriStream.Append(NormalizeVertex(V0));
@@ -129,33 +129,33 @@ void GS(triangle VS_OUTPUT input[3],
 	GS_OUTPUT newVertex=(GS_OUTPUT)0;
 
 	for (int i = 0; i < 3; i++)
-	{
-	newVertex = NormalizeVertex(input[i]);
-	float4 vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-	float4 vView = mul(vWorld, g_matView);
-	float4 vProj = mul(vView, g_matProj);
-	newVertex.p = vProj;
-	triStream.Append(newVertex);
+	{		
+		newVertex = NormalizeVertex(input[i]);
+		float4 vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
+		float4 vView = mul(vWorld, g_matView);
+		float4 vProj = mul(vView, g_matProj);
+		newVertex.p = vProj;
+		triStream.Append(newVertex);
 
-	int iNext = (i + 1) % 3;
-	newVertex = NormalizeVertex(input[iNext]);
-	vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-	vView = mul(vWorld, g_matView);
-	vProj = mul(vView, g_matProj);
-	newVertex.p = vProj;
-	triStream.Append(newVertex);
+		int iNext = (i + 1) % 3;
+		newVertex = NormalizeVertex(input[iNext]);
+		vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
+		vView = mul(vWorld, g_matView);
+		vProj = mul(vView, g_matProj);
+		newVertex.p = vProj;
+		triStream.Append(newVertex);
 
-	newVertex.p = normalize(float4(cPos,1));
-	newVertex.c = cColor;
-	newVertex.n = newVertex.p.xyz;
-	newVertex.t = cTex;
-	vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-	vView = mul(vWorld, g_matView);
-	vProj = mul(vView, g_matProj);
-	newVertex.p = vProj;
-	triStream.Append(newVertex);
+		newVertex.p = normalize(float4(cPos,1));
+		newVertex.c = cColor;
+		newVertex.n = newVertex.p.xyz;
+		newVertex.t = cTex;
+		vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
+		vView = mul(vWorld, g_matView);
+		vProj = mul(vView, g_matProj);
+		newVertex.p = vProj;
+		triStream.Append(newVertex);
 
-	triStream.RestartStrip();
+		triStream.RestartStrip();
 	}
 	triStream.RestartStrip();*/
 }

@@ -5,12 +5,13 @@
 #include "xInput.h"
 #include "xDxState.h"
 #include "xModelView.h"
-#include "xShape.h"
+#include "xSkyBox.h"
 using namespace DX;
 
 class xCore : public xWindow
 {
 public:
+	xSkyBox     m_SkyBox;
 	xTimer		m_Timer;
 	xDxWrite	m_Font;
 	xCamera     m_DefaultCamera;

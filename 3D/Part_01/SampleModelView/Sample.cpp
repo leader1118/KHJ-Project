@@ -1,5 +1,5 @@
 #include "xCore.h"
-#include "xShape.h"
+
 class Sample : public xCore
 {
 	xBoxShape m_ObjBox;
@@ -30,20 +30,20 @@ public:
 
 		m_ObjLine.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/ViewCube.png");
+			L"../../Include/data/Eye.bmp");
 
 		m_ObjBox.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/ViewCube.png");
+			L"../../Include/data/Eye.bmp");
 
 		m_ObjPlane.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/ViewCube.png");
+			L"../../Include/data/Eye.bmp");
 
 
 		m_ObjSphere.Create(m_pd3dDevice,
 			L"../../Include/data/shader/shape.hlsl",
-			L"../../Include/data/ViewCube.png");
+			L"../../Include/data/Eye.bmp");
 		return true;
 	}
 	bool Frame()

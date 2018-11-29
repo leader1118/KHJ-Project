@@ -293,7 +293,7 @@ namespace DX
 			m_pIndexBuffer.Get(),
 			DXGI_FORMAT_R32_UINT, 0);
 
-		pContext->VSSetConstantBuffers(0, 1,
+		pContext->VSSetConstantBuffers(0,1, 
 			m_pConstantBuffer.GetAddressOf());
 		pContext->GSSetConstantBuffers(0, 1,
 			m_pConstantBuffer.GetAddressOf());
@@ -305,7 +305,7 @@ namespace DX
 			m_pGeometryShader.Get(), NULL, 0);
 
 		pContext->PSSetShaderResources(
-			0, 1,
+			0,1,
 			m_pTextureRV.GetAddressOf());
 		return true;
 	}
@@ -332,7 +332,7 @@ namespace DX
 		return true;
 	}
 	xDxObj::xDxObj()
-	{
+	{		
 	}
 
 

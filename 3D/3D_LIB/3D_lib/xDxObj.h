@@ -43,8 +43,8 @@ namespace DX
 	ID3D11GeometryShader*  LoadGeometryShaderFile(
 		ID3D11Device* pd3dDevice,
 		const void* pShaderFile,
-		ID3DBlob** ppBlobOut = nullptr,
-		const char*  pFuntionName = "GS");
+		ID3DBlob** ppBlobOut=nullptr,
+		const char*  pFuntionName="GS");
 
 	HRESULT CompileShaderFromFile(const WCHAR* szFileName,
 		LPCSTR szEntryPoint,

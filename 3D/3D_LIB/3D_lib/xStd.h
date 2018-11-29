@@ -1,8 +1,8 @@
 #pragma once
 #define DIRECTINPUT_VERSION 0x800
-#include <windows.h> 
-#include <assert.h> 
-#include <tchar.h> 
+#include <windows.h>
+#include <assert.h>
+#include <tchar.h>
 #include <iostream>
 #include <map>
 #include <string>
@@ -64,11 +64,11 @@ public:
 		return theSingleInstance;
 	}
 };
-//////////////////////////////////////////// 매크로
-#define randf(x) (x*rand()/(float)RAND_MAX) //0~142가 떨어진다
-#define randf2(x,off) (off+(x*rand())/(float)RAND_MAX)
+///////////////////// 매크로 //////////////////////
+#define randf(x)   (x*rand()/(float)RAND_MAX)
+#define randf2(x,off)   (off+(x*rand())/(float)RAND_MAX)
 #define randstep(fMin,fMax) (fMin+((float)fMax-(float)fMin)*rand()/(float)RAND_MAX)
-#define clamp(x,minX,maxX)if(x>maxX) x=maxX; else if(x<minX)x=minX;
+#define clamp(x, minX, maxX) if(x>maxX) x= maxX;else if(x< minX) x= minX;
 
 #ifndef V
 #define V(x) { hr = (x);}

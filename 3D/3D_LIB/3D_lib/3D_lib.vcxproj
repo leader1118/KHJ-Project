@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Part_01\SampleMAP\xMap.cpp" />
     <ClCompile Include="xArcBall.cpp" />
     <ClCompile Include="xCamera.cpp" />
     <ClCompile Include="xCore.cpp" />
@@ -27,7 +26,6 @@
     <ClCompile Include="xDxObj.cpp" />
     <ClCompile Include="xDxState.cpp" />
     <ClCompile Include="xDxWrite.cpp" />
-    <ClCompile Include="XDX_RT.cpp" />
     <ClCompile Include="xFrustum.cpp" />
     <ClCompile Include="xInput.cpp" />
     <ClCompile Include="xLineShape.cpp" />
@@ -36,12 +34,10 @@
     <ClCompile Include="xShape.cpp" />
     <ClCompile Include="xSkyBox.cpp" />
     <ClCompile Include="xSphereShape.cpp" />
-    <ClCompile Include="xTexture.cpp" />
     <ClCompile Include="xTimer.cpp" />
     <ClCompile Include="xWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Part_01\SampleMAP\xMap.h" />
     <ClInclude Include="xArcBall.h" />
     <ClInclude Include="xCamera.h" />
     <ClInclude Include="xCore.h" />
@@ -49,7 +45,6 @@
     <ClInclude Include="xDxObj.h" />
     <ClInclude Include="xDxState.h" />
     <ClInclude Include="xDxWrite.h" />
-    <ClInclude Include="XDX_RT.h" />
     <ClInclude Include="xFrustum.h" />
     <ClInclude Include="xInput.h" />
     <ClInclude Include="xModelView.h" />
@@ -57,8 +52,6 @@
     <ClInclude Include="xShape.h" />
     <ClInclude Include="xSkyBox.h" />
     <ClInclude Include="xStd.h" />
-    <ClInclude Include="XTemplate.h" />
-    <ClInclude Include="xTexture.h" />
     <ClInclude Include="xTimer.h" />
     <ClInclude Include="xWindow.h" />
   </ItemGroup>
