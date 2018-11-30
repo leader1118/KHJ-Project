@@ -167,7 +167,7 @@ void SChatSvr::Broadcastting(S_PACKET* pUserData)
 
 bool SChatSvr::Init()
 {
-	I_Debug.Print("%s", "서버 오픈");
+	I_Debug.Print("%s", "채팅 서버");
 	SServer::Init();
 	m_Acceptor.Set(10000, NULL);
 	return true;

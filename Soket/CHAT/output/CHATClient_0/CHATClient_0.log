@@ -14,9 +14,4 @@ c:\users\김현진\desktop\khj\soket\chat\chatclient_0\schat_client.cpp(257): wa
 c:\users\김현진\desktop\khj\soket\chat\chatclient_0\schat_client.cpp(259): warning C4312: '형식 캐스트': 'unsigned long'에서 더 큰 'HANDLE'(으)로의 변환입니다.
 c:\users\김현진\desktop\khj\soket\chat\chatclient_0\schat_client.cpp(262): warning C4312: '<function-style-cast>': 'unsigned long'에서 더 큰 'HANDLE'(으)로의 변환입니다.
 c:\users\김현진\desktop\khj\soket\chat\chatclient_0\schat_client.cpp(263): warning C4312: '<function-style-cast>': 'unsigned long'에서 더 큰 'HANDLE'(으)로의 변환입니다.
-  SSample.cpp
-  SUdpSocket.cpp
-c:\users\김현진\desktop\khj\soket\chat\chatclient_0\sudpsocket.cpp(36): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\김현진\desktop\khj\soket\chat\chatclient_0\sudpsocket.cpp(87): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
   CHATClient_0.vcxproj -> C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATClient_0\../output/CHATClient_0/CHATClient_0.exe

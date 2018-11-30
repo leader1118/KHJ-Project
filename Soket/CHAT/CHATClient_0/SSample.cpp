@@ -22,7 +22,7 @@ LRESULT SSample::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		int iHeight = this->m_rtClient.bottom - m_rtClient.top;
 		I_Debug.m_hList = CreateWindow(L"listbox", NULL,
 			WS_CHILD | WS_VISIBLE | WS_HSCROLL | WS_VSCROLL,
-			0, 0, iWidth - 300, iHeight,
+			0, 0, iWidth-400, iHeight,
 			hWnd, (HMENU)0, m_hInstance, NULL);
 	}return 0;
 

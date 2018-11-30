@@ -170,7 +170,7 @@ int SCHAT_Client::CreateConnectSocket(int iPort)
 	SOCKADDR_IN serveraddr;
 	ZeroMemory(&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
-	serveraddr.sin_addr.s_addr = inet_addr("127.0.0.1"); // 风橇归 林家
+	serveraddr.sin_addr.s_addr = inet_addr("192.168.0.28"); // 风橇归 林家 127.0.0.1
 	serveraddr.sin_port = htons(iPort);
 	Rv = connect(m_iSocket, (sockaddr*)&serveraddr, sizeof(serveraddr));
 	if (Rv == SOCKET_ERROR)
