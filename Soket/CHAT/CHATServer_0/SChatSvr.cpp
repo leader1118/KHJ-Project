@@ -3,6 +3,7 @@
 #include "SDebugString.h"
 #include "SLock.h"
 #include "TStd.h"
+#include "SServer.h"
 
 bool SChatSvr::AddUser(SOCKET socket, SOCKADDR_IN address)
 {
@@ -19,7 +20,7 @@ bool SChatSvr::AddUser(SOCKET socket, SOCKADDR_IN address)
 		if (pUser)
 		{
 			I_Server.SendMsg(pUser->m_Socket,
-				"어서오세요! 아이디를 입력하시오",
+				"어서오세요!",
 				PACKET_CHAR_NAME_REQ);
 			m_UserList.push_back(pUser);
 

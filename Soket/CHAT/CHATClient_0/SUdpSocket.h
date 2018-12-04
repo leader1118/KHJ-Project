@@ -1,5 +1,6 @@
 #pragma once
 #include "SThread.h"
+#include <WS2tcpip.h>
 
 class SUdpSocket : public SThread
 {

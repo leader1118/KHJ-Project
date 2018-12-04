@@ -16,7 +16,7 @@ LRESULT SSample::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		CreateWindow(_T("button"), _T("Send"),
 			WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
 			700, 10, 50, 25, hWnd,
-			(HMENU)202, g_hInstance, NULL);
+			(HMENU)302, g_hInstance, NULL);
 
 		int iWidth = this->m_rtClient.right - m_rtClient.left;
 		int iHeight = this->m_rtClient.bottom - m_rtClient.top;
@@ -54,7 +54,9 @@ LRESULT SSample::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 }
 bool SSample::Init()
 {
-	return false;
+	m_Client.Init();
+	m_Udp.Init();
+	return true;
 }
 bool SSample::Frame()
 {

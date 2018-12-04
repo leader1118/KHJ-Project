@@ -1,5 +1,6 @@
 #pragma once
 #include "SvrStd.h"
+#include <process.h>
 #include "sProtocolClient.h"
 #include "SUser.h"
 class SCHAT_Client : public SUser

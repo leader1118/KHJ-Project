@@ -2,7 +2,7 @@
 #include "SChatUser.h"
 #include "SDebugString.h"
 #include "SChatSvr.h"
-#include "SChatUser.h"
+
 
 void SChatPacketPool::ProcessWork(S_PACKET* pUserData)
 {

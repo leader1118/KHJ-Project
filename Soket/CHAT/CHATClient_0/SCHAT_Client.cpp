@@ -22,8 +22,6 @@ unsigned __stdcall sendMessage(void * arg)
 		if (SwitchToThread() == FALSE)
 		{
 			Sleep(1);
-			// Sleep(0)은 동일한 우선순위 스레드 스위칭 되지만
-			// Sleep(1)은 서로 다른 우선순위 스레드에서도 스위칭이 된다.
 		}
 	}
 	return 0;
@@ -35,25 +33,24 @@ unsigned __stdcall receiveMessage(void* arg)
 	SCHAT_Client* pClient = (SCHAT_Client*)arg;
 
 	int iSocket = pClient->m_iSocket;
-	char strBuffer[2048] = { 0, };
+	char  strBuffer[2048] = { 0, };
 
 	while (!pClient->m_bExit)
 	{
 		int iRet = recv(iSocket, strBuffer, sizeof(strBuffer), 0);
 		if (iRet <= 0)
 		{
-			// 비동기 소켓
 			if (WSAGetLastError() == WSAEWOULDBLOCK)
 			{
 				continue;
 			}
+
 			pClient->m_bExit = true;
 			closesocket(pClient->m_iSocket);
 			break;
 		}
 		strBuffer[iRet] = 0;
 		pClient->m_StreamPacket.Put(strBuffer, iRet, pClient);
-		// Sleep(1) 또는 SwitchtoThread()를 사용하면 우선순위가 낮은 스레드에도 스위칭이 가능하다.
 		if (SwitchToThread() == FALSE)
 		{
 			Sleep(1);
@@ -75,28 +72,6 @@ int SCHAT_Client::ProcessPacket()
 			UPACKET* pPacket = &(*itor).packet;
 			switch (pPacket->ph.type)
 			{
-			case PACKET_USER_POSITON:
-			{
-				SPACKET_USER_POSITON user;
-				memcpy(&user, pPacket->msg,
-					sizeof(char)* pPacket->ph.len - 4);
-				if (user.bDirection == VK_DOWN)
-				{
-					int kkk = 0;
-				}
-				if (user.bDirection == VK_LEFT)
-				{
-					int kkk = 0;
-				}
-				if (user.bDirection == VK_RIGHT)
-				{
-					int kkk = 0;
-				}
-				if (user.bDirection == VK_UP)
-				{
-					int kkk = 0;
-				}
-			}break;
 			case PACEKT_CHAT_NAME_REQ:
 			{
 				I_Debug.Print("%s", pPacket->msg);
@@ -119,13 +94,11 @@ int SCHAT_Client::SendMsg(char* pMsg, WORD code)
 	sprintf_s(sendmsg.msg, pMsg);
 	sendmsg.ph.type = code;
 	sendmsg.ph.len = sizeof(PACKET_HEADER) + strlen(sendmsg.msg);
-	
 	int iRet = send(m_iSocket, (char*)&sendmsg, sendmsg.ph.len, 0);
-
 	if (iRet <= 0)
 	{
 		m_bSend = false;
-		// 비동기 소켓
+		//비동기 소켓
 		if (WSAGetLastError() == WSAEWOULDBLOCK)
 		{
 			return 1;
@@ -143,12 +116,10 @@ int SCHAT_Client::SendMsg(char*pMsg, int iSize, WORD code)
 	memcpy(sendmsg.msg, pMsg, iSize);
 	sendmsg.ph.type = code;
 	sendmsg.ph.len = sizeof(PACKET_HEADER) + iSize;
-
 	int iRet = send(m_iSocket, (char*)&sendmsg, sendmsg.ph.len, 0);
 	if (iRet <= 0)
 	{
 		m_bSend = false;
-
 		if (WSAGetLastError() == WSAEWOULDBLOCK)
 		{
 			return 1;
@@ -170,7 +141,7 @@ int SCHAT_Client::CreateConnectSocket(int iPort)
 	SOCKADDR_IN serveraddr;
 	ZeroMemory(&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
-	serveraddr.sin_addr.s_addr = inet_addr("192.168.0.28"); // 루프백 주소 127.0.0.1
+	serveraddr.sin_addr.s_addr = inet_addr("127.0.0.1"); // 루프백 주소 127.0.0.1
 	serveraddr.sin_port = htons(iPort);
 	Rv = connect(m_iSocket, (sockaddr*)&serveraddr, sizeof(serveraddr));
 	if (Rv == SOCKET_ERROR)

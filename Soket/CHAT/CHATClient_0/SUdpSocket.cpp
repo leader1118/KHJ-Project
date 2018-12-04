@@ -23,7 +23,7 @@ int SUdpSocket::GetIPList()
 					ip[3] = (BYTE)pHost->h_addr_list[i][3];
 
 					sprintf_s(iplist, "%d.%d.%d.%d",
-						ip[0], ip[0], ip[0], ip[0]);
+						ip[0], ip[1], ip[2], ip[3]);
 					m_ipList.push_back(iplist);
 				}
 				else
@@ -92,7 +92,7 @@ bool SUdpSocket::Run()
 		inet_ntoa(m_SendAddr.sin_addr),
 		ntohs(m_SendAddr.sin_port), buf);*/
 
-		ZeroMemory(buf, sizeof(char) * 2048);
+		ZeroMemory(buf, sizeof(char)*2048);
 		addrlen = sizeof(PeerAddr);
 		retval = recvfrom(m_RecvSocket, buf, 2048, 0,
 			(SOCKADDR*)&PeerAddr, &addrlen);

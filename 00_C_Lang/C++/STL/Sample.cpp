@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <tchar.h>
-void printer(char* pData)
+void printer(const char* pData)
 {
 	std::cout << pData;
 }
@@ -14,7 +14,7 @@ void main()
 	std::string copyData;
 	
 
-	if (copyA == copyData)
+	if (dataA == copyData)
 	{
 
 	}

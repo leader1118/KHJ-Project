@@ -15,10 +15,6 @@ bool sUdpSocket::Init()
 	int retval = ::bind(m_Socket, (SOCKADDR*)&m_RecvAddr, sizeof(m_RecvAddr));
 	if (retval == SOCKET_ERROR)return false;
 
-	BOOL bEnable = TRUE;
-	retval = setsockopt(m_SendSocket, SOL_SOCKET, SO_BROADCAST, (char*)&bEnable, sizeof(bEnable));
-	if (retval == SOCKET_ERROR)return false;
-
 	m_SendAddr.sin_family = AF_INET;
 	m_SendAddr.sin_port = htons(9001);
 	m_SendAddr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
