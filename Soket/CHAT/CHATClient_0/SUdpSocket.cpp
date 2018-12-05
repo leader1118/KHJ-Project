@@ -60,14 +60,14 @@ bool SUdpSocket::Init()
 		return false;
 	}
 
-	BOOL bEnable = TRUE; 
+	/*BOOL bEnable = TRUE; 
 	ret = setsockopt(m_Socket, SOL_SOCKET,
 		SO_BROADCAST, (char*)&bEnable, sizeof(bEnable));
 	if (ret == SOCKET_ERROR)
 	{
 		I_Debug.Print("[%s]", "ERROR!");
 		return false;
-	}
+	}*/
 	m_SendAddr.sin_family = AF_INET;
 	m_SendAddr.sin_port = htons(10001);
 	m_SendAddr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
@@ -80,17 +80,12 @@ bool SUdpSocket::Run()
 {
 	int retval, addrlen;
 	SOCKADDR_IN PeerAddr;
-	char buf[2048] = "udpsocket-test";
+	char buf[2048] = "접속 완료!";
 	while (1)
 	{
 		retval = sendto(m_Socket, buf, strlen(buf), 0,
 			(SOCKADDR*)&m_SendAddr, sizeof(m_SendAddr));
 		if (retval == SOCKET_ERROR)  break;
-
-		//OutputDebugStringA((char*)buf);
-		/*I_Debug.Print("[SEND]IP=%s, PORT=%d, %s",
-		inet_ntoa(m_SendAddr.sin_addr),
-		ntohs(m_SendAddr.sin_port), buf);*/
 
 		ZeroMemory(buf, sizeof(char)*2048);
 		addrlen = sizeof(PeerAddr);

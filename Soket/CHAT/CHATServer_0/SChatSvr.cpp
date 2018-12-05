@@ -66,7 +66,7 @@ void SChatSvr::DeleteUser(SChatUser* pDeleteUser)
 		list<SChatUser*>::iterator iter;
 		list<SChatUser*>::iterator DelUser;
 
-		int iClientUser = I_Server.m_UserList.size();
+		int iClientUser = (int)I_Server.m_UserList.size();
 		for (iter = I_Server.m_UserList.begin();
 			iter != I_Server.m_UserList.end();
 			iter++)
@@ -95,7 +95,7 @@ void SChatSvr::Broadcastting(char * msg, WORD code, SOCKET SendSocket)
 		list<SChatUser*>::iterator iter;
 		list<SChatUser*>::iterator DelUser;
 
-		int iClientUser = I_Server.m_UserList.size();
+		int iClientUser = (int)I_Server.m_UserList.size();
 		for (iter = I_Server.m_UserList.begin();
 			iter != I_Server.m_UserList.end();
 			iter++)
@@ -121,7 +121,7 @@ void SChatSvr::Broadcastting(UPACKET* pPacket, SOCKET pSendUser)
 		list<SChatUser*>::iterator iter;
 		list<SChatUser*>::iterator DelUser;
 
-		int iClientUser = I_Server.m_UserList.size();
+		int iClientUser = (int)I_Server.m_UserList.size();
 		for (iter = I_Server.m_UserList.begin();
 			iter != I_Server.m_UserList.end();
 			iter++)
@@ -145,8 +145,8 @@ void SChatSvr::Broadcastting(S_PACKET* pUserData)
 		list<SChatUser*>::iterator DelUser;
 
 		UPACKET* pPacket = &pUserData->packet;
-		DWORD dwSendByte;
-		int iClientUser = I_Server.m_UserList.size();
+		//DWORD dwSendByte;
+		int iClientUser =(int)I_Server.m_UserList.size();
 		for (iter = I_Server.m_UserList.begin();
 			iter != I_Server.m_UserList.end();
 			iter++)

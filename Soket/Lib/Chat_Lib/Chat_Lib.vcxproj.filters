@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{97cb2d2e-3b0d-41b5-ae99-43ec780e5c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="basic">
+      <UniqueIdentifier>{bb83aaef-daae-417c-a699-6247bd787579}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="S_Std.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="S_header.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Protocol.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Core.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Input.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Time.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+    <ClInclude Include="S_Window.h">
+      <Filter>basic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="S_Core.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Input.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Time.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+    <ClCompile Include="S_Window.cpp">
+      <Filter>basic</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -564,6 +564,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleServer", "..\Soket\CH
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleDiffuseLight", "..\3D\Part_01\SampleDiffuseLight\SampleDiffuseLight.vcxproj", "{2FE6D324-6824-4062-87F3-F4BE9EED9B9C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chat_Lib", "..\Soket\Lib\Chat_Lib\Chat_Lib.vcxproj", "{49D1DA38-2B64-4705-925B-D670F7A9AA9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -2548,6 +2550,14 @@ Global
 		{2FE6D324-6824-4062-87F3-F4BE9EED9B9C}.Release|x64.Build.0 = Release|x64
 		{2FE6D324-6824-4062-87F3-F4BE9EED9B9C}.Release|x86.ActiveCfg = Release|Win32
 		{2FE6D324-6824-4062-87F3-F4BE9EED9B9C}.Release|x86.Build.0 = Release|Win32
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Debug|x64.ActiveCfg = Debug|x64
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Debug|x64.Build.0 = Debug|x64
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Debug|x86.ActiveCfg = Debug|Win32
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Debug|x86.Build.0 = Debug|Win32
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Release|x64.ActiveCfg = Release|x64
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Release|x64.Build.0 = Release|x64
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Release|x86.ActiveCfg = Release|Win32
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2821,6 +2831,7 @@ Global
 		{4249BC23-6CA5-47CC-8818-72481EAE93A5} = {05BF2C2C-B8BE-4A99-B1FE-F4F2502DD720}
 		{6F1E0BBF-7074-475D-92D3-B96CE2801D7A} = {05BF2C2C-B8BE-4A99-B1FE-F4F2502DD720}
 		{2FE6D324-6824-4062-87F3-F4BE9EED9B9C} = {8E9F3C0D-DBD4-4A22-A569-F7AFE1B64BE5}
+		{49D1DA38-2B64-4705-925B-D670F7A9AA9C} = {EF934C34-265A-4498-92B9-8BEF8D98EBE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9328E03-202E-42E4-9913-1B8D01ECDB7C}

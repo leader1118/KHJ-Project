@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SCHATAccept" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SCHATAccept.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SChatPacketPool" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAgAAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SChatPacketPool.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SChatSvr" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAASAAAAACEAAAAAAAAAAAAAAAgAoACABBEAAI=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SChatSvr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SChatUser" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAEAAAAEBQAAAAAAAAAAAIAAIAAAAQAAAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SChatUser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerMain" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAACAAAIAAAAAAEAAAIACABACAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\ServerMain.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="sUdpSocket" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CABAAAAAAAAAAAAAAAAAAAAAJgAAAAAAAAACAJAAAAI=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\sUdpSocket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="__unnamed_struct_08da_1" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAwAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SProtocolChat.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="SPACKET_USER_POSITION" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\김현진\Desktop\KHJ\Soket\CHAT\CHATServer_0\SProtocolChat.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

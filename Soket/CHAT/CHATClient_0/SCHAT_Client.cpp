@@ -59,7 +59,7 @@ unsigned __stdcall receiveMessage(void* arg)
 	return 0;
 }
 
-// 완성된 패킷에 대한 처리
+
 int SCHAT_Client::ProcessPacket()
 {
 	{
@@ -98,7 +98,7 @@ int SCHAT_Client::SendMsg(char* pMsg, WORD code)
 	if (iRet <= 0)
 	{
 		m_bSend = false;
-		//비동기 소켓
+		
 		if (WSAGetLastError() == WSAEWOULDBLOCK)
 		{
 			return 1;
@@ -224,9 +224,9 @@ bool SCHAT_Client::Release()
 	m_bExit = true;
 	closesocket(m_iSocket);
 
-	// send exit wait
+
 	WaitForSingleObject((HANDLE)m_hSendThread, INFINITE);
-	// rect exit wait
+	
 	WaitForSingleObject((HANDLE)m_hReceiveThread, INFINITE);
 	WSACleanup();
 

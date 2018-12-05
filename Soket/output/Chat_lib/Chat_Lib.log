@@ -1,0 +1,10 @@
+﻿  S_Input.cpp
+  S_Time.cpp
+  S_Window.cpp
+c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_window.cpp(146): error C2819: 'S_Input' 형식에 오버로드된 멤버 'operator ->'가 없습니다.
+  c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_input.h(4): note: 'S_Input' 선언을 참조하십시오.
+  c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_window.cpp(146): note: 대신 '.'을(를) 사용하려고 했습니까?
+c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_window.cpp(146): error C2232: '->S_Input::OnceKeyUp': 왼쪽 피연산자에 'class' 형식이 있습니다. '.'를 사용하십시오.
+  코드를 생성하고 있습니다...
+c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_input.cpp(9): warning C4715: 'S_Input::StayKeydown': 모든 제어 경로에서 값을 반환하지는 않습니다.
+c:\users\김현진\desktop\khj\soket\lib\chat_lib\s_input.cpp(62): error C4716: 'S_Input::Frame': 값을 반환해야 합니다.

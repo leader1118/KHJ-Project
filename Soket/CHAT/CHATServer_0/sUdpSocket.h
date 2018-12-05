@@ -1,6 +1,6 @@
 #pragma once
 #include "SThread.h"
-
+#include <ws2tcpip.h>
 class sUdpSocket : public SThread
 {
 public:
