@@ -19,19 +19,41 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="S_Acceptor.h" />
     <ClInclude Include="S_Core.h" />
+    <ClInclude Include="S_DebugString.h" />
     <ClInclude Include="S_Input.h" />
+    <ClInclude Include="S_IOCP.h" />
+    <ClInclude Include="S_Lock.h" />
+    <ClInclude Include="S_PacketPool.h" />
     <ClInclude Include="S_Protocol.h" />
+    <ClInclude Include="S_Server.h" />
     <ClInclude Include="S_Std.h" />
     <ClInclude Include="S_header.h" />
+    <ClInclude Include="S_StreamPacket.h" />
+    <ClInclude Include="S_SvrObj.h" />
+    <ClInclude Include="S_SvrUser.h" />
+    <ClInclude Include="S_Thread.h" />
     <ClInclude Include="S_Time.h" />
     <ClInclude Include="S_Window.h" />
+    <ClInclude Include="S_WorkThread.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="S_Acceptor.cpp" />
     <ClCompile Include="S_Core.cpp" />
+    <ClCompile Include="S_DebugString.cpp" />
     <ClCompile Include="S_Input.cpp" />
+    <ClCompile Include="S_IOCP.cpp" />
+    <ClCompile Include="S_Lock.cpp" />
+    <ClCompile Include="S_PacketPool.cpp" />
+    <ClCompile Include="S_Server.cpp" />
+    <ClCompile Include="S_StreamPacket.cpp" />
+    <ClCompile Include="S_SvrObj.cpp" />
+    <ClCompile Include="S_SvrUser.cpp" />
+    <ClCompile Include="S_Thread.cpp" />
     <ClCompile Include="S_Time.cpp" />
     <ClCompile Include="S_Window.cpp" />
+    <ClCompile Include="S_WorkThread.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

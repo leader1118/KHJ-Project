@@ -24,6 +24,13 @@ typedef struct
 }SPACKET_USER_POSITON;
 #define PACKET_USER_POSITON		3000
 
+class S_SvrUser;
+typedef struct 
+{
+	UPACKET packet;
+	S_SvrUser* pUser;
+}PACKET, *PTR_PACKET;
+
 typedef struct
 {
 	int		UserIndex;
