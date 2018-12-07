@@ -32,5 +32,5 @@ S_Thread::S_Thread()
 
 S_Thread::~S_Thread()
 {
-	Closehandle((HANDLE)m_hThread);
+	CloseHandle((HANDLE)m_hThread);
 }

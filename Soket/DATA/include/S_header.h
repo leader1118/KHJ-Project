@@ -10,17 +10,18 @@ typedef struct _OVERLAPPEDEX : OVERLAPPED
 }OVERLAPPEDEX;
 
 
-template<class T> class Singleton
+template <class S> class Singleton
 {
 public:
-	static T& GetInstance()
+	static S& GetInstance()
 	{
-		static T theSingleInstance;
+		static S theSingleInstance;
 		return theSingleInstance;
 	}
 };
-
+#define MAX_ARRAY 256
 #define SAFE_NEW(A, B)	{ if (!A) A = new B; }
 #define SAFE_DELETE(p) if(p){delete p; p = NULL;}
-
+#define PACKETBUFFERSIZE 8192
+#define MAX_RECV 10000
 extern HWND g_hWnd;

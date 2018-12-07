@@ -59,6 +59,7 @@ bool S_Input::Frame()
 {
 	GetCursorPos(&m_ptMousePos);
 	ScreenToClient(g_hWnd, &m_ptMousePos);
+	return true;
 }
 bool S_Input::Render()
 {

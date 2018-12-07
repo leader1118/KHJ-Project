@@ -25,6 +25,7 @@
     <ClInclude Include="S_Input.h" />
     <ClInclude Include="S_IOCP.h" />
     <ClInclude Include="S_Lock.h" />
+    <ClInclude Include="S_Packet.h" />
     <ClInclude Include="S_PacketPool.h" />
     <ClInclude Include="S_Protocol.h" />
     <ClInclude Include="S_Server.h" />
@@ -45,6 +46,7 @@
     <ClCompile Include="S_Input.cpp" />
     <ClCompile Include="S_IOCP.cpp" />
     <ClCompile Include="S_Lock.cpp" />
+    <ClCompile Include="S_Packet.cpp" />
     <ClCompile Include="S_PacketPool.cpp" />
     <ClCompile Include="S_Server.cpp" />
     <ClCompile Include="S_StreamPacket.cpp" />

@@ -6,10 +6,13 @@
 #include <WS2tcpip.h>
 #include <WinSock2.h>
 #include <windows.h>
+#include <windowsx.h>
 #include <time.h>
 #include <algorithm>
 #include <functional>
 
+#include <tchar.h>
+#include <iostream>
 #include <vector>
 #include <list>
 #include <string>

@@ -17,12 +17,25 @@ bool S_WorkThread::Run()
 		{
 			if (dwTransfer == 0)
 			{
-				User->
+				User->DeleteUser();
+			}
+			if (dwTransfer != 0 && LPOV != 0)
+			{
+				User->Dispatch(dwTransfer, LPOV);
+			}
+			else
+			{
+				if (GetLastError() != ERROR_OPERATION_ABORTED)
+				{
+					if (dwTransfer == 0)
+					{
+						User->DeleteUser(User->m_Socket);
+					}
+				}
 			}
 		}
-
-
 	}
+	return true;
 }
 void S_WorkThread::Set(HANDLE hIOCP)
 {

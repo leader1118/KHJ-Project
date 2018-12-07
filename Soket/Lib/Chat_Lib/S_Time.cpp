@@ -20,7 +20,7 @@ bool	S_Time::Frame()
 
 	g_fSecPerFrame = m_fSecondperFrame = dwElapseTick / 1000.0f;
 	g_fAccumulation = m_fAccumulation += m_fSecondperFrame;
-	m_fFrameTime += m_fSecondPerFrame;
+	m_fFrameTime += m_fSecondperFrame;
 
 	if (m_fFrameTime > 1.0f)
 	{

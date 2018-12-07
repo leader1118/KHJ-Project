@@ -18,7 +18,7 @@ bool S_Acceptor::Run()
 			continue;
 		}
 
-		AddUser(m_ClientSocket, m_ClientAddr);
+		Adduser(m_ClientSocket, m_ClientAddr);
 		Sleep(10);
 	}
 	return true;
