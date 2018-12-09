@@ -1,10 +1,9 @@
 c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.pdb
 c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.idb
+c:\users\김현진\desktop\khj\soket\output\chat_lib\s_workthread.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_window.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_time.obj
-c:\users\김현진\desktop\khj\soket\output\chat_lib\s_input.obj
-c:\users\김현진\desktop\khj\soket\output\chat_lib\s_core.obj
-c:\users\김현진\desktop\khj\soket\output\chat_lib\s_workthread.obj
+c:\users\김현진\desktop\khj\soket\output\chat_lib\s_thread.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_svruser.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_svrobj.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_streampacket.obj
@@ -13,12 +12,34 @@ c:\users\김현진\desktop\khj\soket\output\chat_lib\s_packetpool.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_packet.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_lock.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_iocp.obj
+c:\users\김현진\desktop\khj\soket\output\chat_lib\s_input.obj
 c:\users\김현진\desktop\khj\soket\output\chat_lib\s_debugstring.obj
+c:\users\김현진\desktop\khj\soket\output\chat_lib\s_core.obj
+c:\users\김현진\desktop\khj\soket\output\chat_lib\s_acceptor.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.pdb
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.idb
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_workthread.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_window.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_time.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_thread.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_svruser.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_svrobj.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_streampacket.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_server.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_packetpool.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_packet.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_lock.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_iocp.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_input.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_debugstring.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_core.obj
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\s_acceptor.obj
 c:\users\김현진\desktop\khj\soket\lib\chat_lib\chat_lib.lib
-c:\users\김현진\desktop\khj\soket\output\chat_lib\../../output/chat_lib/chat_lib.pdb
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\cl.command.1.tlog
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\cl.read.1.tlog
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\cl.write.1.tlog
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\lib-link.read.1.tlog
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\lib-link.write.1.tlog
-c:\users\김현진\desktop\khj\soket\output\chat_lib\chat_lib.tlog\lib.command.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\lib\chat_lib\chat_lib.lib
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\../../output/chat_lib/chat_lib.pdb
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\cl.command.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\cl.read.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\cl.write.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\lib-link.read.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\lib-link.write.1.tlog
+c:\users\hyunj\desktop\c++\khj project\soket\output\chat_lib\chat_lib.tlog\lib.command.1.tlog
