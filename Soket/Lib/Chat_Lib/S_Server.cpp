@@ -18,7 +18,7 @@ bool S_Server::AddUser(SOCKET socket, SOCKADDR_IN address)
 	return true;
 }
 
-bool S_Server::SendMsg(SOCKET socket, char* msg, WORD code)
+bool S_Server::SendMsg(SOCKET socket,const  char* msg, WORD code)
 {
 	UPACKET Sendmsg;
 	ZeroMemory(&Sendmsg, sizeof(Sendmsg));

@@ -134,6 +134,7 @@ int S_Client::CreateConnectSocket(int iPort)
 		return -1;
 	}
 	SOCKADDR_IN serveraddr;
+	ZeroMemory(&serveraddr, sizeof(serveraddr));
 	serveraddr.sin_family = AF_INET;
 	serveraddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 	serveraddr.sin_port = htons(iPort);
@@ -163,6 +164,8 @@ int S_Client::CreateConnectSocket(int iPort)
 		S_Debug.Print("%s", "SOCk_DGRAM");
 	}
 	getsockopt(m_iSocket, SOL_SOCKET, SO_SNDBUF, (char*)&socketType1, &typeLen1);
+	S_Debug.Print("%s=%d", "SO_SNDBUF", socketType1);
+	getsockopt(m_iSocket, SOL_SOCKET, SO_RCVBUF, (char*)&socketType1, &typeLen1);
 	S_Debug.Print("%s=%d", "SO_RCVBUF", socketType1);
 
 	return 0;
@@ -217,6 +220,7 @@ bool S_Client::Release()
 	CloseHandle(HANDLE(m_SendThread));
 	m_ReceiveThread = NULL;
 	m_SendThread = NULL;
+	return true;
 }
 
 S_Client::S_Client()

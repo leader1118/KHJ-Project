@@ -7,7 +7,7 @@ private:
 public:
 	HWND m_hList;
 public:
-	void		Print(char* fmt, ...);
+	void		Print(const char* fmt, ...);
 	bool		Init();
 	bool		Release();
 	WCHAR*		GetMbToWcs(const char* strMsg);

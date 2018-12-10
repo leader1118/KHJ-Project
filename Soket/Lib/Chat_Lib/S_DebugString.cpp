@@ -1,7 +1,7 @@
 #include "S_DebugString.h"
 #include "S_Lock.h"
 
-void S_DebugString::Print(char* fmt, ...)
+void S_DebugString::Print(const char* fmt, ...)
 {
 	if (m_hList == NULL)
 	{

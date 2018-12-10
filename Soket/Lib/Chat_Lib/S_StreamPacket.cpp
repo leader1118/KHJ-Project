@@ -18,7 +18,7 @@ void S_StreamPacket::Put(char* recvBuffer, int Size, S_SvrUser* pUser)
 	m_iWritePos += Size;
 	m_iReadPos += Size;
 
-	if (m_iReadPos < MAX_RECV)
+	if (m_iReadPos < PACKET_HEADER_SIZE)
 	{
 		return;
 	}

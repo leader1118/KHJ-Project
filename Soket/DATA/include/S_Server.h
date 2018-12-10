@@ -12,7 +12,7 @@ public:
 	bool Release();
 	bool Run();
 	virtual bool AddUser(SOCKET socket, SOCKADDR_IN address);
-	bool SendMsg(SOCKET socket, char* msg, WORD code);
+	bool SendMsg(SOCKET socket, const char* msg, WORD code);
 public:
 	S_Server();
 	virtual ~S_Server();

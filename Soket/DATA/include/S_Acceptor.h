@@ -10,7 +10,7 @@ public:
 	bool Run();
 	bool Release();
 	bool Set(int iPort, const char* strAddress = 0);
-	virtual void Adduser(SOCKET socket, SOCKADDR_IN address);
+	virtual void AddUser(SOCKET socket, SOCKADDR_IN address);
 public:
 	S_Acceptor();
 	virtual ~S_Acceptor();

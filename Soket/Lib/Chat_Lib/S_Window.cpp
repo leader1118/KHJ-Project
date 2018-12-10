@@ -1,7 +1,7 @@
 #include "S_Window.h"
 #include "S_Input.h"
 
-S_Window* g_Window = NULL;
+S_Window* g_Window=NULL;
 RECT	  g_rtClient;
 HWND	  g_hWnd;
 HINSTANCE g_hInstance;
@@ -175,6 +175,7 @@ bool S_Window::Release()
 };
 S_Window::S_Window()
 {
+	g_Window = this;
 }
 
 

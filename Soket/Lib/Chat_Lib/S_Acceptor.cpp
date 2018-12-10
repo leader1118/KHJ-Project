@@ -18,7 +18,7 @@ bool S_Acceptor::Run()
 			continue;
 		}
 
-		Adduser(m_ClientSocket, m_ClientAddr);
+		AddUser(m_ClientSocket, m_ClientAddr);
 		Sleep(10);
 	}
 	return true;
@@ -74,7 +74,7 @@ bool S_Acceptor::Set(int iPort, const char* strAddress)
 	char Flag = 1;
 	if (SOCKET_ERROR == setsockopt(m_ListenSock, IPPROTO_TCP, TCP_NODELAY, &Flag, sizeof(char)))
 	{
-	return false;
+		return false;
 	}
 
 	int optvalexe = 1;
@@ -134,7 +134,7 @@ bool S_Acceptor::Set(int iPort, const char* strAddress)
 	return true;
 }
 
-void S_Acceptor::Adduser(SOCKET socket, SOCKADDR_IN address)
+void S_Acceptor::AddUser(SOCKET socket, SOCKADDR_IN address)
 {
 	char buf[MAX_ARRAY] = { 0, };
 	InetNtopA(AF_INET, &address.sin_addr, buf, sizeof(char)*MAX_ARRAY);
