@@ -149,9 +149,11 @@
   <ItemGroup>
     <ClCompile Include="Sample.cpp" />
     <ClCompile Include="x_AseMesh.cpp" />
+    <ClCompile Include="x_Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="x_AseMesh.h" />
+    <ClInclude Include="x_Mesh.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

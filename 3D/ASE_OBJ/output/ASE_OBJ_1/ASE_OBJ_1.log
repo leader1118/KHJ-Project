@@ -131,7 +131,11 @@ c:\users\김현진\desktop\khj\3d\sampleinclude\xdxwrite.h(19): warning C4244: '
 c:\users\김현진\desktop\khj\3d\sampleinclude\xdxwrite.h(20): warning C4244: '=': 'LONG'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\김현진\desktop\khj\3d\sampleinclude\xdxwrite.h(21): warning C4244: '=': 'LONG'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\김현진\desktop\khj\3d\sampleinclude\xdxwrite.h(22): warning C4244: '=': 'LONG'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\sample.cpp(19): fatal error C1004: 예기치 않은 파일의 끝이 나타났습니다.
+c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\sample.cpp(18): error C2628: 'Sample' 다음에 'int'이(가) 올 수 없습니다. ';'이 있어야 합니다.
+c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\sample.cpp(18): error C2556: 'Sample WinMain(HINSTANCE,HINSTANCE,LPSTR,int)': 오버로드된 함수가 'int WinMain(HINSTANCE,HINSTANCE,LPSTR,int)'과(와) 반환 형식만 다릅니다.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winbase.h(913): note: 'WinMain' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\sample.cpp(18): error C2371: 'WinMain': 재정의. 기본 형식이 다릅니다.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winbase.h(913): note: 'WinMain' 선언을 참조하십시오.
   x_AseMesh.cpp
 c:\users\김현진\desktop\khj\3d\sampleinclude\dx\dxgitype.h(12): warning C4005: 'DXGI_STATUS_OCCLUDED': 매크로 재정의
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winerror.h(55460): note: 'DXGI_STATUS_OCCLUDED'의 이전 정의를 참조하십시오.
@@ -189,18 +193,4 @@ c:\users\김현진\desktop\khj\3d\sampleinclude\dx\d3d10.h(608): warning C4005: 
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winerror.h(55899): note: 'D3D10_ERROR_TOO_MANY_UNIQUE_STATE_OBJECTS'의 이전 정의를 참조하십시오.
 c:\users\김현진\desktop\khj\3d\sampleinclude\dx\d3d10.h(609): warning C4005: 'D3D10_ERROR_FILE_NOT_FOUND': 매크로 재정의
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\shared\winerror.h(55908): note: 'D3D10_ERROR_FILE_NOT_FOUND'의 이전 정의를 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(7): warning C4474: 'swscanf' : 서식 문자열에 전달된 인수가 너무 많습니다.
-  c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(7): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 2개가 제공되었습니다.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(7): error C4996: 'swscanf': This function or variable may be unsafe. Consider using swscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(2039): note: 'swscanf' 선언을 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(10): error C4996: 'swscanf': This function or variable may be unsafe. Consider using swscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(2039): note: 'swscanf' 선언을 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(12): error C4996: 'swscanf': This function or variable may be unsafe. Consider using swscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(2039): note: 'swscanf' 선언을 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(14): error C4996: 'swscanf': This function or variable may be unsafe. Consider using swscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(2039): note: 'swscanf' 선언을 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(20): error C4996: '_wfopen': This function or variable may be unsafe. Consider using _wfopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(130): note: '_wfopen' 선언을 참조하십시오.
-c:\users\김현진\desktop\khj\3d\ase_obj\ase_obj_1\x_asemesh.cpp(29): error C4996: 'swscanf': This function or variable may be unsafe. Consider using swscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\corecrt_wstdio.h(2039): note: 'swscanf' 선언을 참조하십시오.
   코드를 생성하고 있습니다...
