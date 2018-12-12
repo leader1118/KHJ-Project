@@ -32,7 +32,7 @@ public:
 				xMesh.m_iNumFaces =
 					m_Obj.m_ObjectList[iObj].PosFaceList.size();
 				
-				xMesh.m_VertexList.resize(xMesh.m_iNumFaces*3);
+				xMesh.m_TempVertexList.resize(xMesh.m_iNumFaces*3);
 
 				for (int iFace = 0; iFace < xMesh.m_iNumFaces; iFace++)
 				{
@@ -43,37 +43,37 @@ public:
 						if (m_Obj.m_ObjectList[iObj].vertexList.size() > 0)
 						{
 							int iIndex = m_Obj.m_ObjectList[iObj].PosFaceList[iFace].i[iVer];
-							xMesh.m_VertexList[iID].p = 
+							xMesh.m_TempVertexList[iID].p =
 								m_Obj.m_ObjectList[iObj].vertexList[iIndex];
 						}
 						// nor
 						if (m_Obj.m_ObjectList[iObj].NorList.size() > 0)
 						{
-							xMesh.m_VertexList[iID].n =
-								m_Obj.m_ObjectList[iObj].vertexList[iID];
+							xMesh.m_TempVertexList[iID].n =
+								m_Obj.m_ObjectList[iObj].NorList[iID];
 						}
 						//color
-						xMesh.m_VertexList[iObj].c = D3DXVECTOR4(1, 1, 1, 1);
+						xMesh.m_TempVertexList[iID].c = D3DXVECTOR4(1, 1, 1, 1);
 						if (m_Obj.m_ObjectList[iObj].ColFaceList.size() > 0)
 						{
 							int iIndex = m_Obj.m_ObjectList[iObj].ColFaceList[iFace].i[iVer];
 													
-							xMesh.m_VertexList[iID]c.x =
-								m_Obj.m_ObjectList[iObj].ColList[iIndex].c.x;
-							xMesh.m_VertexList[iID].c.y =
-								m_Obj.m_ObjectList[iObj].ColList[iIndex].c.y;
-							xMesh.m_VertexList[iID].c.z =
-								m_Obj.m_ObjectList[iObj].ColList[iIndex].c.z;
-							xMesh.m_VertexList[iID].c.w =
-								m_Obj.m_ObjectList[iObj].ColList[iIndex].c.w=1.0f;
+							xMesh.m_TempVertexList[iID].c.x =
+								m_Obj.m_ObjectList[iObj].ColList[iIndex].x;
+							xMesh.m_TempVertexList[iID].c.y =
+								m_Obj.m_ObjectList[iObj].ColList[iIndex].y;
+							xMesh.m_TempVertexList[iID].c.z =
+								m_Obj.m_ObjectList[iObj].ColList[iIndex].z;
+							xMesh.m_TempVertexList[iID].c.w = 1.0f;
+								
 						}
 						//tex
-						if (m_Obj.m_ObjectList[iObj].ColFaceList.size() > 0)
+						if (m_Obj.m_ObjectList[iObj].texFaceList.size() > 0)
 						{
 							int iIndex = m_Obj.m_ObjectList[iObj].texFaceList[iFace].i[iVer];
-							xMesh.m_VertexList[iID].t.x =
+							xMesh.m_TempVertexList[iID].t.x =
 								m_Obj.m_ObjectList[iObj].texList[iIndex].x;
-							xMesh.m_VertexList[iID].t.y =
+							xMesh.m_TempVertexList[iID].t.y =
 								m_Obj.m_ObjectList[iObj].texList[iIndex].y;
 							
 						}
@@ -129,7 +129,7 @@ public:
 	}
 	
 public:
-	Sample() {};
-	~Sample() {};
-}
+	Sample() {}
+	~Sample() {}
+};
 GAME_RUN("SAMPLE_ASE", 800, 600)

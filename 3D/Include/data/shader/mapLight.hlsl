@@ -13,13 +13,7 @@ struct VS_OUTPUT
 	float2 t : TEXCOORD0;
 	float4 l : TEXCOORD1;
 };
-struct GS_OUTPUT
-{
-	float4 p : SV_POSITION;
-	float3 n : NORMAL;
-	float4 c : COLOR0;
-	float2 t : TEXCOORD0;
-};
+
 cbuffer cb0 : register(b0)
 {
 	float4x4  g_matWorld : packoffset(c0);
@@ -32,44 +26,151 @@ cbuffer cb0 : register(b0)
 	float  w : packoffset(c12.w);
 
 	float4 g_Color : packoffset(c13);
+	matrix  g_matInvWorld : packoffset(c14);
+};
+cbuffer cb1: register(b1)
+{
+	float4 g_vLightDir: packoffset(c0);
+	float4 g_vLightPos: packoffset(c1);
+	float4 g_vEyeDir: packoffset(c2);
+	float4 g_vEyePos: packoffset(c3);
+	float4 g_vSpotInfo: packoffset(c4);
+	float4 g_vLightColor: packoffset(c5);
 };
 Texture2D     g_txDiffuse : register(t0);
 SamplerState  g_samLinear : register(s0);
-cbuffer cb1: register(b1)
-{
-	matrix g_matInvWorld : packoffset(c0);
-	float4 g_vLightDir:packoffset(c4);
-	float4 g_vLightPos:packoffset(c5);
-	float4 g_vEyeDir:packoffset(c6);
-	float4 g_vEyePos: packoffset(c7);
-};
+
+
 VS_OUTPUT VS(VS_IN v)
 {
 	VS_OUTPUT vOut = (VS_OUTPUT)0;
-	float4 vWorld = mul(float4(v.p,1.0f), g_matWorld);
+	float4 vWorld = mul(float4(v.p, 1.0f), g_matWorld);
 	float4 vView = mul(vWorld, g_matView);
 	float4 vProj = mul(vView, g_matProj);
 	vOut.p = vProj;
-	vOut.n = mul(v.n,(float3x3)g_matInvWorld);
+	vOut.n = mul(v.n, (float3x3)g_matInvWorld);
 	vOut.c = v.c;// g_Color;
-	float fDot = dot(vOut.n,-g_vLightDir.xyz);
-	vOut.l = float4(fDot, fDot, fDot,1.0f);
+
+	vOut.l.xyz = vWorld.xyz;
+	vOut.l.w = distance(vWorld.xyz, g_vLightPos.xyz);
 	vOut.t = v.t;
 	return vOut;
 }
-VS_OUTPUT VS_NoMatrix(VS_IN v)
+
+float4 Diffuse(float3 vNormal, float3 vWorld, float3 vLight, uint iNumLight, bool bDirectLight)
 {
-	VS_OUTPUT vOut = (VS_OUTPUT)0;	
-	vOut.p = float4(v.p, 1.0f);
-	vOut.n = v.n;
-	vOut.c = v.c;// g_Color;
-	vOut.t = v.t;
-	return vOut;
+	float fIntensity = 0.0f;
+	float fLuminance = 0.0;
+	float4 cLightColor = float4(0, 0, 0, 1);
+	for (uint iLight = 0; iLight < iNumLight; iLight++)
+	{
+		//float3 vLight = normalize(vWorld - g_vLightPos.xyz);
+		float fLength = distance(vWorld, g_vLightPos.xyz);
+
+		fIntensity = saturate(dot(-vLight, vNormal));
+		if (bDirectLight == false)
+		{
+			fLuminance = smoothstep(
+				fLength - 5,
+				fLength,
+				g_vLightPos.w);
+		}
+		else
+		{
+			fLuminance = 1.0f;
+		}
+		cLightColor += float4(0, 0, 1, 1) * fLuminance*fIntensity;
+	}
+	cLightColor.a = 1.0f;
+	return cLightColor;
+}
+
+float4 Specular(float3 vNormal, float3 vWorld, float3 vLight, uint iNumLight, bool bDirectLight)
+{
+	float fIntensity = 0.0f;
+	float fLuminance = 0.0;
+	float4 cLightColor = float4(0, 0, 0, 1);
+	for (uint iLight = 0; iLight < iNumLight; iLight++)
+	{
+		//float3 vLight = normalize(vWorld - g_vLightPos.xyz);
+		float fLength = distance(vWorld, g_vLightPos.xyz);
+#ifndef HALF_VECTOR
+		float3 vReflect = reflect(g_vEyeDir.xyz, vNormal);
+		fIntensity = saturate(dot(-vLight, vReflect));
+		float fPower = pow(fIntensity, g_vEyeDir.w);
+#else
+#endif
+		if (bDirectLight == false)
+		{
+			fLuminance = smoothstep(
+				fLength - 5,
+				fLength,
+				g_vLightPos.w);
+		}
+		else
+		{
+			fLuminance = 1.0;
+		}
+		cLightColor += float4(1, 0, 0, 1) * fLuminance * fPower;
+	}
+	cLightColor.a = 1.0f;
+	return cLightColor;
+}
+float4 ComputeSpotLight(float3 vVertexPos, float3 vVertexNormal, int nNumLights)
+{
+	float4 vSpotLightColor = float4(0, 0, 0, 1);
+	for (int iLight = 0; iLight < nNumLights; iLight++)
+	{
+		float fInner = g_vSpotInfo.x;
+		float fOutner = g_vSpotInfo.y;
+		float fFalloff = g_vSpotInfo.z;
+		float fRange = g_vSpotInfo.w;
+		float4 vLight;
+		vLight.xyz = normalize(vVertexPos - g_vLightPos.xyz);
+		vLight.w = distance(vVertexPos, g_vLightPos.xyz);
+		float fDot = dot(vLight.xyz, g_vLightDir.xyz);
+		float fPhi = fInner - fOutner;
+
+		// 거리에 따라 블랜딩
+		float fIntensity = saturate(dot(vVertexNormal, -vLight.xyz));
+		// 원 거리의 블랜딩
+		float fLuminance = smoothstep(vLight.w - fFalloff, vLight.w, fRange);
+		//내부콘
+		if (fDot > fInner)
+		{
+			vSpotLightColor += float4(g_vLightColor.rgb* fLuminance/**fIntensity*/, 1.0f);
+		}
+		//외부콘
+		else if (fDot > fOutner)
+		{
+			// 내부에서 외부 각의 블랜닝
+			float fLuminanceB = 1.0f - (fInner - fDot) / fPhi;
+			fLuminance = min(fLuminance, fLuminanceB);
+			vSpotLightColor += float4(g_vLightColor.rgb * fLuminance/**fIntensity*/, 1.0f);
+		}
+
+	}
+	return vSpotLightColor;
 }
 float4 PS(VS_OUTPUT v) : SV_Target
 {
+	float4 cAmbient = float4(0.2f,0.2f, 0.2f, 1.0f);
+
+	// Point Lightting
+	float3 vLight = normalize(v.l.xyz - g_vLightPos.xyz);
+	float4 cDiffuse = Diffuse(v.n, v.l.xyz, vLight.xyz, 1, false);
+	float4 cSpecular = Specular(v.n, v.l.xyz, vLight.xyz, 1, false);
+
+	// Direction Lightting
+	//vLight = g_vLightDir.xyz;
+	//cDiffuse += Diffuse(v.n, v.l.xyz, vLight.xyz, 1, true);
+	//cSpecular += Specular(v.n, v.l.xyz, vLight.xyz, 1, true);
+
+	float4 cSpot = ComputeSpotLight(v.l.xyz, v.n, 1);
 	float4 vTexColor = g_txDiffuse.Sample(g_samLinear, v.t);
-	return vTexColor * v.c* v.l;
+	vTexColor = vTexColor * (cSpot + cSpecular + cDiffuse + cAmbient);
+	vTexColor.a = 1.0f;
+	return vTexColor;
 }
 float4 PSLine(VS_OUTPUT v) : SV_Target
 {
@@ -78,94 +179,4 @@ float4 PSLine(VS_OUTPUT v) : SV_Target
 float4 PSColor(VS_OUTPUT v) : SV_Target
 {
 	return g_Color;
-}
-//// 로칼 정점의 크기를 정규화하여 1로 만든다.
-//GS_OUTPUT NormalizeVertex(GS_OUTPUT Vertex)
-//{
-//	GS_OUTPUT newvertex= (GS_OUTPUT)0;
-//	newvertex.p = float4(normalize(Vertex.p.xyz),1);
-//	// 정점이 원점을 중심으로 하는 노말 벡터가 된다.
-//	newvertex.n = normalize(Vertex.p.xyz);
-//	newvertex.c = Vertex.c;
-//	newvertex.t = Vertex.t;
-//
-//	float4 vWorld = mul(float4(newvertex.p.xyz, 1.0f), g_matWorld);
-//	float4 vView = mul(vWorld, g_matView);
-//	float4 vProj = mul(vView, g_matProj);
-//	newvertex.p = vProj;
-//	return newvertex;
-//}
-//void TriAppend(GS_OUTPUT V0, GS_OUTPUT V1, GS_OUTPUT V2, 
-//	inout TriangleStream<GS_OUTPUT> TriStream)
-//{
-//	TriStream.Append(NormalizeVertex(V0));
-//	TriStream.Append(NormalizeVertex(V1));
-//	TriStream.Append(NormalizeVertex(V2));
-//	// 삼각형 단위로 스트립으로 구성토록 한다.		
-//	TriStream.RestartStrip();
-//}
-//
-//[maxvertexcount(12)]
-//void GS(triangle VS_OUTPUT input[3],
-//	inout TriangleStream<GS_OUTPUT> triStream)
-//{
-//	// 페이스의 중점을 구한다.
-//	GS_OUTPUT Center0, Center1, Center2;
-//	Center0.p = float4((input[0].p.xyz + input[1].p.xyz) / 2.0, 1.0f);
-//	Center0.n = (input[0].n.xyz + input[1].n.xyz) / 2.0;
-//	Center0.c = (input[0].c + input[1].c) / 2.0;
-//	Center0.t = (input[0].t.xy + input[1].t.xy) / 2.0;
-//
-//	Center1.p = float4((input[1].p.xyz + input[2].p.xyz) / 2.0, 1.0f);
-//	Center1.n = (input[1].n.xyz + input[2].n.xyz) / 2.0;
-//	Center1.c = (input[1].c + input[2].c) / 2.0;
-//	Center1.t = (input[1].t.xy + input[2].t.xy) / 2.0;
-//
-//	Center2.p = float4((input[0].p.xyz + input[2].p.xyz) / 2.0, 1.0f);
-//	Center2.n = (input[0].n.xyz + input[2].n.xyz) / 2.0;
-//	Center2.c = (input[0].c + input[2].c) / 2.0;
-//	Center2.t = (input[0].t.xy + input[2].t.xy) / 2.0;
-//
-//	TriAppend(input[0], Center0, Center2, triStream);
-//	TriAppend(Center0, input[1], Center1, triStream);
-//	TriAppend(input[2], Center2, Center1, triStream);
-//	TriAppend(Center0, Center1, Center2, triStream);
-//
-	/*float3 cPos = (input[0].p.xyz +	input[1].p.xyz +input[2].p.xyz) / 3.0f;
-	float4 cColor = (input[0].c +input[1].c +input[2].c) / 3.0f;
-	float3 cNormal = (input[0].n +input[1].n +	input[2].n) / 3.0f;
-	float2 cTex = (input[0].t +	input[1].t +input[2].t) / 3.0f;
-
-	GS_OUTPUT newVertex=(GS_OUTPUT)0;
-
-	for (int i = 0; i < 3; i++)
-	{		
-		newVertex = NormalizeVertex(input[i]);
-		float4 vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-		float4 vView = mul(vWorld, g_matView);
-		float4 vProj = mul(vView, g_matProj);
-		newVertex.p = vProj;
-		triStream.Append(newVertex);
-
-		int iNext = (i + 1) % 3;
-		newVertex = NormalizeVertex(input[iNext]);
-		vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-		vView = mul(vWorld, g_matView);
-		vProj = mul(vView, g_matProj);
-		newVertex.p = vProj;
-		triStream.Append(newVertex);
-
-		newVertex.p = normalize(float4(cPos,1));
-		newVertex.c = cColor;
-		newVertex.n = newVertex.p.xyz;
-		newVertex.t = cTex;
-		vWorld = mul(float4(newVertex.p.xyz, 1.0f), g_matWorld);
-		vView = mul(vWorld, g_matView);
-		vProj = mul(vView, g_matProj);
-		newVertex.p = vProj;
-		triStream.Append(newVertex);
-
-		triStream.RestartStrip();
-	}
-	triStream.RestartStrip();*/
 }

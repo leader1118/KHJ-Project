@@ -52,10 +52,10 @@ bool	xCore::GameInit()
 	m_pMainCamera = &m_DefaultCamera;
 
 	m_SkyBox.Create(m_pd3dDevice,
-		L"../../data/shader/sky.hlsl",
-		L"../../data/grassenvmap1024.dds");
+		L"../../Sampleinclude/data/shader/sky.hlsl",
+		L"../../Sampleinclude/data/grassenvmap1024.dds");
 
-	m_dirAxis.Create(m_pd3dDevice,L"../../data/shader/shape.hlsl",L"../../data/eye.bmp");
+	m_dirAxis.Create(m_pd3dDevice,L"../../Sampleinclude/data/shader/shape.hlsl",L"../../Sampleinclude/data/eye.bmp");
 
 	Init();
 	return true;

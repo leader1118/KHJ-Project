@@ -65,6 +65,7 @@ bool  xShape::Create(
 HRESULT xShape::CreateVertexBuffer()
 {
 	HRESULT hr = S_OK;
+	if (m_iNumVertex <= 0)return hr;
 	m_iVertexSize = sizeof(PNCT_VERTEX);
 	DX::CreateVertexBuffer(m_pd3dDevice,
 		m_iNumVertex,
@@ -76,6 +77,7 @@ HRESULT xShape::CreateVertexBuffer()
 HRESULT xShape::CreateIndexBuffer()
 {
 	HRESULT hr = S_OK;
+	if (m_iNumIndex <= 0)return hr;
 	DX::CreateIndexBuffer(m_pd3dDevice,
 		m_iNumIndex,
 		sizeof(DWORD),
@@ -169,7 +171,10 @@ bool  xShape::Render(ID3D11DeviceContext* pContext) {
 		(D3D_PRIMITIVE_TOPOLOGY)m_Primitive);
 
 	m_dxObj.PreRender(pContext, m_iVertexSize);
-	m_dxObj.PostRender(pContext, m_iVertexSize, m_iNumIndex);
+	if (m_iNumIndex > 0)
+		m_dxObj.PostRender(pContext, m_iVertexSize, m_iNumIndex);
+	else
+		m_dxObj.PostRender(pContext, m_iVertexSize, m_iNumVertex);
 	return true;
 }
 bool  xShape::PostRender(ID3D11DeviceContext* pContext	)
@@ -191,6 +196,8 @@ bool  xShape::Init()
 }
 xShape::xShape()
 {
+	m_iNumIndex=0;
+	m_iNumVertex=0;
 	D3DXMatrixIdentity(&m_matWorld);
 	m_vPosition.x = m_matWorld._41;
 	m_vPosition.y = m_matWorld._42;
