@@ -261,6 +261,7 @@ void x_AseMesh::LoadGeomObject()
 			_fgetts(m_pBuffer, 256, m_pStream);
 			_fgetts(m_pBuffer, 256, m_pStream);
 			_stscanf(m_pBuffer, _T("%s%d"), m_pString, &iNumFaces);
+			_fgetts(m_pBuffer, 256, m_pStream);
 
 			geomObject.ColFaceList.resize(iNumFaces);
 			for (int iFace = 0; iFace < iNumFaces; iFace++)
@@ -271,6 +272,8 @@ void x_AseMesh::LoadGeomObject()
 		//*MESH_NORMALS{
 		geomObject.NorList.resize(iNumFaces * 3);
 		_fgetts(m_pBuffer, 256, m_pStream);
+		_fgetts(m_pBuffer, 256, m_pStream);
+
 		for (int iFace = 0; iFace < iNumFaces; iFace++)
 		{
 			_fgetts(m_pBuffer, 256, m_pStream);
