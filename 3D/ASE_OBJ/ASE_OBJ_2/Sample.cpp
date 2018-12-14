@@ -24,9 +24,10 @@ public:
 	bool Init()
 	{
 		//if(m_Obj.Load(L"../../Sampleinclude/data/multiBox2.ASE"))
+		if (m_Obj.Load(L"../../Sampleinclude/data/BOX.ASE"))
 		//if(m_Obj.Load(L"../../Sampleinclude/data/St02sc00.ASE"))
-		//if (m_Obj.Load(L"../../Sampleinclude/data/BOX.ASE"))
-		if(m_Obj.Load(L"../../Sampleinclude/data/multicameras.ASE"))
+		
+		//if(m_Obj.Load(L"../../Sampleinclude/data/multicameras.ASE"))
 		{
 			for (int iObj = 0; iObj < m_Obj.m_ObjectList.size(); iObj++)
 			{
