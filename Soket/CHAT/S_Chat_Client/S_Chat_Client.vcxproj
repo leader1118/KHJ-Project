@@ -23,7 +23,7 @@
     <ProjectGuid>{9F1E2268-77E7-4272-92F4-3262E2290F86}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SChatClient</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

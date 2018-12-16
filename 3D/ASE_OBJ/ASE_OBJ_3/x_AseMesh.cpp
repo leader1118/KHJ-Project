@@ -14,6 +14,12 @@ void   x_AseMesh::LoadScene()
 	_fgetts(m_pBuffer, 256, m_pStream);
 	_stscanf(m_pBuffer, _T("%s%d"), m_pString, &m_Scene.iTickPerFrame);
 }
+void x_AseMesh::LoadHelperOBject()
+{
+	_fgetts(m_pBuffer, 256, m_pStream);
+	_fgetts(m_pBuffer, 256, m_pStream);
+	
+}
 void   x_AseMesh::LoadMaterial()
 {
 	//*MATERIAL_COUNT 1
@@ -97,6 +103,11 @@ bool   x_AseMesh::Load(T_STR name)
 	if (FineString(_T("*MATERIAL_LIST")) == false) return false;
 	LoadMaterial();
 
+	if (FineString(_T("*MATERIAL 1")) == false) return false;
+	LoadMaterial();
+	// HELPEROBJECT
+	if (FineString(_T("*HELPEROBJECT")) == false)return false;
+
 	if (FineString(_T("*GEOMOBJECT")) == false) return false;
 	LoadGeomObject();
 
@@ -156,6 +167,9 @@ void x_AseMesh::LoadIndexData(xIndex& v)
 		&v.i[2],
 		&v.i[1]);
 }
+
+
+
 void x_AseMesh::LoadGeomObject()
 {
 	

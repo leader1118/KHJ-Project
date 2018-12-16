@@ -23,7 +23,7 @@
     <ProjectGuid>{C3AA3CB4-26EA-4EF2-9C43-680B71D8B202}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>My2Echoserver</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

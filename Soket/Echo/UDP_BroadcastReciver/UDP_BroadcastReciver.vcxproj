@@ -23,7 +23,7 @@
     <ProjectGuid>{E2E58D0C-2C9B-4DD5-8B72-F03E123BAF93}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>UDPBroadcastReciver</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

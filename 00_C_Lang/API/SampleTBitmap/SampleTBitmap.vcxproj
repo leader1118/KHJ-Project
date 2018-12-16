@@ -41,7 +41,7 @@
     <ProjectGuid>{45B0E3BB-2AC4-430F-A702-1FE9E78E2D0E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SampleTBitmap</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

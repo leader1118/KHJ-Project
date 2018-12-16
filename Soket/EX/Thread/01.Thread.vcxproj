@@ -23,7 +23,7 @@
     <ProjectGuid>{7CE97CF6-B63A-4BF4-9F8D-080920E5AF64}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Thread</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>01_Thread_0</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
