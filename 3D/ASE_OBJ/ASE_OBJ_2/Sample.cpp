@@ -24,8 +24,8 @@ public:
 	bool Init()
 	{
 		//if(m_Obj.Load(L"../../Sampleinclude/data/multiBox2.ASE"))
-		if (m_Obj.Load(L"../../Sampleinclude/data/BOX.ASE"))
-		//if(m_Obj.Load(L"../../Sampleinclude/data/St02sc00.ASE"))
+		//if (m_Obj.Load(L"../../Sampleinclude/data/BOX.ASE"))
+		if(m_Obj.Load(L"../../Sampleinclude/data/St02sc00.ASE"))
 		
 		//if(m_Obj.Load(L"../../Sampleinclude/data/multicameras.ASE"))
 		{

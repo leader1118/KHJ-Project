@@ -74,7 +74,6 @@ public:
 	void	LoadScene();
 	void	LoadMaterial();
 	void	LoadGeomObject();
-	void	LoadHelperOBject();
 	void	GetData(void* pData);
 	bool	FineString(T_STR find);
 	void	LoadVertexData(D3DXVECTOR3& v, bool bSwap = true);
