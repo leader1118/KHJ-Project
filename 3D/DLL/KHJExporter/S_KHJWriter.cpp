@@ -33,6 +33,10 @@ void S_KHJWriter::GetTexture(Mtl* pmtl, xMtrlerial& xMtrl)
 		}
 	}
 }
+void S_KHJWriter::DumpMatrix3(Matrix3* m, _D3DMATRIX& mat)
+{
+
+}
 void S_KHJWriter::Exeporter()
 {
 	m_Scene.iNumObject = m_ObjectList.size();
@@ -72,6 +76,21 @@ void S_KHJWriter::Exeporter()
 		for (int iObj = 0; iObj < m_ObjectList.size(); iObj++) //helper geom
 		{
 			xGeomMesh xmesh;
+			INode* pNode = m_ObjectList[iObj];
+			INode* pParent = pNode->GetParentNode;
+			xmesh.name = pNode->GetName();
+			xmesh.pParentName = _T("none");
+			if (!pParent->IsRootNode())// 가상의 노드
+			{
+				xmesh.pParentName = pParent->GetName();
+				//false 가 되야 진짜
+			}
+			// nodetm
+			Matrix3 matWorld=pNode->GetNodeTM(m_Interval.Start());
+			DumpMatrix3(matWorld, xmesh.matWorld);
+			GetMesh(pNode)
+
+			// mtrl_ref
 			Mtl* pMtl = m_ObjectList[iObj]->GetMtl();
 			int iMtlRef = -1;
 			for (int iMtl = 0; iMtl < m_MtrlList.size(); iMtl++)
@@ -86,7 +105,7 @@ void S_KHJWriter::Exeporter()
 			m_xObjectList.push_back(xmesh);
 		}
 		_ftprintf(m_pStream, _T("\n%s"), _T("#MATERIALE"));
-		for (int iMtl = 0; iMtl < m_xMtrlList.size(); iMtl++)
+	/*	for (int iMtl = 0; iMtl < m_xMtrlList.size(); iMtl++)
 		{
 			if (m_xMtrlList[iMtl].m_SubMaterial.size() > 0)
 			{
@@ -98,13 +117,68 @@ void S_KHJWriter::Exeporter()
 						m_xMtrlList[iMtl].m_mapList[iSub].name);
 				}
 			}
-		}
+		}*/
 		
 
 		/*	_ftprintf(m_pStream, _T("%s"), _T("#OBJECT"));
 		_ftprintf(m_pStream, _T("\n%d %d %d %d %d %d"),*/
 
 	fclose(m_pStream);
+}
+
+void S_KHJWriter::GetMesh(INode* pNode, xGeomMesh& xMesh)
+{
+	ObjectState os = pNode->EvalWorldState(m_Interval.Start());
+	if (!os.obj || os.obj->SuperClassID() != GEOMOBJECT_CLASS_ID)return;
+
+	BOOL needDel;
+	TriObject* tri = GetTriObjectFromNode(pNode,m_Interval.Start(), needDel);
+	if (tri == NULL)return;
+	Mesh* mesh = &tri->GetMesh();
+
+
+
+	int v0, v1, v2;
+	BOOL negScale = TMNegParity(tm);
+	if (negScale)
+	{
+		v0 = 2;
+		v1 = 1;
+		v2 = 0;
+	}
+	else
+	{
+		v0 = 0;
+		v1 = 1;
+		v2 = 2;
+	}
+	
+
+	int iNumFace = mesh->getNumFaces();
+	for (int iFace = 0; iFace < iNumFace; iFace++)
+	{
+		Point3 v;
+		int iNumVertex = mesh->getNumVerts();
+		if(iNumVertex > 0)
+		{
+			v = mesh->verts[mesh->faces[iFace].v[0]];
+			v = mesh->verts[mesh->faces[iFace].v[2]];
+			v = mesh->verts[mesh->faces[iFace].v[1]];
+		}
+		int iNumVertex = mesh->getNumTVerts();
+		if (iNumVertex > 0)
+		{
+
+		}
+		int iNumVertex = mesh->getNumVertCol();
+		if (iNumVertex > 0)
+		{
+
+		}
+		mesh->buildNormals;
+	}
+
+	if (needDel)delete tri;
 }
 void S_KHJWriter::Release()
 {

@@ -36,9 +36,22 @@ struct xIndex
 	int i[3];
 	int iSubMtrl;
 };
+
+struct SVertex
+{
+	Point3 p;
+	Point3 n;
+	Point3 c;
+	Point3 t;
+};
+struct STri
+{
+	SVertex v[3];
+};
 struct xGeomMesh
 {
 	int mtrlRef;
+	TSTR pParentName;
 	TSTR name;
 	_D3DMATRIX matWorld; // MAX = Matrix3 4x3
 	vector<Point3> vertexList;
@@ -71,6 +84,8 @@ public:
 	void Initialize(Interface *i, TSTR name);
 	void AddObject(INode* pNode);
 	void AddMtl(INode* pNode);
+public:
+	void DumpMatrix3(Matrix3* m, _D3DMATRIX& mat);
 public:
 	S_KHJGlobal();
 	virtual ~S_KHJGlobal();
