@@ -156,12 +156,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="S_KHJ_AnimObj.cpp" />
     <ClCompile Include="S_KHJ_Global.cpp" />
+    <ClCompile Include="S_KHJ_Object.cpp" />
+    <ClCompile Include="S_KHJ_Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="S_KHJ_AnimObj.h" />
     <ClInclude Include="S_KHJ_Global.h" />
+    <ClInclude Include="S_KHJ_Object.h" />
+    <ClInclude Include="S_KHJ_Writer.h" />
     <ClInclude Include="TemplateMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
