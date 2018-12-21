@@ -64,3 +64,5 @@ typedef basic_string<TCHAR>				T_STR;
 typedef basic_string<CHAR>				CHAR_STRING;
 typedef vector<basic_string<TCHAR>>		T_STR_VECTOR;
 typedef vector<DWORD>					DWORD_VECTOR;
+
+//Class_ID(0x55533089, 0x59c62028)

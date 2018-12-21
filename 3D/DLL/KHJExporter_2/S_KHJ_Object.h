@@ -10,7 +10,7 @@ public:
 	void UpdateObject();
 	void GetObject(MATRIXINDEX* pPoint); // 오브젝트 리스트에서 정보얻기
 	// 오브젝트 정보
-	void GetNodeheader(INode* node, SMesh* pMesh);
+	void GetNodeHeader(INode* node, SMesh* pMesh);
 	void GetNodeTM(INode* node, SMesh* pMesh);
 	// 메쉬 정보
 	void GetMesh(INode* node, SMesh* pMesh);
