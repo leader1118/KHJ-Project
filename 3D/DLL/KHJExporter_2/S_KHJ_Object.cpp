@@ -155,6 +155,86 @@ void S_KHJ_Object::GetMesh(INode* node, SMesh* Smesh)
 	}
 
 	Smesh->m_TriList.resize(Smesh->m_iNumFace);
+
+	for (int iFace = 0; iFace < Smesh->m_iNumFace;iFace++)
+	{
+		Matrix3 pInverse = Inverse(node->GetNodeTM(m_Interval.Start()));
+
+		Point3 v;
+
+		if (mesh->getNumVerts() > 0)
+		{
+			v = mesh->verts[mesh -> faces[iFace].v[v0]] * tm*pInverse;
+			DumpPoint3(Smesh->m_TriList[iFace].v[0].p, v);
+
+			v = mesh->verts[mesh -> faces[iFace].v[v2]] * tm*pInverse;
+			DumpPoint3(Smesh->m_TriList[iFace].v[1].p, v);
+
+			v = mesh->verts[mesh->faces[iFace].v[v1]] * tm*pInverse;
+			DumpPoint3(Smesh->m_TriList[iFace].v[2].p, v);
+		}
+		if (mesh->getNumTVerts() > 0)
+		{
+			Smesh->m_TriList[iFace].v[0].t.x = mesh->tVerts[mesh->tvFace[iFace].t[v0]].x;
+			Smesh->m_TriList[iFace].v[0].t.y = 1.0f - mesh->tVerts[mesh->tvFace[iFace].t[v0]].y;
+			Smesh->m_TriList[iFace].v[1].t.x = mesh->tVerts[mesh->tvFace[iFace].t[v2]].x;
+			Smesh->m_TriList[iFace].v[1].t.y = 1.0f - mesh->tVerts[mesh->tvFace[iFace].t[v2]].y;
+			Smesh->m_TriList[iFace].v[2].t.x = mesh->tVerts[mesh->tvFace[iFace].t[v1]].x;
+			Smesh->m_TriList[iFace].v[2].t.y = 1.0f - mesh->tVerts[mesh->tvFace[iFace].t[v1]].y;
+		}
+
+		Smesh->m_TriList[iFace].v[0].c = Point4(1, 1, 1, 1);
+		Smesh->m_TriList[iFace].v[1].c = Point4(1, 1, 1, 1);
+		Smesh->m_TriList[iFace].v[2].c = Point4(1, 1, 1, 1);
+
+		if (mesh->getNumVertCol() > 0)
+		{
+			Smesh->m_TriList[iFace].v[0].c.x = mesh->vertCol[mesh->vcFace[iFace].t[v0]].x;
+			Smesh->m_TriList[iFace].v[0].c.y = mesh->vertCol[mesh->vcFace[iFace].t[v0]].y;
+			Smesh->m_TriList[iFace].v[0].c.z = mesh->vertCol[mesh->vcFace[iFace].t[v0]].z;
+			Smesh->m_TriList[iFace].v[0].c.w = 1.0f;
+
+			Smesh->m_TriList[iFace].v[0].c.x = mesh->vertCol[mesh->vcFace[iFace].t[v2]].x;
+			Smesh->m_TriList[iFace].v[0].c.y = mesh->vertCol[mesh->vcFace[iFace].t[v2]].y;
+			Smesh->m_TriList[iFace].v[0].c.z = mesh->vertCol[mesh->vcFace[iFace].t[v2]].z;
+			Smesh->m_TriList[iFace].v[0].c.w = 1.0f;
+
+			Smesh->m_TriList[iFace].v[0].c.x = mesh->vertCol[mesh->vcFace[iFace].t[v1]].x;
+			Smesh->m_TriList[iFace].v[0].c.y = mesh->vertCol[mesh->vcFace[iFace].t[v1]].y;
+			Smesh->m_TriList[iFace].v[0].c.z = mesh->vertCol[mesh->vcFace[iFace].t[v1]].z;
+			Smesh->m_TriList[iFace].v[0].c.w = 1.0f;
+		}
+
+		// 정점 노말 얻기
+		mesh->buildNormals();
+
+		int vert = mesh->faces[iFace].getVert(v0);
+		Point3 vn = GetVertexNormal(mesh, iFace, mesh->getRVertPtr(vert));
+		DumpPoint3(Smesh->m_TriList[iFace].v[0].n, vn);
+
+		vert = mesh->faces[iFace].getVert(v2);
+		vn = GetVertexNormal(mesh, iFace, mesh->getRVertPtr(vert));
+		DumpPoint3(Smesh->m_TriList[iFace].v[1].n, vn);
+
+		vert = mesh->faces[iFace].getVert(v1);
+		vn = GetVertexNormal(mesh, iFace, mesh->getRVertPtr(vert));
+		DumpPoint3(Smesh->m_TriList[iFace].v[2].n, vn);
+
+		// 서브 매터리얼 인덱스
+		Smesh->m_TriList[iFace].v[2].n, vn);
+	}
+	if (needDel)
+	{
+		delete tri;
+	}
+
+	Smesh->m_iMtrlRef = GetMtlref(node->GetMtl());
+}
+
+Point3 S_KHJ_Object::GetVertexNormal(Mesh* mesh, int faceNo, RVertex* rv)
+{
+	Face* f = &mesh->faces[faceNo];
+	DWORD smGroup = f->smGroup;
 }
 S_KHJ_Object::S_KHJ_Object()
 {
