@@ -235,12 +235,57 @@ Point3 S_KHJ_Object::GetVertexNormal(Mesh* mesh, int faceNo, RVertex* rv)
 {
 	Face* f = &mesh->faces[faceNo];
 	DWORD smGroup = f->smGroup;
+	int numNormals = rv->rFlags & NORCT_MASK;
+	Point3 vertexNormal;
+
+	if (rv->rFlags & SPECIFIED_NORMAL)
+	{
+		vertexNormal = rv->rn.getNormal();
+	}
+	else if (numNormals && smGroup)
+	{
+		if (numNormals == 1)
+		{
+			vertexNormal = rv->rn.getNormal();
+		}
+		else
+		{
+			for (int i = 0; i < numNormals; i++)
+			{
+				if (rv->ern[i].getSmGroup() & smGroup)
+				{
+					vertexNormal = rv->ern[i].getNormal();
+				}
+			}
+		}
+	}
+	else
+	{
+		vertexNormal = mesh->getFaceNormal(faceNo);
+	}
+	return vertexNormal;
 }
-S_KHJ_Object::S_KHJ_Object()
+
+TriObject* S_KHJ_Object::GetTriObjectFromNode(INode* node, TimeValue t, int &deletelt)
+{
+	deletelt = FALSE;
+	Object* obj = node->EvalWorldState(t).obj;
+	if (obj->CanConvertToType(Class_ID(TRIOBJ_CLASS_ID, 0)))
+	{
+		TriObject* tri = (TriObject*)obj->ConvertToType(t, Class_ID(TRIOBJ_CLASS_ID, 0));
+		if (obj != tri)deletelt = TRUE;
+		return tri;
+	}
+	else
+	{
+		return NULL;
+	}
+}
+S_KHJ_Object::S_KHJ_Object(void)
 {
 }
 
 
-S_KHJ_Object::~S_KHJ_Object()
+S_KHJ_Object::~S_KHJ_Object(void)
 {
 }
