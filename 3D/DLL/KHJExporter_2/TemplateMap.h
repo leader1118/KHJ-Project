@@ -175,3 +175,18 @@ TTemplateMap< Child >::~TTemplateMap()
 {
 	Release();
 }
+
+template<class T> class TSingleton
+{
+public:
+	static T& GetInstance()
+	{
+		static T theSingleInstance;
+		return theSingleInstance;
+	}
+	static T* GetInstancePtr()
+	{
+		static T theSingleInstance;
+		return &theSingleInstance;
+	}
+};
