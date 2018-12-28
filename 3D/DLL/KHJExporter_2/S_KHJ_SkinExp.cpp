@@ -296,7 +296,16 @@ void S_KHJ_SkinExp::SetTriangle(INode* node, Mesh* mesh, SSkinMesh* pSkinMesh, S
 	}
 
 	// 원하는 시점 (I_Writer.m_p3dsMax->GetTime() 에서 월드 행렬을 얻는다.
-	Matrix3 tm = node->GetObjTMAfterWSM(I_Writer.m_Interval.Start());
+	Matrix3 tm = node->GetObjTMAfterWSM(I_Writer.m_Interval.Start()); // .m_p3dsMax->GetTime();
+	Matrix3 nodetm = node->GetNodeTM(I_Writer.m_Interval.Start());
+	I_Writer.DumpMatrix3(&nodetm, pSkinMesh->m_matWorld);
+
+	int v0, v1, v2;
+	v0 = 0, v1 = 1, v2 = 2;
+	if (I_Writer.TMNegParity(tm))
+	{
+		v0 = 2, v1 = 1, v2 = 2;
+	}
 }
 
 S_KHJ_SkinExp::S_KHJ_SkinExp()
