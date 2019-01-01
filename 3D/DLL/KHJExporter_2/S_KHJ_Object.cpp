@@ -80,7 +80,7 @@ void  S_KHJ_Object::GetTexture(SMtl* DestMtrl, Mtl* pSrcMtl)
 
 void S_KHJ_Object::UpdateObject()
 {
-	for (int iObj; iObj < m_MatrixMap.Count(); iObj++)
+	for (int iObj=0; iObj < m_MatrixMap.Count(); iObj++)
 	{
 		MATRIXINDEX* pPoint = (MATRIXINDEX*)m_MatrixMap.TMap[iObj];
 		GetObject(pPoint);
@@ -221,7 +221,7 @@ void S_KHJ_Object::GetMesh(INode* node, SMesh* Smesh)
 		DumpPoint3(Smesh->m_TriList[iFace].v[2].n, vn);
 
 		// 서브 매터리얼 인덱스
-		Smesh->m_TriList[iFace].v[2].n, vn);
+		Smesh->m_TriList[iFace].iSubIndex = mesh->faces[iFace].getMatID();
 	}
 	if (needDel)
 	{

@@ -304,15 +304,400 @@ void S_KHJ_SkinExp::SetTriangle(INode* node, Mesh* mesh, SSkinMesh* pSkinMesh, S
 	v0 = 0, v1 = 1, v2 = 2;
 	if (I_Writer.TMNegParity(tm))
 	{
-		v0 = 2, v1 = 1, v2 = 2;
+		v0 = 2, v1 = 1, v2 = 0;
+	}
+	Matrix3 invTM = Inverse(nodetm);
+	for (int i = 0; i < mesh->getNumFaces(); i++)
+	{
+		// 서브매터리얼 사용시는 그룹화 해야하기 때문에 해당 매터리얼이 아닐시 반복시킴
+		if (pMesh->m_iMtrlRef > 0 && mesh->faces[i].getMatID() != iMtrl)
+		{
+			continue;
+		}
+
+		SSkinTri Triangle;
+		// 페이스 리스트 초기화
+		memset(&Triangle, 0, sizeof(STri));
+		// 서브 매터리얼 인덱스
+		Triangle.iSubIndex = mesh->faces[i].getMatID();
+
+		// 정점 위치 저장
+		if(mesh->getNumVerts()>0)
+		{
+			SetVertexBiped(node, &mesh->faces[i], v0, v1, v2, &Triangle);
+			for (int iVertex = 0; iVertex < 3; iVertex++)
+			{
+				Point3 v;
+				if (iVertex == 0)		v = tm * mesh->verts[mesh->faces[i].v[v0]];
+				else if (iVertex == 1)	v = tm * mesh->verts[mesh->faces[i].v[v2]];
+				else					v = tm * mesh->verts[mesh->faces[i].v[v1]];
+				//v = invTM * v;
+				Triangle.m_vVertex[iVertex].p.x = v.x;
+				Triangle.m_vVertex[iVertex].p.y = v.z;
+				Triangle.m_vVertex[iVertex].p.z = v.y;
+			}
+		}
+
+		// 정점 텍스쳐좌표 저장
+		if (mesh->getNumTVerts() > 0)
+		{
+			Triangle.m_vVertex[0].t.x = mesh->tVerts[mesh->tvFace[i].t[v0]].x;
+			Triangle.m_vVertex[0].t.y = 1.0f - mesh->tVerts[mesh->tvFace[i].t[v0]].y;
+			Triangle.m_vVertex[1].t.x = mesh->tVerts[mesh->tvFace[i].t[v2]].x;
+			Triangle.m_vVertex[1].t.y = 1.0f - mesh->tVerts[mesh->tvFace[i].t[v2]].y;
+			Triangle.m_vVertex[2].t.x = mesh->tVerts[mesh->tvFace[i].t[v1]].x;
+			Triangle.m_vVertex[2].t.y = 1.0f - mesh->tVerts[mesh->tvFace[i].t[v1]].y;
+		}
+
+		// 정점 컬러 저장
+		Triangle.m_vVertex[0].c = Point4(1.0f, 1.0f, 1.0f, 1.0f);
+		Triangle.m_vVertex[1].c = Point4(1.0f, 1.0f, 1.0f, 1.0f);
+		Triangle.m_vVertex[2].c = Point4(1.0f, 1.0f, 1.0f, 1.0f);
+		if (mesh->getNumVertCol() > 0)
+		{
+			Triangle.m_vVertex[0].c.w = 0xff;
+			Triangle.m_vVertex[0].c.x = mesh->vertCol[mesh->vcFace[i].t[v0]].x;
+			Triangle.m_vVertex[0].c.y = mesh->vertCol[mesh->vcFace[i].t[v0]].y;
+			Triangle.m_vVertex[0].c.z = mesh->vertCol[mesh->vcFace[i].t[v0]].z;
+
+			Triangle.m_vVertex[1].c.w = 0xff;
+			Triangle.m_vVertex[1].c.x = mesh->vertCol[mesh->vcFace[i].t[v2]].x;
+			Triangle.m_vVertex[1].c.y = mesh->vertCol[mesh->vcFace[i].t[v2]].y;
+			Triangle.m_vVertex[1].c.z = mesh->vertCol[mesh->vcFace[i].t[v2]].z;
+
+			Triangle.m_vVertex[2].c.w = 0xff;
+			Triangle.m_vVertex[2].c.x = mesh->vertCol[mesh->vcFace[i].t[v1]].x;
+			Triangle.m_vVertex[2].c.y = mesh->vertCol[mesh->vcFace[i].t[v1]].y;
+			Triangle.m_vVertex[2].c.z = mesh->vertCol[mesh->vcFace[i].t[v1]].z;
+		}
+		// 정점 노말 및 페이스 노말 저장
+		Point3 vn, fn;  // Vertex normal, Face normal
+		int  vert;
+		Face* f;
+
+		f = &mesh->faces[i];
+		vert = f->getVert(v0);
+		vn = I_Writer.GetVertexNormal(mesh, i, mesh->getRVertPtr(vert));
+
+		Triangle.m_vVertex[0].n.x = vn.x;
+		Triangle.m_vVertex[0].n.y = vn.z;
+		Triangle.m_vVertex[0].n.z = vn.y;
+		vert = f->getVert(v2);
+		vn = I_Writer.GetVertexNormal(mesh, i, mesh->getRVertPtr(vert));
+
+		Triangle.m_vVertex[1].n.x = vn.x;
+		Triangle.m_vVertex[1].n.y = vn.z;
+		Triangle.m_vVertex[1].n.z = vn.y;
+		vert = f->getVert(v1);
+		vn = I_Writer.GetVertexNormal(mesh, i, mesh->getRVertPtr(vert));
+
+		Triangle.m_vVertex[2].n.x = vn.x;
+		Triangle.m_vVertex[2].n.y = vn.z;
+		Triangle.m_vVertex[2].n.z = vn.y;
+
+		pMesh->m_SkinTriList.push_back(Triangle);
+	}
+	pMesh->m_iNumFace = pMesh->m_SkinTriList.size();
+	
+}
+
+void S_KHJ_SkinExp::GenerateGroup(INode* node, Mesh *mesh, SSkinMesh* pSkinMesh)
+{
+	Mtl* mtl = node->GetMtl();
+	pSkinMesh->m_strNodeName = node->GetName();
+
+	if (mtl)
+	{
+		pSkinMesh->m_iMtrlRef = mtl->NumSubMtls();
+	}
+	if (pSkinMesh->m_iMtrlRef > 0)
+	{
+		for (int imtl = 0; imtl < pSkinMesh->m_iMtrlRef; imtl++)
+		{
+			SSkinMesh* pSubSkinMesh = NULL;
+			SAFE_NEW(pSubSkinMesh, SSkinMesh);
+			// 맥스 서브메터리얼 정보 저장
+			Mtl* subMtl = mtl->GetSubMtl(imtl);
+			LoadMaterial(pSubSkinMesh, subMtl);
+			// 매쉬를 이루는 페이스리스트를 만든다.
+			SetTriangle(node, mesh, pSkinMesh, pSubSkinMesh, imtl);
+			pSkinMesh->m_pSubMesh.push_back(pSubSkinMesh);
+		}
+	}
+	else
+	{
+		LoadMaterial(pSkinMesh, mtl);
+		// 매쉬를 이루는 페이스리스트를 만든다.
+		SetTriangle(node, mesh, pSkinMesh);
 	}
 }
-
-S_KHJ_SkinExp::S_KHJ_SkinExp()
+void S_KHJ_SkinExp::LoadMaterial(SSkinMesh*	pMesh, Mtl* mtl)
 {
+	if (mtl)
+	{
+		pMesh->m_iNumTex = 0;
+		memset(pMesh->m_szTexName, 0, sizeof(TCHAR) * 13 * 30);
+		for (int i = 0; i < mtl->NumSubTexmaps(); i++)
+		{
+			Texmap* subTex = mtl->GetSubTexmap(i);
+			float amt = 1.0f;
+			if (subTex)
+			{
+				if (mtl->ClassID() == Class_ID(DMTL_CLASS_ID, 0))
+				{
+					if (!((StdMat*)mtl)->MapEnabled(i))
+						continue;
+				}
+				if (subTex->ClassID() == Class_ID(BMTEX_CLASS_ID, 0x00))
+				{
+					pMesh->m_iTexType[pMesh->m_iNumTex] = GetMapID(mtl->ClassID(), i);
+					TSTR mapName = ((BitmapTex *)subTex)->GetMapName();
+					TCHAR Drive[MAX_PATH];
+					TCHAR Dir[MAX_PATH];
+					TCHAR FName[MAX_PATH];
+					TCHAR Ext[MAX_PATH];
+					_tsplitpath_s(I_Writer.FixupName(mapName), Drive, Dir, FName, Ext);
+					Ext[4] = 0;
+					_stprintf_s(pMesh->m_szTexName[pMesh->m_iNumTex], _T("%s%s"), FName, Ext);
+					pMesh->m_iNumTex++;
+				}
+			}
+		}
+	}
+}
+// 피직크 검색
+Modifier*	S_KHJ_SkinExp::FindModifier(INode *nodePtr, Class_ID classID)
+{
+	Object *ObjectPtr = nodePtr->GetObjectRef();
+	if (!ObjectPtr)
+	{
+		return NULL;
+	}
+	while (ObjectPtr->SuperClassID() == GEN_DERIVOB_CLASS_ID && ObjectPtr)
+	{
+		IDerivedObject *DerivedObjectPtr = (IDerivedObject *)(ObjectPtr);
+
+		int ModStackIndex = 0;
+		while (ModStackIndex < DerivedObjectPtr->NumModifiers())
+		{
+			Modifier* ModifierPtr = DerivedObjectPtr->GetModifier(ModStackIndex);
+
+			if (ModifierPtr->ClassID() == classID)
+			{
+				return ModifierPtr;
+			}
+
+			ModStackIndex++;
+		}
+		ObjectPtr = DerivedObjectPtr->GetObjRef();
+	}
+	return NULL;
+}
+int S_KHJ_SkinExp::GetMapID(Class_ID cid, int subNo)
+{
+	int iResultIndex = 1;
+	if (cid == Class_ID(0, 0))
+	{
+		iResultIndex = 30;
+	}
+	else if (cid == Class_ID(DMTL_CLASS_ID, 0))
+	{
+		switch (subNo)
+		{
+		case ID_AM: iResultIndex = 0; break;
+		case ID_DI: iResultIndex = 1; break;
+		case ID_SP: iResultIndex = 2; break;
+		case ID_SH: iResultIndex = 3; break;
+		case ID_SS: iResultIndex = 4; break;
+		case ID_SI: iResultIndex = 5; break;
+		case ID_OP: iResultIndex = 6; break;
+		case ID_FI: iResultIndex = 7; break;
+		case ID_BU: iResultIndex = 8; break;
+		case ID_RL: iResultIndex = 9; break;
+		case ID_RR: iResultIndex = 10; break;
+		}
+	}
+	else
+	{
+		iResultIndex = 31;
+	}
+	return iResultIndex;
+}
+int S_KHJ_SkinExp::IsEqulVertexList(vector<PNCT5_VERTEX>&  VertexArray, PNCT5_VERTEX& Vertex)
+{
+	for (int iVertex = 0; iVertex < VertexArray.size(); iVertex++)
+	{
+		if (I_Writer.EqualPoint3(VertexArray[iVertex].p, Vertex.p) &&
+			I_Writer.EqualPoint3(VertexArray[iVertex].n, Vertex.n) &&
+			I_Writer.EqualPoint4(VertexArray[iVertex].c, Vertex.c) &&
+			I_Writer.EqualPoint2(VertexArray[iVertex].t, Vertex.t))
+		{
+			return iVertex;
+		}
+	}
+	return -1;
+}
+bool S_KHJ_SkinExp::skmExport()
+{
+	int iSkinMeshCount = m_SkinMeshList.size();
+	if (iSkinMeshCount <= 0)
+	{
+		MessageBox(NULL, _T("출력할 정보가 없습니다."), _T("파일생성에러"), MB_ICONERROR);
+		return FALSE;
+	}
+
+	TCHAR  szFile[256] = { 0, };
+	_tcscpy(szFile, I_Writer.SaveFileDlg(_T("skm"), _T("TSkinExport")));
+
+	FILE	*fp;
+	fp = _tfopen(szFile, _T("wb"));
+	if (!fp)
+	{
+		MessageBox(NULL, _T("파일을 생성하지 못했습니다."), _T("파일생성에러"), MB_ICONERROR);
+		return FALSE;
+	}
+
+	struct tm *newtime;
+	time_t aclock;
+	time(&aclock);
+	newtime = localtime(&aclock);
+	fwrite(newtime, sizeof(tm), 1, fp);
+
+	m_Scene.iNumMesh = m_SkinMeshList.size();
+	fwrite(&m_Scene, sizeof(SScene), 1, fp);
+
+	for (SSKINMESH_VECTOR::iterator iter = m_SkinMeshList.begin(); iter != m_SkinMeshList.end(); iter++)
+	{
+		SSkinMesh* pMesh = (*iter);
+		TCHAR szName[256] = { 0, };
+		TCHAR szParentName[256] = { 0, };
+		// 노드 이름
+		int iLen = pMesh->m_strNodeName.Length();
+		fwrite(&iLen, sizeof(int), 1, fp);
+		if (iLen > 0)
+		{
+			_tcscpy(szName, pMesh->m_strNodeName);
+			fwrite(szName, sizeof(TCHAR)*iLen, 1, fp);
+		}
+
+		// 노드 부모 이름
+		iLen = pMesh->m_strParentName.Length();
+		_tcscpy(szParentName, pMesh->m_strParentName);
+		fwrite(&iLen, sizeof(int), 1, fp);
+		if (iLen > 0)
+		{
+			fwrite(szParentName, sizeof(TCHAR)*iLen, 1, fp);
+		}
+
+		// 월드 행렬
+		fwrite(&pMesh->m_matWorld, sizeof(D3D_MATRIX), 1, fp);
+
+		// 서브매터리얼 개수
+		int iRealSubMtrlConter = pMesh->m_pSubMesh.size();
+		fwrite(&iRealSubMtrlConter, sizeof(int), 1, fp);
+
+		if (iRealSubMtrlConter <= 0)
+		{
+			ExportMesh(fp, pMesh);
+		}
+		else
+		{
+			for (int iMesh = 0; iMesh < pMesh->m_pSubMesh.size(); iMesh++)
+			{
+				SSkinMesh* pSubMesh = pMesh->m_pSkinSubMesh[iMesh];
+				ExportMesh(fp, pSubMesh);
+			}
+		}
+	}
+
+	// 드레스 포즈의 각 바이패드 행렬 출력
+	MATRIXINDEX* matIndex;
+	D3D_MATRIX d3dMat;
+	int iNumMatrix = I_Writer.m_MatrixMap.TMap.size();
+	fwrite(&iNumMatrix, sizeof(int), 1, fp);
+
+	for (int iMat = 0; iMat < iNumMatrix; iMat++)
+	{
+		matIndex = I_Writer.m_MatrixMap.GetPtr(iMat);
+		I_Writer.DumpMatrix3(&matIndex->m_InvNodeTM, d3dMat);
+		fwrite(&d3dMat, sizeof(D3D_MATRIX), 1, fp);
+	}
+
+	fclose(fp);
+	Release();
+	MessageBox(GetActiveWindow(), szFile, _T("Succeed!!"), MB_OK);
+	return true;
+}
+bool S_KHJ_SkinExp::ExportMesh(FILE* fp, SSkinMesh* pMesh)
+{
+	vector <PNCT5_VERTEX>			VertexArray;
+	vector < unsigned int>			IndexArray;
+	VertexArray.reserve(pMesh->m_iNumFace * 3);
+	IndexArray.reserve(pMesh->m_iNumFace * 3);
+
+	int iPosPushCnt = 0;
+	for (int iFace = 0; iFace < pMesh->m_iNumFace; iFace++)
+	{
+		for (int iCnt = 0; iCnt < 3; iCnt++)
+		{
+			int iPosReturn = IsEqulVertexList(VertexArray, pMesh->m_SkinTriList[iFace].m_vVertex[iCnt]);
+			if (iPosReturn < 0)
+			{
+				// 서브매터리얼 인덱스 => 정점 알파성분에 대입
+				//pMesh->m_SkinTriList[iFace].m_vVertex[iCnt].c.w = pMesh->m_SkinTriList[iFace].iSubIndex;
+				VertexArray.push_back(pMesh->m_SkinTriList[iFace].m_vVertex[iCnt]);
+				iPosReturn = iPosPushCnt++;
+			}
+			IndexArray.push_back(iPosReturn);
+		}
+	}
+	pMesh->m_iNumVertex = VertexArray.size();
+
+	fwrite(&pMesh->m_iNumVertex, sizeof(int), 1, fp);
+	fwrite(&pMesh->m_iNumFace, sizeof(int), 1, fp);
+	fwrite(&pMesh->m_iNumTex, sizeof(int), 1, fp);
+
+	fwrite(&VertexArray.at(0), sizeof(PNCT5_VERTEX)	* VertexArray.size(), 1, fp);
+	fwrite(&IndexArray.at(0), sizeof(unsigned int)	* IndexArray.size(), 1, fp);
+
+	for (int itex = 0; itex < pMesh->m_iNumTex; itex++)
+	{
+		int iLen = _tcslen(pMesh->m_szTexName[itex]);
+		fwrite(&iLen, sizeof(int), 1, fp);
+		fwrite(&pMesh->m_iTexType[itex], sizeof(int), 1, fp);
+		fwrite(pMesh->m_szTexName[itex], sizeof(TCHAR) * iLen, 1, fp);
+	}
+	return true;
+}
+bool S_KHJ_SkinExp::Release()
+{
+	m_BipedList.clear();
+	for (SSKINMESH_VECTOR::iterator iter = m_SkinMeshList.begin(); iter != m_SkinMeshList.end(); iter++)
+	{
+		SSkinMesh* pMesh = (*iter);
+		if (pMesh->m_iMtrlRef > 0)
+		{
+			pMesh->m_pSkinSubMesh.clear();
+			for (int imtl = 0; imtl < pMesh->m_iMtrlRef; imtl++)
+			{
+				//SAFE_DEL( pMesh->m_pSkinSubMesh[imtl] );
+
+			}
+		}
+		SAFE_DEL(pMesh);
+	}
+	m_SkinMeshList.clear();
+	return true;
+}
+
+S_KHJ_SkinExp::S_KHJ_SkinExp(void)
+{
+	Init();
 }
 
 
-S_KHJ_SkinExp::~S_KHJ_SkinExp()
+S_KHJ_SkinExp::~S_KHJ_SkinExp(void)
 {
+	Release();
 }
+ 

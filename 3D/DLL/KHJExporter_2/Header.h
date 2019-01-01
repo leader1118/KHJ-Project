@@ -1,5 +1,7 @@
 #pragma once
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "resource.h"
 #include <istdplug.h>
 #include <iparamb2.h>
@@ -65,4 +67,4 @@ typedef basic_string<CHAR>				CHAR_STRING;
 typedef vector<basic_string<TCHAR>>		T_STR_VECTOR;
 typedef vector<DWORD>					DWORD_VECTOR;
 
-//Class_ID(0x55533089, 0x59c62028)
+#define KHJ_EXPORT_CLASS_ID Class_ID(0x55533089, 0x59c62028)

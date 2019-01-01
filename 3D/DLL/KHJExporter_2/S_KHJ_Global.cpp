@@ -66,7 +66,7 @@ void S_KHJ_Global::AddObject(INode* pNode)
 		{
 			return;
 		}
-		switch (os.obj->SuperClassID)
+		switch (os.obj->SuperClassID())
 		{
 		case GEOMOBJECT_CLASS_ID:
 			case HELPER_CLASS_ID:
