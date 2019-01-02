@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>../output/KHJExporter_2/</OutDir>
     <IntDir>../output/KHJExporter_2/</IntDir>
+    <TargetExt>.dle</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -157,6 +158,7 @@
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="S_KHJ_AnimObj.cpp" />
+    <ClCompile Include="S_KHJ_Expoter.cpp" />
     <ClCompile Include="S_KHJ_Global.cpp" />
     <ClCompile Include="S_KHJ_Object.cpp" />
     <ClCompile Include="S_KHJ_SkinExp.cpp" />

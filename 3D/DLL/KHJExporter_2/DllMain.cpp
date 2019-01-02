@@ -12,7 +12,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, ULONG fdwReason, LPVOID/*lpvReserved*/)
 		hInstance = hinstDLL;
 		DisableThreadLibraryCalls(hInstance);
 	}
-	return(TRUE);
+	return TRUE;
 }
 
 __declspec(dllexport) const TCHAR* LibDescription()
