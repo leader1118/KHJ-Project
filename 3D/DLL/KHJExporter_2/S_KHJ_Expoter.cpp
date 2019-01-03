@@ -1,7 +1,7 @@
 // DLL 응용 프로그램을 위해 내보낸 함수를 정의합니다
 
 
-#define KHJ_EXPORT_CLASS_ID Class_ID(0x55533089, 0x59c62028)
+#define KHJ_EXPORT_CLASS_ID Class_ID(0x7bfc2122, 0x17ef3cbc)
 
 #include "Header.h"
 #include "S_KHJ_Writer.h"
