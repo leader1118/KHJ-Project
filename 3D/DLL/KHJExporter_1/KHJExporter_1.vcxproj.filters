@@ -21,9 +21,6 @@
     <ClCompile Include="KHJ_AnimObj.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="KHJ_Exporter.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="KHJ_Global.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -36,12 +33,12 @@
     <ClCompile Include="KHJ_Writer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="KHJ_Exporter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KHJ_AnimObj.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="KHJ_Exporter.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="KHJ_Global.h">
@@ -60,6 +57,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TamplateMap.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

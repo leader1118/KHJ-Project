@@ -164,12 +164,12 @@
   <ItemGroup>
     <ClInclude Include="Header.h" />
     <ClInclude Include="KHJ_AnimObj.h" />
-    <ClInclude Include="KHJ_Exporter.h" />
     <ClInclude Include="KHJ_Global.h" />
     <ClInclude Include="KHJ_Object.h" />
     <ClInclude Include="KHJ_SkinExp.h" />
     <ClInclude Include="KHJ_Writer.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="TamplateMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
