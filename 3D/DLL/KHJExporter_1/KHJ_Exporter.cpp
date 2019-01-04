@@ -2,7 +2,7 @@
 
 #include "Header.h"
 
-#define KHJExporter_CLASS_ID ClassID
+#define KHJExporter_CLASS_ID Class_ID(0x7f1d60c8, 0x6c453ac4)
 
 class KHJExporter : public SceneExport
 {

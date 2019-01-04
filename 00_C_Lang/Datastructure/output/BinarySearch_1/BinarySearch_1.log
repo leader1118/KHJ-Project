@@ -1,0 +1,6 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch_1\sample.cpp(81): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch_1\sample.cpp(31): warning C4715: 'CreateNode': 모든 제어 경로에서 값을 반환하지는 않습니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch_1\sample.cpp(63): warning C4715: 'BinaryNode': 모든 제어 경로에서 값을 반환하지는 않습니다.
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\binarysearch_1\sample.cpp(79): warning C4715: 'BinarySearch': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  BinarySearch_1.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\Datastructure\BinarySearch_1\../output/BinarySearch_1.exe

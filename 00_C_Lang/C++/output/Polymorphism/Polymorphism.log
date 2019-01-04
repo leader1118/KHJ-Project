@@ -1,0 +1,17 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(8): error C2664: 'TPermanent::TPermanent(const TPermanent &)': 인수 1을(를) 'const char [4]'에서 'char *'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(8): note: 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(9): error C2664: 'TPermanent::TPermanent(const TPermanent &)': 인수 1을(를) 'const char [4]'에서 'char *'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(9): note: 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(10): error C2664: 'TTemporary::TTemporary(TTemporary &&)': 인수 1을(를) 'const char [4]'에서 'char *'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(10): note: 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(11): error C2664: 'TTemporary::TTemporary(TTemporary &&)': 인수 1을(를) 'const char [5]'에서 'char *'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\sample.cpp(11): note: 문자열 리터럴로부터의 변환은 const 한정자가 손실됩니다(/Zc:strictStrings 참조).
+  TDepartment.cpp
+  TEmployee.cpp
+  TPermanent.cpp
+  TTemporary.cpp
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\ttemporary.cpp(4): error C2065: '_time': 선언되지 않은 식별자입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\ttemporary.cpp(5): error C2065: '_pay': 선언되지 않은 식별자입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c++\polymorphism\ttemporary.cpp(10): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+  코드를 생성하고 있습니다...

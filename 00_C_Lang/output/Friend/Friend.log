@@ -1,0 +1,8 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\friend\sample.cpp(4): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\friend\sample.cpp(5): error C2440: '초기화 중': 'const wchar_t [18]'에서 'TCHAR []'(으)로 변환할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\friend\sample.cpp(5): note: 문자열 리터럴 형식이 배열 형식과 호환되지 않습니다.
+  Token.cpp
+  value.cpp
+c:\users\김현진\desktop\khj\00_c_lang\friend\value.cpp(6): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...

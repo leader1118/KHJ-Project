@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : 'c:\users\김현진\desktop\khj\00_c_lang\sort\output\sort\vc141.idb' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : 'c:\users\김현진\desktop\khj\00_c_lang\sort\output\sort\vc141.pdb' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 중간 디렉터리(../output/SORT/)에 다른 프로젝트(Heap.vcxproj, Insertion.vcxproj, Quick.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  Merge Sort.cpp
+c:\users\김현진\desktop\khj\00_c_lang\sort\sample.001\merge sort.cpp(86): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\00_c_lang\sort\sample.001\merge sort.cpp(92): warning C4244: '인수': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+LINK : fatal error LNK1104: '..\output\SORT\Merge Sort.obj' 파일을 열 수 없습니다.

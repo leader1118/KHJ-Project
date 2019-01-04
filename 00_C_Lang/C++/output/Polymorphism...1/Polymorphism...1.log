@@ -1,0 +1,9 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 중간 디렉터리(../output/Polymorphism...1/)에 다른 프로젝트(*.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  Sample.cpp
+  TEllipse.cpp
+  TFigure.cpp
+  TRectangle.cpp
+  TTriangle.cpp
+  코드를 생성하고 있습니다...
+Sample.obj : error LNK2019: "public: __cdecl TTriangle::TTriangle(int,int,int,int)" (??0TTriangle@@QEAA@HHHH@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+../output/Polymorphism...1.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

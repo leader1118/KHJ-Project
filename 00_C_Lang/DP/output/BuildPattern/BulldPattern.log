@@ -1,0 +1,28 @@
+﻿  Sample.cpp
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(24): error C2039: 'vector': 'std'의 멤버가 아닙니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(14): note: 'std' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(24): error C2143: 구문 오류: ';'이(가) '<' 앞에 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(24): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(24): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(25): error C2039: 'vector': 'std'의 멤버가 아닙니다.
+  c:\program files (x86)\microsoft visual studio\2017\enterprise\vc\tools\msvc\14.16.27023\include\iostream(14): note: 'std' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(25): error C2143: 구문 오류: ';'이(가) '<' 앞에 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(25): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(25): error C2238: ';' 앞에 예기치 않은 토큰이 있습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(44): error C2248: 'TBuilder::BuildAttack': private 멤버('TBuilder' 클래스에서 선언)에 액세스할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(16): note: 'TBuilder::BuildAttack' 선언을 참조하십시오.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(13): note: 'TBuilder' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(44): error C2297: '+=': 오른쪽 피연산자 형식으로 'void'을(를) 사용할 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(44): error C2120: 모든 형식에서 'void'를 사용할 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(45): error C2248: 'TBuilder::BuildDefense': private 멤버('TBuilder' 클래스에서 선언)에 액세스할 수 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(17): note: 'TBuilder::BuildDefense' 선언을 참조하십시오.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(13): note: 'TBuilder' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(45): error C2297: '+=': 오른쪽 피연산자 형식으로 'void'을(를) 사용할 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(45): error C2120: 모든 형식에서 'void'를 사용할 수 없습니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(47): error C2819: 'TBuilder' 형식에 오버로드된 멤버 'operator ->'가 없습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(13): note: 'TBuilder' 선언을 참조하십시오.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(47): note: 대신 '.'을(를) 사용하려고 했습니까?
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(47): error C2232: '->TBuilder::GetMaze': 왼쪽 피연산자에 'class' 형식이 있습니다. '.'를 사용하십시오.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(52): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(56): error C2039: 'GetTCharacter': 'TDirector'의 멤버가 아닙니다.
+  c:\users\김현진\desktop\khj\00_c_lang\dp\bulldpattern\sample.cpp(36): note: 'TDirector' 선언을 참조하십시오.

@@ -1,0 +1,5 @@
+﻿  Sample.cpp
+  TAvlTree.cpp
+c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.cpp(10): error C2275: 'Node': 이 형식을 식으로 잘못 사용했습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\datastructure\avltree1\tavltree.h(8): note: 'Node' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...

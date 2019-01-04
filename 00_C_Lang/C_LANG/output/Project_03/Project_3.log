@@ -1,0 +1,14 @@
+﻿  Study_2.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(5): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(5): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(6): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(6): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(7): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(7): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(8): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(8): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(9): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(10): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_3\study_2.c(10): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  Project_3.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_3\../output/Project_03.exe

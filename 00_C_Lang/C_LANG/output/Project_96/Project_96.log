@@ -1,0 +1,10 @@
+﻿  Study_95.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'char *'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): note: 이 인수는 버퍼 크기로 사용됩니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'int *'입니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): note: 이 인수는 변환 지정자에서 사용됩니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): warning C4473: 'scanf_s': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 5개 필요하지만 3개가 제공되었습니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): note: 누락된 variadic 인수 4이(가) 서식 문자열 '%s'에 필요합니다.
+  c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_96\study_95.c(10): note: 이 인수는 버퍼 크기로 사용됩니다.
+  Project_96.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_96\../output/Project_96.exe

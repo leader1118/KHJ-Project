@@ -1,0 +1,4 @@
+﻿  Sutdy_96.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_97\sutdy_96.c(33): warning C4047: '!=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_97\sutdy_96.c(39): warning C4047: '!=': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+  Project_97.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_97\../output/Project_97.exe

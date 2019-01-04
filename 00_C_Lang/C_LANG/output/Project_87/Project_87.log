@@ -1,0 +1,8 @@
+﻿  Study_86.c
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int *'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4313: 'printf': 서식 문자열의 '%d'이(가) 인수 2('int *' 형식)과(와) 충돌합니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'float *'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4313: 'printf': 서식 문자열의 '%d'이(가) 인수 3('float *' 형식)과(와) 충돌합니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 4의 형식이 'double *'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_87\study_86.c(13): warning C4313: 'printf': 서식 문자열의 '%d'이(가) 인수 4('double *' 형식)과(와) 충돌합니다.
+  Project_87.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_87\../output/Project_87.exe

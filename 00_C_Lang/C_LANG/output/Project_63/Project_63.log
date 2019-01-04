@@ -1,0 +1,3 @@
+﻿  Study_62.cpp
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_63\study_62.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Project_63.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_63\../output/Project_63.exe

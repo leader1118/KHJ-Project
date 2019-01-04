@@ -1,0 +1,35 @@
+﻿  DB_CONNECT.cpp
+  DB_MGR.cpp
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SQLTCHAR *'입니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%lls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%Ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%ws'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'SQLTCHAR *'입니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%lls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%Ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(87): note: 서식 문자열에서 '%ws'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'TCHAR *'입니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): note: 이 인수는 변환 지정자에서 사용됩니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): note: 서식 문자열에서 '%ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): note: 서식 문자열에서 '%lls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): note: 서식 문자열에서 '%Ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(124): note: 서식 문자열에서 '%ws'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'SQLTCHAR *'입니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%lls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%Ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%ws'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'SQLTCHAR *'입니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%lls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%Ls'을(를) 사용하는 것이 좋습니다.
+  c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(152): note: 서식 문자열에서 '%ws'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\db\odbclib\db_mgr.cpp(114): warning C4101: 'cbRetParam' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  ODBCLIB.vcxproj -> C:\Users\김현진\Desktop\KHJ\DB\ODBCLIB\../output/ODBCLIB/ODBCLIB.lib
+  DB_CONNECT.h
+  DB_MGR.h
+  ODBCSTD.h
+          3개 파일이 복사되었습니다.

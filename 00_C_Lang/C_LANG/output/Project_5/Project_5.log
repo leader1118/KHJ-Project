@@ -1,0 +1,4 @@
+﻿  Stduy_4.cpp
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_5\stduy_4.cpp(5): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+c:\users\김현진\desktop\khj\00_c_lang\c_lang\project_5\stduy_4.cpp(11): warning C4305: '=': 'double'에서 'float'(으)로 잘립니다.
+  Project_5.vcxproj -> C:\Users\김현진\Desktop\KHJ\00_C_Lang\C_LANG\Project_5\../output/Project_05.exe
