@@ -12,6 +12,7 @@ public:
 	LPDIRECTINPUT8  m_pDI;
 	LPDIRECTINPUTDEVICE8  m_pKey;
 	LPDIRECTINPUTDEVICE8  m_pMouse;
+	HWND			m_hWnd;
 
 	BYTE			m_KeyState[256];
 	DIMOUSESTATE	m_MouseState;

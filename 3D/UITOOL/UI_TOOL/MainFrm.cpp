@@ -6,6 +6,7 @@
 #include "UI_TOOL.h"
 
 #include "MainFrm.h"
+#include "UI_INTERFACE.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -25,6 +26,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWndEx)
 	ON_REGISTERED_MESSAGE(AFX_WM_CREATETOOLBAR, &CMainFrame::OnToolbarCreateNew)
 	ON_COMMAND_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnApplicationLook)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_VIEW_APPLOOK_WIN_2000, ID_VIEW_APPLOOK_WINDOWS_7, &CMainFrame::OnUpdateApplicationLook)
+	ON_COMMAND(ID_INTERFACE, &CMainFrame::OnInterface)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -308,3 +310,11 @@ BOOL CMainFrame::LoadFrame(UINT nIDResource, DWORD dwDefaultStyle, CWnd* pParent
 	return TRUE;
 }
 
+
+
+void CMainFrame::OnInterface()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	UI_INTERFACE INT;
+	INT.DoModal();
+}

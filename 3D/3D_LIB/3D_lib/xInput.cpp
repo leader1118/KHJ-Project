@@ -57,7 +57,7 @@ bool xInput::Init()
 		return false;
 	}
 	if (FAILED(hr = m_pKey->SetCooperativeLevel(
-		g_hWnd, DISCL_NONEXCLUSIVE |DISCL_FOREGROUND | DISCL_NOWINKEY)))
+		m_hWnd, DISCL_NONEXCLUSIVE |DISCL_FOREGROUND | DISCL_NOWINKEY)))
 	{
 		return false;
 	}
@@ -71,7 +71,7 @@ bool xInput::Init()
 	{
 		return false;
 	}
-	if (FAILED(hr = m_pMouse->SetCooperativeLevel(g_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND | DISCL_NOWINKEY)))
+	if (FAILED(hr = m_pMouse->SetCooperativeLevel(m_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND | DISCL_NOWINKEY)))
 	{
 		return false;
 	}
@@ -81,6 +81,7 @@ bool xInput::Init()
 
 xInput::xInput()
 {
+	m_hWnd = NULL;
 }
 
 

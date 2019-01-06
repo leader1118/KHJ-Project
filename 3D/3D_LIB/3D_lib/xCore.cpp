@@ -75,7 +75,7 @@ bool	xCore::GameFrame()
 	
 	D3DXVECTOR4   vYawPitchRoll(0,0,0,0);
 	// camera control
-	if (g_Input.bButton1)
+	if (g_Input.bButton0)
 	{
 		vYawPitchRoll.y = 0.1f * D3DXToRadian(I_Input.m_MouseState.lX);
 		vYawPitchRoll.x = 0.1f * D3DXToRadian(I_Input.m_MouseState.lY);

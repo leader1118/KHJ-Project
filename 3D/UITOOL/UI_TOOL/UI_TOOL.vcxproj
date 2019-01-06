@@ -23,7 +23,7 @@
     <ProjectGuid>{6D2D7369-294B-4A68-8EE2-45743377C563}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>UITOOL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -192,6 +192,7 @@
     <ClInclude Include="Sample.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UI_INTERFACE.h" />
     <ClInclude Include="UI_TOOL.h" />
     <ClInclude Include="UI_TOOLDoc.h" />
     <ClInclude Include="UI_TOOLView.h" />
@@ -205,6 +206,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UI_INTERFACE.cpp" />
     <ClCompile Include="UI_TOOL.cpp" />
     <ClCompile Include="UI_TOOLDoc.cpp" />
     <ClCompile Include="UI_TOOLView.cpp" />

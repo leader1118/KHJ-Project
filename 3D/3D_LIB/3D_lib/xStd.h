@@ -10,7 +10,7 @@
 #include <vector>
 #include <tchar.h>
 #include "d3dx11.h"
-#include "dxgi.h" 
+//#include "dxgi.h" 
 #include "d3dcompiler.h"
 #include <d3dx10math.h>
 #include <wrl.h>
@@ -18,7 +18,7 @@
 #pragma comment(lib,"winmm.lib")
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"d3dx11.lib")
-#pragma comment(lib,"dxgi.lib")
+//#pragma comment(lib,"dxgi.lib")
 #pragma comment(lib,"3D_lib.lib")
 
 using namespace std;

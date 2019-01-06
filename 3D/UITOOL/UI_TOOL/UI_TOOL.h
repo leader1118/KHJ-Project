@@ -8,7 +8,7 @@
 #endif
 
 #include "resource.h"       // 주 기호입니다.
-
+#include "Sample.h"
 
 // CUITOOLApp:
 // 이 클래스의 구현에 대해서는 UI_TOOL.cpp을(를) 참조하세요.
@@ -18,7 +18,7 @@ class CUITOOLApp : public CWinAppEx
 {
 public:
 	CUITOOLApp() noexcept;
-
+	Sample m_ToolCtl;
 
 // 재정의입니다.
 public:
@@ -35,6 +35,7 @@ public:
 
 	afx_msg void OnAppAbout();
 	DECLARE_MESSAGE_MAP()
+	virtual BOOL OnIdle(LONG lCount);
 };
 
 extern CUITOOLApp theApp;
