@@ -29,6 +29,7 @@ void UI_INTERFACE::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(UI_INTERFACE, CDialog)
 ON_WM_SIZE()
+//ON_BN_CLICKED(IDC_BUTTON5, &UI_INTERFACE::OnBnClickedButton5)
 END_MESSAGE_MAP()
 
 
@@ -54,3 +55,4 @@ void UI_INTERFACE::OnSize(UINT nType, int cx, int cy)
 
 	return;	
 }
+

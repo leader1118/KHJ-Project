@@ -8,7 +8,7 @@
 #include <string>
 #include <list>
 #include <vector>
-#include <tchar.h>
+
 #include "d3dx11.h"
 //#include "dxgi.h" 
 #include "d3dcompiler.h"

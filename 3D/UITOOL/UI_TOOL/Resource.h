@@ -41,15 +41,33 @@
 #define IDC_CHECK8                      1029
 #define IDC_CHECK9                      1030
 #define IDC_CHECK10                     1031
+#define IDC_BUTTON6                     1032
+#define IDC_BUTTON7                     1033
+#define IDC_BUTTON8                     1034
+#define IDC_BUTTON9                     1035
+#define IDC_BUTTON10                    1036
+#define IDC_BUTTON11                    1037
+#define IDC_BUTTON12                    1038
+#define IDC_LIST1                       1040
+#define IDC_SCROLLBAR1                  1043
+#define IDC_BUTTON13                    1045
+#define IDC_BUTTON14                    1046
+#define IDC_BUTTON15                    1047
+#define IDC_BUTTON16                    1048
+#define IDC_BUTTON17                    1049
+#define IDC_BUTTON18                    1050
+#define IDC_EDIT1                       1052
 #define ID_INTERFACE                    32771
+#define ID_SOUND                        32772
+#define ID_TEXTURE                      32773
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        316
-#define _APS_NEXT_COMMAND_VALUE         32772
-#define _APS_NEXT_CONTROL_VALUE         1032
+#define _APS_NEXT_COMMAND_VALUE         32774
+#define _APS_NEXT_CONTROL_VALUE         1053
 #define _APS_NEXT_SYMED_VALUE           310
 #endif
 #endif

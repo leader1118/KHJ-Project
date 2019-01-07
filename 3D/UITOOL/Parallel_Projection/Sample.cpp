@@ -1,11 +1,8 @@
-#include "xCore.h"
-class Sample : public xCore
+#include "sCore.h"
+
+class Sample : public sCore
 {
 public:
-	xBoxShape		m_ObjBox;
-	xPlaneShape		m_ObjPlane;
-	xLineShape		m_ObjLine;
-	xSphereShape	m_ObjSphere;
 public:
 	Sample() {}
 	~Sample() {}
