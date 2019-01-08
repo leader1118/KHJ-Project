@@ -172,6 +172,12 @@ copy "*.lib" "../../lib_1"</Command>
     <ClInclude Include="sTimer.h" />
     <ClInclude Include="sWindow.h" />
     <ClInclude Include="sWrite.h" />
+    <ClInclude Include="xArcBall.h" />
+    <ClInclude Include="xCamera.h" />
+    <ClInclude Include="xFrustum.h" />
+    <ClInclude Include="xModelView.h" />
+    <ClInclude Include="xShape.h" />
+    <ClInclude Include="xSkyBox.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sCore.cpp" />
@@ -182,6 +188,15 @@ copy "*.lib" "../../lib_1"</Command>
     <ClCompile Include="sTimer.cpp" />
     <ClCompile Include="sWindow.cpp" />
     <ClCompile Include="sWrite.cpp" />
+    <ClCompile Include="xArcBall.cpp" />
+    <ClCompile Include="xCamera.cpp" />
+    <ClCompile Include="xFrustum.cpp" />
+    <ClCompile Include="xLineShape.cpp" />
+    <ClCompile Include="xModelView.cpp" />
+    <ClCompile Include="xPlaneShape.cpp" />
+    <ClCompile Include="xShape.cpp" />
+    <ClCompile Include="xSkyBox.cpp" />
+    <ClCompile Include="xSphereShape.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
 #include "sInput.h"
 
-
+SGameInput g_Input;
 bool sInput::Frame()
 {
 	HRESULT hr;

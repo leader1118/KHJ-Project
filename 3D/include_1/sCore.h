@@ -1,9 +1,24 @@
 #pragma once
 #include "sWindow.h"
+#include "sTimer.h"
+#include "sInput.h"
+#include "sDxState.h"
+#include "sWrite.h"
+#include "xSkyBox.h"
+#include "xModelView.h"
 
+using namespace DX;
 
 class sCore : public sWindow
 {
+public:
+	xSkyBox     m_SkyBox;
+	sTimer		m_Timer;
+	sWrite		m_Font;
+	xCamera     m_DefaultCamera;
+	xModelView  m_ModelCamera;
+	xCamera*	m_pMainCamera;
+	xDirLineShape   m_dirAxis;
 public:
 	virtual bool	GamePreInit();
 	bool	GameInit();
@@ -33,4 +48,3 @@ public:
 	sCore();
 	virtual ~sCore();
 };
-

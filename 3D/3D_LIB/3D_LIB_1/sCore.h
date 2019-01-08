@@ -4,19 +4,21 @@
 #include "sInput.h"
 #include "sDxState.h"
 #include "sWrite.h"
+#include "xSkyBox.h"
+#include "xModelView.h"
 
 using namespace DX;
 
 class sCore : public sWindow
 {
 public:
-	sSkyBox     m_SkyBox;
+	xSkyBox     m_SkyBox;
 	sTimer		m_Timer;
 	sWrite		m_Font;
-	sCamera     m_DefaultCamera;
-	sModelView  m_ModelCamera;
-	sCamera*	m_pMainCamera;
-	sDirLineShape   m_dirAxis;
+	xCamera     m_DefaultCamera;
+	xModelView  m_ModelCamera;
+	xCamera*	m_pMainCamera;
+	xDirLineShape   m_dirAxis;
 public:
 	virtual bool	GamePreInit();
 	bool	GameInit();

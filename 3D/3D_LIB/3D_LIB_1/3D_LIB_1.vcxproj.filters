@@ -12,6 +12,15 @@
     <Filter Include="header">
       <UniqueIdentifier>{c3d4dc88-b7bc-44da-bc1a-8861ff3cdcf2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{d16a3ecf-2a2a-46d3-8091-7c2672532b84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SKY">
+      <UniqueIdentifier>{ef6fe4ed-1223-4ff2-9cfb-be26133a4e7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{468f41d4-2ca4-4b7d-a693-5b4f689d42f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sWindow.h">
@@ -44,6 +53,24 @@
     <ClInclude Include="sDxObj.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="xSkyBox.h">
+      <Filter>SKY</Filter>
+    </ClInclude>
+    <ClInclude Include="xShape.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="xArcBall.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xCamera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xFrustum.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="xModelView.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sWindow.cpp">
@@ -69,6 +96,33 @@
     </ClCompile>
     <ClCompile Include="sDxObj.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="xSkyBox.cpp">
+      <Filter>SKY</Filter>
+    </ClCompile>
+    <ClCompile Include="xLineShape.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="xPlaneShape.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="xShape.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="xSphereShape.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="xCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="xFrustum.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="xModelView.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="xArcBall.cpp">
+      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

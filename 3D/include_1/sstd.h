@@ -53,9 +53,10 @@ struct SGameInput
 	BOOL bBack; // s
 	BOOL bLeft; // a
 	BOOL bRight; // d
+	BOOL bSpace; // 스페이스바
 	BOOL bButton0; // 마우스 왼쪽 버튼
-	BOOL bButton1; // 마우스 휠 버튼
-	BOOL bButton2; // 마우스 오른쪽 버튼
+	BOOL bButton1; // 마우스 오른쪽 버튼
+	BOOL bButton2; // 마우스 휠 버튼
 };
 extern SGameInput g_Input;
 template<class S>class SSingleton

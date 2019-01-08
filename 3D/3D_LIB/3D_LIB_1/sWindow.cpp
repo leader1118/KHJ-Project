@@ -191,6 +191,8 @@ bool sWindow::GameRelease() {
 }
 sWindow::sWindow()
 {
+	m_dwStyle = WS_OVERLAPPEDWINDOW;
+	g_pWindow = this;
 }
 
 
