@@ -20,8 +20,8 @@ public:
 		const TCHAR* pVsFile,
 		const TCHAR* pPsFile,
 		const TCHAR* pTexFile);
-	bool Render(ID3D11DeviceContext* pContext);
-	bool PostRebder(ID3D11DeviceContext* pContext);
+	bool Render(ID3D11DeviceContext* pContext,UINT iVertexSize);
+	bool PostRender(ID3D11DeviceContext* pContext);
 	bool Init();
 	bool Frame(float fGameTimer, float fFps);
 	bool Release();
