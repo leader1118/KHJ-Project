@@ -202,7 +202,7 @@ public:
 	TCHAR		 m_tmpBuffer[MAX_PATH]; // 임시 버퍼
 public:
 	bool CheckFile(Interface* pMax);
-	bool Initialize(Interface* p3dsMax = NULL);
+	bool Initialize(Interface* p3dsMax = NULL,TSTR name);
 	void PreProcess(INode* pNode);
 	void AddObject(INode* pNode);
 	void AddMtl(INode* pNode); // 중복되지 않고 매터리얼 추가

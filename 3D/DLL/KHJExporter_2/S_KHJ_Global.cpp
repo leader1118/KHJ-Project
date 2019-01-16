@@ -20,7 +20,7 @@ bool S_KHJ_Global::CheckFile(Interface* pMax)
 	return true;
 }
 
-bool S_KHJ_Global::Initialize(Interface* pMax)
+bool S_KHJ_Global::Initialize(Interface* pMax,TSTR name)
 {
 	m_p3dsMax = pMax;
 	m_pRootNode = pMax->GetRootNode();

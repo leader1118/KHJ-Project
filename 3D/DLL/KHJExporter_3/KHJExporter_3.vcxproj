@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{68DC2E17-1791-418A-8974-373EB0089AC7}</ProjectGuid>
+    <ProjectGuid>{933D3057-FE91-4F94-A8DD-2FE87E91DC62}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>KHJExporter2</RootNamespace>
+    <RootNamespace>KHJExporter3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,9 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>../output/KHJExporter_2/</OutDir>
-    <IntDir>../output/KHJExporter_2/</IntDir>
-    <TargetExt>.dll</TargetExt>
+    <OutDir>../output/KHJExporter_3/</OutDir>
+    <IntDir>../output/KHJExporter_3/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -90,8 +89,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;KHJEXPORTER2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>false</ConformanceMode>
+      <PreprocessorDefinitions>_DEBUG;KHJEXPORTER3_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>../../Sampleinclude/DX;../../Sampleinclude;../../MaxSdk/include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -107,7 +106,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;KHJEXPORTER2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;KHJEXPORTER3_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -123,7 +122,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;KHJEXPORTER2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;KHJEXPORTER3_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -141,7 +140,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;KHJEXPORTER2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;KHJEXPORTER3_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -153,25 +152,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="EXPORTER.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Source.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="S_KHJ_AnimObj.cpp" />
-    <ClCompile Include="S_KHJ_Expoter.cpp" />
-    <ClCompile Include="S_KHJ_Global.cpp" />
-    <ClCompile Include="S_KHJ_Object.cpp" />
-    <ClCompile Include="S_KHJ_SkinExp.cpp" />
-    <ClCompile Include="S_KHJ_Writer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Header.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="S_KHJ_AnimObj.h" />
-    <ClInclude Include="S_KHJ_Global.h" />
-    <ClInclude Include="S_KHJ_Object.h" />
-    <ClInclude Include="S_KHJ_SkinExp.h" />
-    <ClInclude Include="S_KHJ_Writer.h" />
     <ClInclude Include="TemplateMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

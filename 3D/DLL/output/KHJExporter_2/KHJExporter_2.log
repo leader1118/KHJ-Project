@@ -1,4 +1,73 @@
-﻿  S_KHJ_Expoter.cpp
+﻿  S_KHJ_AnimObj.cpp
 c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-  KHJExporter_2.vcxproj -> C:\Users\김현진\Desktop\KHJ\3D\DLL\KHJExporter_2\../output/KHJExporter_2/KHJExporter_2.dle
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+  S_KHJ_Expoter.cpp
+c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+  S_KHJ_Global.cpp
+c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+  S_KHJ_Object.cpp
+c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_object.cpp(76): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  S_KHJ_SkinExp.cpp
+c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(220): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(234): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(248): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(263): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(264): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(265): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(272): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(274): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(276): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(400): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(542): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(566): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(596): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(616): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(654): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_skinexp.cpp(665): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  S_KHJ_Writer.cpp
+c:\users\김현진\desktop\khj\3d\maxsdk\include\paramtype.h(513): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\maxsdk\include\graphicsconstants.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): error C2548: 'S_KHJ_Global::Initialize': 매개 변수 2에 대한 기본 매개 변수가 없습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(41): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(64): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(121): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(135): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(150): error C2660: 'S_KHJ_Global::Initialize': 함수는 1개의 매개 변수를 사용하지 않습니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_global.h(205): note: 'S_KHJ_Global::Initialize' 선언을 참조하십시오.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(243): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(243): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(251): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(256): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(265): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(265): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(271): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(276): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(293): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(293): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(298): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(326): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(330): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(358): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(358): warning C4477: 'fwprintf' : 서식 문자열 '%s'에 'wchar_t *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'WStr'입니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 4의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 5의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 6의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(359): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(413): warning C4477: 'fwprintf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 3의 형식이 'unsigned __int64'입니다.
+  c:\users\김현진\desktop\khj\3d\dll\khjexporter_2\s_khj_writer.cpp(413): note: 서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  코드를 생성하고 있습니다...
