@@ -33,5 +33,79 @@ public:
 	virtual Class_ID ClassID() { return KHJEXP_CLASS_ID; }
 	virtual const TCHAR* Category() { return _T("KHJExporter"); }
 
-	virtual
+	virtual const TCHAR* InternalName() { return _T("KHJExporterClassDesc"); }
+	virtual HINSTANCE Hinstance() { return hInstance; }
 };
+
+ClassDesc2* GetExportDesc()
+{
+	static KHJExporterClassDesc KHJExportDesc;
+	return &KHJExportDesc;
+}
+
+KHJExporter::KHJExporter()
+{
+
+}
+KHJExporter::~KHJExporter()
+{
+
+}
+
+int KHJExporter::ExtCount()
+{
+	return 1;
+}
+
+const TCHAR* KHJExporter::Ext(int n)
+{
+	return _T("KHJ");
+}
+const TCHAR* KHJExporter::LongDesc()
+{
+	return _T("KHJ EXPOTER 2.0");
+}
+
+const TCHAR* KHJExporter::ShortDesc()
+{
+	return _T("KHJExpoter");
+}
+
+const TCHAR* KHJExporter::AuthorName()
+{
+	return _T("PROKVIP");
+}
+
+const TCHAR* KHJExporter::CopyrightMessage()
+{
+	return _T("");
+}
+
+const TCHAR* KHJExporter::OtherMessage1()
+{
+	return _T("");
+}
+const TCHAR* KHJExporter::OtherMessage2()
+{
+	return _T("");
+}
+
+unsigned int KHJExporter::Version()
+{
+	return 100;
+}
+
+void KHJExporter::ShowAbout(HWND)
+{
+
+}
+
+BOOL KHJExporter::SupportsOptions(int, DWORD)
+{
+	return TRUE;
+}
+
+int KHJExporter::DoExport(const TCHAR* name, ExpInterface* ei, Interface* i, BOOL suppressPrompts, DWORD options)
+{
+	return FALSE;
+}

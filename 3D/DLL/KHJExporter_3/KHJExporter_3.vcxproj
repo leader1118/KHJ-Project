@@ -90,7 +90,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;KHJEXPORTER3_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>../../Sampleinclude/DX;../../Sampleinclude;../../MaxSdk/include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -154,12 +154,16 @@
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="EXPORTER.cpp" />
+    <ClCompile Include="S_Global.cpp" />
+    <ClCompile Include="S_Object.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source.def" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
+    <ClInclude Include="S_Global.h" />
+    <ClInclude Include="S_Object.h" />
     <ClInclude Include="TemplateMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

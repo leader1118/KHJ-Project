@@ -1,6 +1,6 @@
 #include "Header.h"
 
-extern ClassDesc2 GetExportDesc();
+extern ClassDesc2* GetExportDesc();
 
 HINSTANCE hInstance;
 int controlsInit = FALSE;

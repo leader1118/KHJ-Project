@@ -1,26 +1,24 @@
-#include "S_KHJ_Global.h"
+#include "S_Global.h"
 
-int S_KHJ_Global::GetIndex(const TCHAR* strNodeName)
+int S_Global::GetIndex(const TCHAR* strNodeName)
 {
 	return m_MatrixMap.GetID(strNodeName);
 }
-
-bool S_KHJ_Global::CheckFile(Interface* pMax)
+bool S_Global::CheckFile(Interface* pMax)
 {
 	TSTR curtFileName = FixupName(pMax->GetCurFileName());
 	if (curtFileName.isNull() == false && m_CurtFileName == curtFileName)
 	{
 		return false;
 	}
-
 	m_MatrixMap.Release();
-	m_pMtlList.clear(); // 매터리얼 리스트
+	m_pMtlList.clear();
 
 	m_CurtFileName = curtFileName;
 	return true;
 }
 
-bool S_KHJ_Global::Initialize(Interface* pMax,TSTR name)
+bool S_Global::Initialize(Interface* pMax)
 {
 	m_p3dsMax = pMax;
 	m_pRootNode = pMax->GetRootNode();
@@ -29,24 +27,37 @@ bool S_KHJ_Global::Initialize(Interface* pMax,TSTR name)
 	{
 		return false;
 	}
+
 	if (CheckFile(pMax) == false)return true;
 
-	// Scene  정보 얻기
+	// scene 정보 얻기
 	m_Interval = m_p3dsMax->GetAnimRange();
 
+	memset(&m_Scene, 0, sizeof(m_Scene));
+
+	m_Scene.iVersion = 20190121;
+	m_Scene.iFirstFrame = m_Interval.Start() / GetTicksPerFrame();
+	m_Scene.iLastFrmae = m_Interval.End() / GetTicksPerFrame();
+	m_Scene.iFrameSpeed = GetFrameRate();
+	m_Scene.iTickPerFrame = GetTicksPerFrame();
+
+	// 최 상위 INode 얻기
+	PreProcess(m_p3dsMax->GetRootNode());
+
 	m_Scene.iNumMesh = m_MatrixMap.Count();
-	m_Scene.iMaxweight = 1;
+	m_Scene.iMaxWeight = 1;
 	return true;
 }
-void S_KHJ_Global::PreProcess(INode* pNode)
+
+void S_Global::PreProcess(INode* pNode)
 {
 	if (pNode == NULL)return;
+
 	AddObject(pNode);
 	AddMtl(pNode);
-
-	// 재귀 호출
+	
+	//  재귀 호출
 	int iNumChildren = pNode->NumberOfChildren(); // pNode의 자식 노드 개수를 반환함.
-
 	for (int iCnt = 0; iCnt < iNumChildren; iCnt++)
 	{
 		INode* pChild = pNode->GetChildNode(iCnt); // iCnt 번째의 자식 노드를 반환함.
@@ -54,14 +65,14 @@ void S_KHJ_Global::PreProcess(INode* pNode)
 	}
 }
 
-void S_KHJ_Global::AddObject(INode* pNode)
+void S_Global::AddObject(INode* pNode)
 {
-	// 오브젝 트 추가
+	// 오브젝트 추가
 	ObjectState os = pNode->EvalWorldState(m_Interval.Start());
 	// 타켓 클래스인 오브젝트는 불필요한 오브젝트이다.
 	if (os.obj)
 	{
-		// 타켓클래스인 오브젝트는 불필요한 오브젝트이다.
+		// 타켓 클래스인 오브젝트는 불필요한 오브젝트이다.
 		if (os.obj->ClassID() == Class_ID(TARGET_CLASS_ID, 0))
 		{
 			return;
@@ -69,40 +80,40 @@ void S_KHJ_Global::AddObject(INode* pNode)
 		switch (os.obj->SuperClassID())
 		{
 		case GEOMOBJECT_CLASS_ID:
-			case HELPER_CLASS_ID:
-			{
-				int iIndex = m_MatrixMap.Add(pNode->GetName());
-				TSTR parentName = pNode->GetParentNode()->GetName();
-				m_MatrixMap.GetPtr(iIndex)->SetNode(pNode, m_Interval.Start(), m_MatrixMap.GetPtr(parentName));
-			}
-			break;
+		case HELPER_CLASS_ID:
+		{
+			int iIndex = m_MatrixMap.Add(pNode->GetName());
+			TSTR parentname = pNode->GetParentNode()->GetName();
+			m_MatrixMap.GetPtr(iIndex)->SetNode(pNode, m_Interval.Start(), m_MatrixMap.GetPtr(parentname));
+
+		}
+		break;
 		}
 	}
 }
 
-void S_KHJ_Global::AddMtl(INode* pNode)
+void S_Global::AddMtl(INode* pNode)
 {
-	// 매터리얼 추가 (중복제거)
+	// 매터리얼 추가(중복 제거)
 	Mtl* pMtl = pNode->GetMtl();
 	if (pMtl != NULL)
 	{
 		bool bAdd = true;
 		for (int iCnt = 0; iCnt < m_pMtlList.size(); iCnt++)
 		{
-			if (m_pMtlList[iCnt] == pMtl)// 중복제거
+			if (m_pMtlList[iCnt] == pMtl)
 			{
 				bAdd = false;
 				break;
 			}
 		}
-		if (bAdd)
+		if(bAdd)
 		{
 			m_pMtlList.push_back(pMtl);
 		}
 	}
 }
-
-int S_KHJ_Global::GetMtlref(Mtl* pMtl) // 매터리얼 레퍼런스 정보
+int S_Global::GetMtlRef(Mtl* pMtl)
 {
 	for (int iMtl = 0; iMtl < m_pMtlList.size(); iMtl++)
 	{
@@ -114,7 +125,7 @@ int S_KHJ_Global::GetMtlref(Mtl* pMtl) // 매터리얼 레퍼런스 정보
 	return -1;
 }
 
-TCHAR* S_KHJ_Global::FixupName(MSTR name)
+TCHAR* S_Global::FixupName(MSTR name)
 {
 	memset(m_tmpBuffer, 0, sizeof(TCHAR)*MAX_PATH);
 
@@ -132,7 +143,7 @@ TCHAR* S_KHJ_Global::FixupName(MSTR name)
 	return m_tmpBuffer;
 }
 
-void S_KHJ_Global::DumpMatrix3(Matrix3* m, D3D_MATRIX& mat)
+void S_Global::DumpMatrix3(Matrix3* m, D3D_MATRIX& mat)
 {
 	Point3 row;
 	row = m->GetRow(0);
@@ -141,27 +152,25 @@ void S_KHJ_Global::DumpMatrix3(Matrix3* m, D3D_MATRIX& mat)
 	mat._21 = row.x; mat._23 = row.y; mat._22 = row.z;
 	row = m->GetRow(1);
 	mat._31 = row.x; mat._33 = row.y; mat._32 = row.z;
-
 	row = m->GetRow(3);
 	mat._41 = row.x; mat._43 = row.y; mat._42 = row.z;
 	mat._14 = mat._24 = mat._34 = 0.0f;
 	mat._44 = 1.0f;
 }
 
-void S_KHJ_Global::DumpPoint3(Point3& pDest, Point3& pSrc)
+void S_Global::DumpPoint3(Point3& pDest, Point3& pSrc)
 {
 	pDest.x = pSrc.x;
 	pDest.y = pSrc.z;
 	pDest.z = pSrc.y;
 }
-
-bool S_KHJ_Global::TMNegParity(Matrix3 &m)
+bool S_Global::TMNegParity(Matrix3 &m)
 {
 	return (DotProd(CrossProd(m.GetRow(0), m.GetRow(1)),
-		m.GetRow(2)) < 0.0f) ? 1 : 0;
+		m.GetRow(2)) < 0.0) ? 1 : 0;
 }
 
-bool S_KHJ_Global::EqualPoint2(Point2 p1, Point2 p2)
+bool S_Global::EqualPoint2(Point2 p1, Point2 p2)
 {
 	if (fabs(p1.x - p2.x) > ALMOST_ZERO)
 		return false;
@@ -169,7 +178,8 @@ bool S_KHJ_Global::EqualPoint2(Point2 p1, Point2 p2)
 		return false;
 	return true;
 }
-bool S_KHJ_Global::EqualPoint3(Point3 p1, Point3 p2)
+
+bool S_Global::EqualPoint3(Point3 p1, Point3 p2)
 {
 	if (fabs(p1.x - p2.x) > ALMOST_ZERO)
 		return false;
@@ -177,10 +187,11 @@ bool S_KHJ_Global::EqualPoint3(Point3 p1, Point3 p2)
 		return false;
 	if (fabs(p1.z - p2.z) > ALMOST_ZERO)
 		return false;
+
 	return true;
 }
 
-bool S_KHJ_Global::EqualPoint4(Point4 p1, Point4 p2)
+bool S_Global::EqualPoint4(Point4 p1, Point4 p2)
 {
 	if (fabs(p1.x - p2.x) > ALMOST_ZERO)
 		return false;
@@ -192,14 +203,14 @@ bool S_KHJ_Global::EqualPoint4(Point4 p1, Point4 p2)
 		return false;
 	return true;
 }
-S_KHJ_Global::S_KHJ_Global(void)
+S_Global::S_Global(void)
 {
-	m_p3dsMax = NULL; 
+	m_p3dsMax = NULL;
 	m_pRootNode = NULL;
 }
 
 
-S_KHJ_Global::~S_KHJ_Global(void)
+S_Global::~S_Global(void)
 {
 	m_MatrixMap.Release();
 }
