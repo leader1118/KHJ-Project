@@ -274,11 +274,11 @@ TriObject* S_Object::GetTriObjectFromNode(INode* node, TimeValue t, int &deletel
 		return NULL;
 	}
 }
-S_Object::S_Object()
+S_Object::S_Object(void)
 {
 }
 
 
-S_Object::~S_Object()
+S_Object::~S_Object(void)
 {
 }

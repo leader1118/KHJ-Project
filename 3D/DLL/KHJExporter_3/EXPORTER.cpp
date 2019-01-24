@@ -1,5 +1,5 @@
 #include "Header.h"
-
+#include "S_Writer.h"
 #define KHJEXP_CLASS_ID Class_ID(0x79537139, 0x5c066d4f)
 
 class KHJExporter : public SceneExport
@@ -107,5 +107,7 @@ BOOL KHJExporter::SupportsOptions(int, DWORD)
 
 int KHJExporter::DoExport(const TCHAR* name, ExpInterface* ei, Interface* i, BOOL suppressPrompts, DWORD options)
 {
-	return FALSE;
+	I_Writer.Initialize(i);
+	I_Writer.KHJExport();
+	return TRUE;
 }

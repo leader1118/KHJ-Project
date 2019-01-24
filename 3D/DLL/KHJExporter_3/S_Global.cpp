@@ -37,7 +37,7 @@ bool S_Global::Initialize(Interface* pMax)
 
 	m_Scene.iVersion = 20190121;
 	m_Scene.iFirstFrame = m_Interval.Start() / GetTicksPerFrame();
-	m_Scene.iLastFrmae = m_Interval.End() / GetTicksPerFrame();
+	m_Scene.iLastFrame = m_Interval.End() / GetTicksPerFrame();
 	m_Scene.iFrameSpeed = GetFrameRate();
 	m_Scene.iTickPerFrame = GetTicksPerFrame();
 

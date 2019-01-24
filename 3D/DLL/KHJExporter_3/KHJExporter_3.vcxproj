@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>../output/KHJExporter_3/</OutDir>
     <IntDir>../output/KHJExporter_3/</IntDir>
+    <TargetExt>.dle</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -154,16 +155,22 @@
   <ItemGroup>
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="EXPORTER.cpp" />
+    <ClCompile Include="S_AnimObj.cpp" />
     <ClCompile Include="S_Global.cpp" />
     <ClCompile Include="S_Object.cpp" />
+    <ClCompile Include="S_Skin.cpp" />
+    <ClCompile Include="S_Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source.def" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />
+    <ClInclude Include="S_AnimObj.h" />
     <ClInclude Include="S_Global.h" />
     <ClInclude Include="S_Object.h" />
+    <ClInclude Include="S_Skin.h" />
+    <ClInclude Include="S_Writer.h" />
     <ClInclude Include="TemplateMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

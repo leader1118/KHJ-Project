@@ -55,7 +55,7 @@ struct SScene
 {
 	int iVersion; // 파일 버전
 	int iFirstFrame; // 시작 프레임
-	int iLastFrmae; // 마지막 프레임
+	int iLastFrame; // 마지막 프레임
 	int iFrameSpeed; // 1초당 프레임 개수 (30)
 	int iTickPerFrame; // 1프레임의 틱 값(160)
 	int iNumMesh; // 메쉬 오브젝트 개수
