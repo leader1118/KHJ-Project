@@ -143,6 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <FxCompile Include="Character.hlsl" />
+    <FxCompile Include="MatrixViewer.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CharacterTable.cit" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
