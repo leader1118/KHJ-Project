@@ -72,6 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>../output/KHJViewer/</OutDir>
+    <IntDir>../output/KHJViewer/</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -89,10 +91,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../../Include/DX;../../Include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>../../lib/;../../lib/DX/;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -148,6 +152,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CharacterTable.cit" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="S_Character.h" />
+    <ClInclude Include="S_CharMgr.h" />
+    <ClInclude Include="S_HeroObj.h" />
+    <ClInclude Include="S_Viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="S_Character.cpp" />
+    <ClCompile Include="S_CharMgr.cpp" />
+    <ClCompile Include="S_HeroObj.cpp" />
+    <ClCompile Include="S_Viewer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
