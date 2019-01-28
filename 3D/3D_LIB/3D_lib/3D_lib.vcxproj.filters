@@ -81,6 +81,9 @@
     <ClCompile Include="xSkyBox.cpp">
       <Filter>SKY</Filter>
     </ClCompile>
+    <ClCompile Include="TParser.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xCore.h">
@@ -130,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="xSkyBox.h">
       <Filter>SKY</Filter>
+    </ClInclude>
+    <ClInclude Include="TParser.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TTemplate.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

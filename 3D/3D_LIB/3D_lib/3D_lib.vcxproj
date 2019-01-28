@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TParser.cpp" />
     <ClCompile Include="xArcBall.cpp" />
     <ClCompile Include="xCamera.cpp" />
     <ClCompile Include="xCore.cpp" />
@@ -38,6 +39,8 @@
     <ClCompile Include="xWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TParser.h" />
+    <ClInclude Include="TTemplate.h" />
     <ClInclude Include="xArcBall.h" />
     <ClInclude Include="xCamera.h" />
     <ClInclude Include="xCore.h" />
