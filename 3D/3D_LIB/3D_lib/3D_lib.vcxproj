@@ -19,7 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TAnimation.cpp" />
+    <ClCompile Include="TAseObj.cpp" />
+    <ClCompile Include="TAseParser.cpp" />
+    <ClCompile Include="TBoneObj.cpp" />
+    <ClCompile Include="TDxHelper.cpp" />
+    <ClCompile Include="TDxHelperEx.cpp" />
+    <ClCompile Include="TDxRT.cpp" />
+    <ClCompile Include="TDxState.cpp" />
+    <ClCompile Include="TExpMesh.cpp" />
+    <ClCompile Include="TInput.cpp" />
+    <ClCompile Include="TLoadToken.cpp" />
+    <ClCompile Include="TMath.cpp" />
+    <ClCompile Include="TModel.cpp" />
+    <ClCompile Include="TObject.cpp" />
+    <ClCompile Include="TObjMgr.cpp" />
     <ClCompile Include="TParser.cpp" />
+    <ClCompile Include="TSkinObj.cpp" />
+    <ClCompile Include="TTbsObj.cpp" />
+    <ClCompile Include="TTextureMgr.cpp" />
     <ClCompile Include="xArcBall.cpp" />
     <ClCompile Include="xCamera.cpp" />
     <ClCompile Include="xCore.cpp" />
@@ -39,8 +57,30 @@
     <ClCompile Include="xWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TAnimation.h" />
+    <ClInclude Include="TAseObj.h" />
+    <ClInclude Include="TAseParser.h" />
+    <ClInclude Include="TBasisStd.h" />
+    <ClInclude Include="TBoneObj.h" />
+    <ClInclude Include="TDxHelper.h" />
+    <ClInclude Include="TDxHelperEx.h" />
+    <ClInclude Include="TDxRT.h" />
+    <ClInclude Include="TDxState.h" />
+    <ClInclude Include="TExpMesh.h" />
+    <ClInclude Include="TInput.h" />
+    <ClInclude Include="TLoadToken.h" />
+    <ClInclude Include="TMath.h" />
+    <ClInclude Include="TMesh.h" />
+    <ClInclude Include="TModel.h" />
+    <ClInclude Include="TObject.h" />
+    <ClInclude Include="TObjMgr.h" />
+    <ClInclude Include="TObjStd.h" />
     <ClInclude Include="TParser.h" />
+    <ClInclude Include="TSkinObj.h" />
+    <ClInclude Include="TTbsObj.h" />
     <ClInclude Include="TTemplate.h" />
+    <ClInclude Include="TTextureMgr.h" />
+    <ClInclude Include="TUtils.h" />
     <ClInclude Include="xArcBall.h" />
     <ClInclude Include="xCamera.h" />
     <ClInclude Include="xCore.h" />

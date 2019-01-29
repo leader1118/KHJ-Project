@@ -56,7 +56,7 @@ struct TGameInput
 	BOOL bButton2;
 };
 extern TGameInput g_Input;
-template<class T> class TSingleton
+template<class T> class SSingleton
 {
 public:
 	static T& GetInstance()

@@ -4,10 +4,17 @@
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "dxguid.lib")
 
-class xInput : public TSingleton < xInput >
+
+enum KeyState {
+	KEY_FREE = 0,
+	KEY_UP = 1,
+	KEY_PUSH = 2,
+	KEY_HOLD = 3,
+};
+class xInput : public SSingleton < xInput >
 {
 private:
-	friend class TSingleton<xInput>;
+	friend class SSingleton<xInput>;
 public:
 	LPDIRECTINPUT8  m_pDI;
 	LPDIRECTINPUTDEVICE8  m_pKey;

@@ -45,6 +45,15 @@ bool	xTimer::Release()
 {
 	return true;
 }
+float xTimer::GetElapsedTime()
+{
+	if (m_bStarted)
+	{
+		QueryPerformanceCounter((LARGE_INTEGER*)&m_Elapse);
+		m_fEventTime = static_cast<float>(m_Elapse.QuadPart - m_Start.QuadPart) / static_cast<float>(m_Frequency.QuadPart);
+	}
+	return m_fEventTime;
+}
 
 xTimer::xTimer()
 {

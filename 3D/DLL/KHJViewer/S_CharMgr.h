@@ -2,12 +2,12 @@
 #include "TTemplate.h"
 #include "S_Character.h"
 #include "TParser.h"
-#include "xStd.h"
+
 
 class SCharacterLoader : public TParser
 {
 public:
-	BOOL GetDataFromSkinMeshString(TCHAR* pString, VOID* pData0, VOID* pData1);
+	BOOL GetDataFromSkinMeshString(const TCHAR* pString, VOID* pData0, VOID* pData1);
 public:
 	SCharacterLoader() {};
 	~SCharacterLoader() {};
@@ -24,7 +24,7 @@ public:
 		const TCHAR* strFileName,
 		const TCHAR* strShaderName,
 		int iMatrixIndex = -1);
-	bool Load(ID3D11Device8 pd3dDevice,
+	bool Load(ID3D11Device* pd3dDevice,
 		ID3D11DeviceContext* plmmediateContext,
 		const TCHAR* strFileName);
 

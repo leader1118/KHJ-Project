@@ -4,10 +4,10 @@
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "dxguid.lib")
 
-class xInput : public TSingleton < xInput >
+class xInput : public SSingleton < xInput >
 {
 private:
-	friend class TSingleton<xInput>;
+	friend class SSingleton<xInput>;
 public:
 	LPDIRECTINPUT8  m_pDI;
 	LPDIRECTINPUTDEVICE8  m_pKey;

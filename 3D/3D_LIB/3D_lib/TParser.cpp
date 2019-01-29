@@ -97,7 +97,7 @@ BOOL TParser::GetDataFromFileNext(TCHAR* pString, VOID* pData, INT DataType)
 	return FALSE;
 }
 
-BOOL TParser::GetDataFromFile(TCHAR* pString, VOID* pData, INT DataType)
+BOOL TParser::GetDataFromFile(const TCHAR* pString, VOID* pData, INT DataType)
 {
 
 	fpos_t  FilePos;
@@ -225,7 +225,7 @@ BOOL TParser::GetNodeName(TCHAR* pString, VOID* pData, INT DataType)
 	return FALSE;
 }
 
-BOOL TParser::GetDataFromFileLoop(TCHAR* pString, VOID* pData, INT DataType)
+BOOL TParser::GetDataFromFileLoop(const TCHAR* pString, VOID* pData, INT DataType)
 {
 	LPCSTR pBuffer = NULL;//사용처가 없기 때문에 없어도 됨..
 						  // 왜 있느냐고 묻는다면. 예전에 수업하던 것이라. 기억이 안남.. 따지지마...!!!

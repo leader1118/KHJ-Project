@@ -84,6 +84,60 @@
     <ClCompile Include="TParser.cpp">
       <Filter>Object</Filter>
     </ClCompile>
+    <ClCompile Include="TObject.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TModel.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TExpMesh.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TAnimation.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TDxHelperEx.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TDxRT.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TDxState.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TTextureMgr.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TDxHelper.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TMath.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TInput.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TObjMgr.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TAseObj.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TAseParser.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TBoneObj.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TSkinObj.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TTbsObj.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="TLoadToken.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xCore.h">
@@ -139,6 +193,72 @@
     </ClInclude>
     <ClInclude Include="TTemplate.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TObject.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TModel.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TExpMesh.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TObjStd.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TAnimation.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TMesh.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TDxHelperEx.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TDxRT.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TDxState.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TTextureMgr.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TBasisStd.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TDxHelper.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TUtils.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TMath.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TInput.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TObjMgr.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TAseObj.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TAseParser.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TBoneObj.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TSkinObj.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TTbsObj.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="TLoadToken.h">
+      <Filter>Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

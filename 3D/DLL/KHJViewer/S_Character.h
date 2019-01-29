@@ -1,10 +1,11 @@
 #pragma once
-#include "xstd.h"
-class S_Character
+#include "TObject.h"
+
+class S_Character :public TObject
 {
 public:
-	T_STR m_pBoneObject;
-	//S_BoneObj* m_pBoneObject;
+	T_STR m_szName;
+	TBoneObj* m_pBoneObject;
 	int m_iStartFrame;
 	int m_iLastFrame;
 	int m_iCurrentFrame;
