@@ -165,4 +165,4 @@ int S_Viewer::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	}
 	return -1;
 }
-GAME_RUN(L"Bindpose Viewer");
+GAME_RUN(L"Bindpose Viewer",800,600);
