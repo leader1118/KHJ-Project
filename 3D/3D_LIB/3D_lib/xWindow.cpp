@@ -136,6 +136,8 @@ bool xWindow::SetWindow(HINSTANCE	hInst,
 	GetClientRect(m_hWnd, &m_rtClient);
 	g_rtClient = m_rtClient;
 
+	
+
 	CenterWindow();
 
 	ShowWindow(m_hWnd, SW_SHOW);

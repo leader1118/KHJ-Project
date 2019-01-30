@@ -1,8 +1,23 @@
 #pragma once
-class S_Viewer
+#include "xCore.h"
+#include "S_HeroObj.h"
+class S_Viewer : public xCore
 {
 public:
-	S_Viewer();
-	virtual ~S_Viewer();
+	shared_ptr<xCamera> m_pMainCamera;
+	D3DXMATRIX m_matWorld;
+	vector<shared_ptr<S_HeroObj>> m_HeroObj;
+public:
+	bool Init();
+	bool Frame();
+	bool Render();
+	bool Release();
+	
+
+	HRESULT CreateResource();
+	HRESULT DeleteResource();
+public:
+	S_Viewer(void);
+	virtual ~S_Viewer(void);
 };
 

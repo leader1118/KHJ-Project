@@ -1,4 +1,5 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #define DIRECTINPUT_VERSION 0x800
 #include <windows.h>
 #include <assert.h>
@@ -55,7 +56,7 @@ struct TGameInput
 	BOOL bButton2;
 };
 extern TGameInput g_Input;
-template<class T> class TSingleton
+template<class T> class SSingleton
 {
 public:
 	static T& GetInstance()
@@ -105,9 +106,33 @@ public:
 #endif 
 
 #ifndef SAFE_NEW_CLEAR
-#define SAFE_NEW_CLEAR( A, B )			{ if (!A) A = new B; if(A) memset( A, 0, sizeof(B) ); };
+#define SAFE_NEW_CLEAR( A, B )		s	{ if (!A) A = new B; if(A) memset( A, 0, sizeof(B) ); };
 #endif 
 
 #ifndef SAFE_NEW_ARRAY_CLEAR
 #define NEW_ARRAY_CLEAR( A, B, C )	{ if (!A && C) A = new B[C]; if(A) memset( A, 0, sizeof(B)*C ); };
+#endif
+
+//////////////////////////////////////////////
+// Assert
+//////////////////////////////////////////////
+#ifndef Assert
+#if defined( _DEBUG ) || defined( _DEBUG )
+#define Assert(b) do {if (!(b)) {OutputDebugStringW(L"Assert: " #b L"\n");}} while(0)
+#else
+#define Assert(b)
+#endif //_DEBUG || _DEBUG
+#endif
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// 디버그 메세지( 오류가 예상되는 곳에서 사용함 ) : 파일명과 라인 및 문자열이 출력되며 강제 종료됨.
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#ifdef _DEBUG
+#define	DEBUGMSG(lpText)\
+	{\
+		TCHAR szBuffer[256];\
+		_stprintf_s(szBuffer, _T("[File: %s][Line: %d]\n[Note : %s]"), _CRT_WIDE(__FILE__), __LINE__, lpText);	\
+		MessageBox(NULL, szBuffer, _T("ERROR"), MB_ICONERROR);\
+		_ASSERT(1);}			
+#else
+#define DEBUGMSG(lpText)
 #endif

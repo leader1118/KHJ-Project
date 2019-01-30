@@ -1,17 +1,17 @@
 #pragma once
 #include "xDxObj.h"
-struct PC_VERTEX
+struct _PC_VERTEX
 {
 	D3DXVECTOR3 p;
 	D3DXVECTOR4 c;
 };
-struct PNCT_VERTEX
+struct _PNCT_VERTEX
 {
 	D3DXVECTOR3 p;
 	D3DXVECTOR3 n;
 	D3DXVECTOR4 c;
 	D3DXVECTOR2 t;
-	bool operator == (const PNCT_VERTEX & Vertex)
+	bool operator == (const _PNCT_VERTEX & Vertex)
 	{
 		if (p == Vertex.p  && n == Vertex.n && 	c == Vertex.c  &&	t == Vertex.t)
 		{
@@ -19,8 +19,8 @@ struct PNCT_VERTEX
 		}
 		return  false;
 	}
-	PNCT_VERTEX() {}
-	PNCT_VERTEX(D3DXVECTOR3		vp,
+	_PNCT_VERTEX() {}
+	_PNCT_VERTEX(D3DXVECTOR3		vp,
 		D3DXVECTOR3		vn,
 		D3DXVECTOR4		vc,
 		D3DXVECTOR2     vt)

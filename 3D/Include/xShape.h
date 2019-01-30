@@ -7,7 +7,7 @@ public:
 	ID3D11Device* m_pd3dDevice;
 	D3D_PRIMITIVE_TOPOLOGY m_Primitive;
 	xDxObj  m_dxObj;
-	vector<PNCT_VERTEX>  m_VertexList;
+	vector<_PNCT_VERTEX>  m_VertexList;
 	vector<DWORD>		 m_IndexList;
 	UINT				 m_iVertexSize;
 	T_CB_DATA            m_cbData;
@@ -110,11 +110,11 @@ public:
 };
 class xSphereShape : public xBoxShape
 {
-	vector<PNCT_VERTEX>  m_vList;
+	vector<_PNCT_VERTEX>  m_vList;
 public:
-	PNCT_VERTEX NormalizeVertex(PNCT_VERTEX Vertex);
-	void TriAppend(PNCT_VERTEX V0, PNCT_VERTEX V1, PNCT_VERTEX V2,
-		vector<PNCT_VERTEX>& TriStream, int iIndex);
+	_PNCT_VERTEX NormalizeVertex(_PNCT_VERTEX Vertex);
+	void TriAppend(_PNCT_VERTEX V0, _PNCT_VERTEX V1, _PNCT_VERTEX V2,
+		vector<_PNCT_VERTEX>& TriStream, int iIndex);
 	HRESULT CreateVertexData();
 	HRESULT CreateIndexData() {	return S_OK;};
 	HRESULT CreateVertexBuffer();
