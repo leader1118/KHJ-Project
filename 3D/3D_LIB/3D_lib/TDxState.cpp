@@ -1,7 +1,7 @@
 #include "TDxState.h"
 //extern ID3D11Device*    g_pd3dDevice;
 
-namespace DX
+namespace TBASIS
 {
 	ID3D11RasterizerState* TDxState::g_pRSWireFrame = 0;
 	ID3D11RasterizerState* TDxState::g_pRSSolid = 0;

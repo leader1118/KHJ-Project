@@ -58,7 +58,7 @@ namespace DX
 		pd3dDeviceContext->RSSetState(NULL);
 	}
 
-	HRESULT CompileShaderFromFile(const WCHAR* szFileName,
+	/*HRESULT CompileShaderFromFile(const WCHAR* szFileName,
 		LPCSTR szEntryPoint,
 		LPCSTR szShaderModel,
 		ID3DBlob** ppBlobOut)
@@ -82,7 +82,7 @@ namespace DX
 		if (pErrorBlob) pErrorBlob->Release();
 
 		return S_OK;
-	}
+	}*/
 	ID3D11VertexShader*   LoadVertexShaderFile(ID3D11Device*  pd3dDevice,
 		const void* pShaderFileData,
 		ID3DBlob** ppBlobOut,
@@ -509,7 +509,7 @@ namespace DX
 		}		
 		return pBuffer;
 	}
-	ID3D11ShaderResourceView*	CreateShaderResourceView(ID3D11Device* pDevice, const TCHAR* strFilePath)
+	/*ID3D11ShaderResourceView*	CreateShaderResourceView(ID3D11Device* pDevice, const TCHAR* strFilePath)
 	{
 		HRESULT hr = S_OK;
 		if(strFilePath == NULL) return nullptr;
@@ -521,7 +521,7 @@ namespace DX
 			return nullptr;
 		}
 		return pSRV;
-	}
+	}*/
 
 	ID3D11DepthStencilView* CreateDepthStencilView(ID3D11Device* pDevice,DWORD dwWidth, DWORD dwHeight)
 	{

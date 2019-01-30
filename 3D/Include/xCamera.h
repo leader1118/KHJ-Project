@@ -36,6 +36,7 @@ public:
 		float fNear=1.0f,
 		float fFar=1000.0f);
 	void  UpdateProjMatrix(UINT width, UINT height);
+	
 public:
 	virtual bool Init() {return true;};
 	virtual bool Frame();

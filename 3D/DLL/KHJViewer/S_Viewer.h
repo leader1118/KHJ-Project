@@ -12,7 +12,7 @@ public:
 	bool Frame();
 	bool Render();
 	bool Release();
-	int WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	
 
 	HRESULT CreateResource();
 	HRESULT DeleteResource();

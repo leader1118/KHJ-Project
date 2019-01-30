@@ -1,6 +1,7 @@
 #pragma once
 #include "TTemplate.h"
 #include "TDxHelperEx.h"
+
 // Sub texture types
 #define ID_TBASIS_AM 0   // ambient
 #define ID_TBASIS_DI 1   // diffuse

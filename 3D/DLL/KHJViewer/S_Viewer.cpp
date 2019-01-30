@@ -69,7 +69,7 @@ bool S_Viewer::Init()
 
 	float fAspectRatio = 800 / (FLOAT)600;
 	m_pMainCamera->SetProjMatrix(D3DX_PI / 4, fAspectRatio, 0.1f, 1000.0f);
-	//m_pMainCamera->SetWindow(800, 600);
+//m_pMainCamera->SetWindow(800, 600);
 	return true;
 }
 bool S_Viewer::Render()
@@ -83,7 +83,7 @@ bool S_Viewer::Render()
 	return true;
 }
 
-bool S_Viewer()
+bool S_Viewer::Release()
 {
 	I_CharMgr.Release();
 	return true;
@@ -157,12 +157,9 @@ S_Viewer::~S_Viewer(void)
 {
 }
 
-int S_Viewer::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR   lpCmdLine, int   nCmdShow)
 {
-	if (m_pMainCamera != nullptr)
-	{
-		m_pMainCamera->WndProc(hWnd, msg, wParam, lParam);
-	}
-	return -1;
+	S_Viewer vie;
+	vie.SetWindow(hInst, L"Viewer", 800, 600);
+	vie.Run();
 }
-GAME_RUN(L"Bindpose Viewer",800,600);

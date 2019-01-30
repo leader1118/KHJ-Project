@@ -4,8 +4,8 @@ HRESULT xLineShape::CreateVertexData()
 	HRESULT hr = S_OK;
 	// 앞면
 	m_VertexList.resize(2);
-	m_VertexList[0] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
-	m_VertexList[1] = PNCT_VERTEX(D3DXVECTOR3(1.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
+	m_VertexList[0] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
+	m_VertexList[1] = _PNCT_VERTEX(D3DXVECTOR3(1.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
 	m_iNumVertex = m_VertexList.size();
 	return hr;
 }
@@ -25,7 +25,7 @@ bool xLineShape::Draw(
 	D3DXVECTOR3 vEnd, 
 	D3DXVECTOR4 vColor)
 {	
-	PNCT_VERTEX vertexList[2];
+	_PNCT_VERTEX vertexList[2];
 	vertexList[0] = m_VertexList[0];
 	vertexList[1] = m_VertexList[1];
 	vertexList[0].p = vStart;
@@ -64,12 +64,12 @@ HRESULT xDirLineShape::CreateVertexData()
 	HRESULT hr = S_OK;
 	// 앞면
 	m_VertexList.resize(6);
-	m_VertexList[0] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
-	m_VertexList[1] = PNCT_VERTEX(D3DXVECTOR3(10000.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
-	m_VertexList[2] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
-	m_VertexList[3] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 10000.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
-	m_VertexList[4] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 0.0f, 1.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
-	m_VertexList[5] = PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 10000.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 0.0f, 1.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
+	m_VertexList[0] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
+	m_VertexList[1] = _PNCT_VERTEX(D3DXVECTOR3(10000.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(1.0f, 0.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
+	m_VertexList[2] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
+	m_VertexList[3] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 10000.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 1.0f, 0.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
+	m_VertexList[4] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 0.0f, 1.0f, 1.0f), D3DXVECTOR2(0.0f, 0.0f));
+	m_VertexList[5] = _PNCT_VERTEX(D3DXVECTOR3(0.0f, 0.0f, 10000.0f), D3DXVECTOR3(0.0f, 0.0f, -1.0f), D3DXVECTOR4(0.0f, 0.0f, 1.0f, 1.0f), D3DXVECTOR2(1.0f, 0.0f));
 	m_iNumVertex = m_VertexList.size();
 	return hr;
 }

@@ -4,6 +4,15 @@
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "dxguid.lib")
 
+#define KEYSTATECOUNT 256
+
+enum KeyState {
+	KEY_FREE = 0,
+	KEY_UP = 1,
+	KEY_PUSH = 2,
+	KEY_HOLD = 3,
+};
+
 class xInput : public SSingleton < xInput >
 {
 private:

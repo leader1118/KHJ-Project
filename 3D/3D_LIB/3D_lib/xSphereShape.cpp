@@ -2,19 +2,19 @@
 HRESULT xSphereShape::CreateVertexBuffer()
 {
 	HRESULT hr = S_OK;
-	m_iVertexSize = sizeof(PNCT_VERTEX);
+	m_iVertexSize = sizeof(_PNCT_VERTEX);
 	DX::CreateVertexBuffer(m_pd3dDevice,
 		m_iNumVertex,
-		sizeof(PNCT_VERTEX),
+		sizeof(_PNCT_VERTEX),
 		&m_vList.at(0),
 		m_dxObj.m_pVertexBuffer.GetAddressOf());
 	return hr;
 }
 // 로칼 정점의 크기를 정규화하여 1로 만든다.
-PNCT_VERTEX xSphereShape::NormalizeVertex(
-	PNCT_VERTEX Vertex)
+_PNCT_VERTEX xSphereShape::NormalizeVertex(
+	_PNCT_VERTEX Vertex)
 {
-	PNCT_VERTEX newvertex;// = (PNCT_VERTEX)0;
+	_PNCT_VERTEX newvertex;// = (PNCT_VERTEX)0;
 	D3DXVec3Normalize(&newvertex.p, &Vertex.p);
 	// 정점이 원점을 중심으로 하는 노말 벡터가 된다.
 	newvertex.n = newvertex.p;
@@ -23,8 +23,8 @@ PNCT_VERTEX xSphereShape::NormalizeVertex(
 	return newvertex;
 }
 void xSphereShape::TriAppend(
-	PNCT_VERTEX V0, PNCT_VERTEX V1, PNCT_VERTEX V2,
-	vector<PNCT_VERTEX>& TriStream, int iIndex)
+	_PNCT_VERTEX V0, _PNCT_VERTEX V1, _PNCT_VERTEX V2,
+	vector<_PNCT_VERTEX>& TriStream, int iIndex)
 {
 	TriStream[iIndex + 0] = NormalizeVertex(V0);
 	TriStream[iIndex + 1] = NormalizeVertex(V1);
@@ -35,7 +35,7 @@ HRESULT xSphereShape::CreateVertexData()
 {
 	xBoxShape::CreateVertexData();	
 	xBoxShape::CreateIndexData();
-	vector<PNCT_VERTEX>  vList;
+	vector<_PNCT_VERTEX>  vList;
 	vList.resize(m_IndexList.size());
 	m_vList.resize((m_IndexList.size() / 3) * 12);
 	for (int iFace = 0; iFace < 12; iFace++)
@@ -48,12 +48,12 @@ HRESULT xSphereShape::CreateVertexData()
 	int iIndex = 0;
 	for (int iFace = 0; iFace < 12; iFace++)
 	{
-		PNCT_VERTEX input[3];
+		_PNCT_VERTEX input[3];
 		input[0] = vList[iFace * 3 + 0];
 		input[1] = vList[iFace * 3 + 1];
 		input[2] = vList[iFace * 3 + 2];
 
-		PNCT_VERTEX Center0, Center1, Center2;
+		_PNCT_VERTEX Center0, Center1, Center2;
 		Center0.p = D3DXVECTOR3((input[0].p + input[1].p) / 2.0);
 		Center0.n = (input[0].n + input[1].n) / 2.0;
 		Center0.c = (input[0].c + input[1].c) / 2.0;
