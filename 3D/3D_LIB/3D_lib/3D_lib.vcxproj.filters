@@ -72,9 +72,6 @@
     <ClCompile Include="xPlaneShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
-    <ClCompile Include="xSphereShape.cpp">
-      <Filter>Object</Filter>
-    </ClCompile>
     <ClCompile Include="xShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
@@ -136,6 +133,9 @@
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="TLoadToken.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="xSphereShape.cpp">
       <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>

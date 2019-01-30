@@ -30,11 +30,11 @@
 #pragma comment( lib, "d2d1.lib" )
 #pragma comment( lib, "dwrite.lib" )
 
-namespace TBASIS
-{
+//namespace TBASIS
+//{
 	extern ID3D11Device*			g_pd3dDevice;
 	extern ID3D11DeviceContext*		g_pImmediateContext;
-}
+//}
 
 #if defined(DEBUG) | defined(_DEBUG) 
 #ifndef H_RETURN

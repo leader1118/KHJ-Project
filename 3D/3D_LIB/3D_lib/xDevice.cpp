@@ -1,5 +1,10 @@
 #include "xDevice.h"
+
+ID3D11Device* g_pd3dDevice;
+ID3D11DeviceContext* g_pImmediateContext;
+
 void xDevice::DeleteDeviceResources(){}
+
 HRESULT xDevice::CreateDeviceResources(UINT width, UINT height) 
 {
 	return S_OK;
@@ -33,6 +38,10 @@ bool   xDevice::Init()
 	{
 		return false;
 	}
+
+	g_pd3dDevice = m_pd3dDevice;
+	g_pImmediateContext = m_pContext;
+
 	if (FAILED(CreateGIFactory()))
 	{
 		return false;
