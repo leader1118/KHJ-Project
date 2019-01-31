@@ -227,7 +227,6 @@ namespace DX
 			pBlob->Release();
 		else  
 			*ppBlobOut = pBlob;
-
 		//D3DCreateBlob(dwSize, ppBlobOut);
 		return pGeometryShader;
 	}
@@ -239,7 +238,6 @@ namespace DX
 		ID3DBlob* pBlob = nullptr;
 		DWORD dwSize = 0;
 		LPCVOID lpData = NULL;
-
 		if (bBinary == false)
 		{
 			if (pFuntionName == 0)
@@ -274,9 +272,9 @@ namespace DX
 			pBlob->Release();
 		else
 			*ppBlobOut = pBlob;
-
 		return pHullShader;
 	};
+
 	ID3D11DomainShader*  LoadDomainShaderFile(ID3D11Device*  pd3dDevice, const void* pShaderFileData, ID3DBlob** ppBlobOut, char *pFuntionName, bool bBinary)
 	{
 		HRESULT hr = S_OK;
@@ -284,7 +282,6 @@ namespace DX
 		ID3DBlob* pBlob = nullptr;
 		DWORD dwSize = 0;
 		LPCVOID lpData = NULL;
-
 		if (bBinary == false)
 		{
 			if (pFuntionName == 0)
@@ -319,9 +316,9 @@ namespace DX
 			pBlob->Release();
 		else
 			*ppBlobOut = pBlob;
-
 		return pDomainShader;
 	};
+
 	ID3D11ComputeShader*  LoadComputeShaderFile(ID3D11Device*  pd3dDevice, const void* pShaderFileData, ID3DBlob** ppBlobOut, char *pFuntionName, bool bBinary )
 	{
 		HRESULT hr = S_OK;
@@ -329,7 +326,6 @@ namespace DX
 		ID3DBlob* pBlob = nullptr;
 		DWORD dwSize = 0;
 		LPCVOID lpData = NULL;
-
 		if (bBinary == false)
 		{
 			if (pFuntionName == 0)
@@ -364,7 +360,6 @@ namespace DX
 			pBlob->Release();
 		else
 			*ppBlobOut = pBlob;
-
 		return pComputeShader;
 	};
 

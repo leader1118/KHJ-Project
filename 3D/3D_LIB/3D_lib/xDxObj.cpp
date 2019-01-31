@@ -153,7 +153,7 @@ namespace DX
 		HRESULT hr = S_OK;
 
 		DWORD dwShaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
-#if defined( DEBUG ) || defined( _DEBUG )	
+#if defined( DEBUG ) || defined( _DEBUG )
 		dwShaderFlags |= D3DCOMPILE_DEBUG;
 #endif
 		ID3DBlob* pErrorBlob;
@@ -207,6 +207,7 @@ namespace DX
 		}
 		return pVertexShader;
 	}
+
 	ID3D11PixelShader*  LoadPixelShaderFile(
 		ID3D11Device* pd3dDevice,
 		const void* pShaderFile,
@@ -243,6 +244,7 @@ namespace DX
 		}
 		return pPixelShader;
 	}
+
 	ID3D11GeometryShader*  LoadGeometryShaderFile(
 		ID3D11Device* pd3dDevice,
 		const void* pShaderFile,

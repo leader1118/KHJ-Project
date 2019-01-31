@@ -1,5 +1,25 @@
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.pdb
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.idb
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xarcball.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\ttexturemgr.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\ttbsobj.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tskinobj.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tparser.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tobject.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tobjmgr.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tmodel.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tmath.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tloadtoken.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tinput.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\texpmesh.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tdxstate.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tdxrt.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tdxhelperex.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tdxhelper.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tboneobj.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\taseparser.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\taseobj.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\tanimation.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xwindow.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xtimer.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xsphereshape.obj
@@ -16,30 +36,11 @@ c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xdxobj.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xdevice.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xcore.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xcamera.obj
-c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\xarcball.obj
 c:\users\김현진\desktop\khj\3d\3d_lib\3d_lib\3d_lib.lib
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xarcball.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xcamera.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xcore.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xdevice.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xdxobj.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xdxstate.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xdxwrite.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xfrustum.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xinput.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xlineshape.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xmodelview.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xplaneshape.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xshape.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xskybox.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xsphereshape.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xtimer.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\xwindow.obj
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.idb
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.pdb
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.command.1.tlog
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.read.1.tlog
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.write.1.tlog
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib-link.read.1.tlog
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib-link.write.1.tlog
-c:\users\hyunj\desktop\c++\khj project\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib.command.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\ttimer.obj
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.command.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.read.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\cl.write.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib-link.read.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib-link.write.1.tlog
+c:\users\김현진\desktop\khj\3d\3d_lib\output\3d_lib\3d_lib.tlog\lib.command.1.tlog

@@ -1,5 +1,6 @@
 #include "TBoneObj.h"
 #include "xStd.h"
+
 #define MAX_BONE_MATRICES 255
 
 void TBoneObj::SetBoneMatrices(ID3D11DeviceContext*    pContext)
@@ -361,6 +362,8 @@ HRESULT TBoneObj::SetInputLayout()
 		(DWORD)m_dxobj.g_pVSBlob.Get()->GetBufferSize(),
 		m_dxobj.g_pVSBlob.Get()->GetBufferPointer(), layout, numElements));
 
+	
+
 	SetBuffer(m_pd3dDevice);
 
 	return S_OK;
@@ -532,6 +535,7 @@ bool TBoneObj::Release()
 //////////////////////////////////////////////////////////////////////
 TBoneObj::TBoneObj()
 {
+
 	m_fSpeed = 1.0f;
 	m_pMatrix = NULL;
 	m_ppAniMatrix = NULL;

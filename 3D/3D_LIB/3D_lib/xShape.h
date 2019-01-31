@@ -1,6 +1,7 @@
 #pragma once
 #include "xObjectStd.h"
 #include "xDxState.h"
+
 class xShape
 {
 public:
