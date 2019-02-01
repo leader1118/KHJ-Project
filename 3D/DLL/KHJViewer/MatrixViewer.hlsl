@@ -18,15 +18,15 @@ StructuredBuffer<TessedVertex> g_TessedVertices : register(t1);
 
 struct VS_OUTPUT
 {
-    float4 p : SV_POSITON;
-    float4 c : COLORO;
-    float2 t : TEXCOORDO;
+    float4 p : SV_POSITION;
+    float4 c : COLOR0;
+    float2 t : TEXCOORD0;
 };
 struct PNC_VS_INPUT
 {
     float4 p : POSITION;
     float3 n : NORMAL;
-    float4 c : COLORO;
+    float4 c : COLOR0;
 };
 
 VS_OUTPUT VS(PNC_VS_INPUT input)

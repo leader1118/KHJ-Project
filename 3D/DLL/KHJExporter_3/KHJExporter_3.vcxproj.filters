@@ -64,5 +64,6 @@
     <None Include="Source.def">
       <Filter>소스 파일</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@
 
 #define KEYSTATECOUNT 256
 
-enum KeyState {
+enum Key_State {
 	KEY_FREE = 0,
 	KEY_UP = 1,
 	KEY_PUSH = 2,

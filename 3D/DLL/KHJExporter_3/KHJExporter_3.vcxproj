@@ -162,6 +162,7 @@
     <ClCompile Include="S_Writer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="Source.def" />
   </ItemGroup>
   <ItemGroup>

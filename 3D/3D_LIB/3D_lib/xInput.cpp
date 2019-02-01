@@ -1,8 +1,11 @@
 #include "xInput.h"
+
+
 TGameInput g_Input;
 bool xInput::Frame()
 {
 	HRESULT hr;
+
 	if (FAILED(hr = m_pKey->GetDeviceState(256, &m_KeyState)))
 	{
 		while (m_pKey->Acquire() == DIERR_INPUTLOST);
@@ -11,6 +14,7 @@ bool xInput::Frame()
 	{
 		while (m_pMouse->Acquire() == DIERR_INPUTLOST);
 	}
+
 
 
 	g_Input.bFront = m_KeyState[DIK_W];
@@ -57,10 +61,19 @@ bool xInput::Init()
 		return false;
 	}
 	if (FAILED(hr = m_pKey->SetCooperativeLevel(
-		m_hWnd, DISCL_NONEXCLUSIVE |DISCL_FOREGROUND | DISCL_NOWINKEY)))
+		g_hWnd, DISCL_NONEXCLUSIVE |DISCL_FOREGROUND | DISCL_NOWINKEY)))
 	{
 		return false;
 	}
+
+	// TOOL 사용 마우스
+	/*if (FAILED(hr = m_pKey->SetCooperativeLevel(
+		m_hWnd, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND | DISCL_NOWINKEY)))
+	{
+		return false;
+	}*/
+	
+	
 	while (m_pKey->Acquire() == DIERR_INPUTLOST);
 	// mouse
 	if (FAILED(hr = m_pDI->CreateDevice(GUID_SysMouse, &m_pMouse, NULL)))
